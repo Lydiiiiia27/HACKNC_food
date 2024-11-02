@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Tomatoes",
+    "category": "vegetables",
+    "quantity_or_weight": 3,
+    "unit": "pieces",
+    "best_before_in_fridge": 7
+  },
+  {
+    "name": "Peppers",
+    "category": "vegetables",
+    "quantity_or_weight": 4,
+    "unit": "pieces",
+    "best_before_in_fridge": 7
+  },
+  {
+    "name": "Bread",
+    "category": "grains",
+    "quantity_or_weight": 1,
+    "unit": "loaf",
+    "best_before_in_fridge": 7
+  },
+  {
+    "name": "Milk",
+    "category": "dairy",
+    "quantity_or_weight": 1,
+    "unit": "cup",
+    "best_before_in_fridge": 7
+  },
+  {
+    "name": "Chicken Breasts",
+    "category": "protein",
+    "quantity_or_weight": 0,
+    "unit": "",
+    "best_before_in_fridge": 2
+  },
+  {
+    "name": "Hamburger Patties",
+    "category": "protein",
+    "quantity_or_weight": 4,
+    "unit": "pieces",
+    "best_before_in_fridge": 2
+  },
+  {
+    "name": "Beef Sticks",
+    "category": "protein",
+    "quantity_or_weight": 0,
+    "unit": "",
+    "best_before_in_fridge": 5
+  }
+]
