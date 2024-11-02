@@ -5,13 +5,59 @@
 {% block extra_css %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 <style>
-    .fridge-container {
-        perspective: 2000px;
-        width: 800px;
-        height: 800px;
-        margin: 50px auto;
-        position: relative;
+    .page-container {
+    display: flex;
+    padding: 20px;
+    gap: 30px;
+    min-width: 1400px;
+}
+
+    .list-container {
+    width: 300px;
+    flex-shrink: 0;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+
+    .list-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #2c3e50;
     }
+
+    .list-item {
+        padding: 10px;
+        margin: 8px 0;
+        background: #f8f9fa;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+    }
+
+    .list-item:hover {
+        background: #e9ecef;
+        transform: translateX(5px);
+    }
+
+    /* Original fridge styles */
+    .fridge-wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+    .fridge-container {
+    perspective: 2000px;
+    width: 800px;
+    height: 800px;
+    margin: 50px auto;
+    position: relative;
+}
 
     .fridge {
         width: 100%;
@@ -149,7 +195,6 @@
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
-    /* Add frost effect */
     .door::before {
         content: '';
         position: absolute;
@@ -169,23 +214,36 @@
 {% endblock %}
 
 {% block content %}
-<div class="fridge-container">
-    <div class="fridge">
-        <div class="fridge-content">
-            <div class="compartment" id="left-compartment">
-                <!-- Left compartment content -->
+<div class="page-container">
+    <!-- New list container -->
+    <div class="list-container">
+        <div class="list-title">Shopping List</div>
+        <div class="list-item">🥚 Eggs</div>
+        <div class="list-item">🥛 Milk</div>
+        <div class="list-item">🍎 Apples</div>
+        <div class="list-item">🥖 Bread</div>
+        <div class="list-item">🧀 Cheese</div>
+    </div>
+
+    <!-- Original fridge container -->
+    <div class="fridge-container">
+        <div class="fridge">
+            <div class="fridge-content">
+                <div class="compartment" id="left-compartment">
+                    <!-- Left compartment content -->
+                </div>
+                <div class="compartment" id="right-compartment">
+                    <!-- Right compartment content -->
+                </div>
             </div>
-            <div class="compartment" id="right-compartment">
-                <!-- Right compartment content -->
+            <div class="door door-left" onclick="toggleDoor(this, 'left')">
+                <div class="logo">🧊</div>
+                <div class="handle"></div>
             </div>
-        </div>
-        <div class="door door-left" onclick="toggleDoor(this, 'left')">
-            <div class="logo">🧊</div>
-            <div class="handle"></div>
-        </div>
-        <div class="door door-right" onclick="toggleDoor(this, 'right')">
-            <div class="logo">❄️</div>
-            <div class="handle"></div>
+            <div class="door door-right" onclick="toggleDoor(this, 'right')">
+                <div class="logo">❄️</div>
+                <div class="handle"></div>
+            </div>
         </div>
     </div>
 </div>
@@ -202,7 +260,6 @@ function toggleDoor(door, side) {
     const leftCompartment = document.getElementById('left-compartment');
     const rightCompartment = document.getElementById('right-compartment');
     
-    // Check if both doors are open
     if (doorsOpen.left && doorsOpen.right) {
         setTimeout(() => {
             leftCompartment.classList.add('visible');
@@ -222,11 +279,9 @@ function loadFoodItems() {
             const leftCompartment = document.getElementById('left-compartment');
             const rightCompartment = document.getElementById('right-compartment');
             
-            // Clear previous content
             leftCompartment.innerHTML = '';
             rightCompartment.innerHTML = '';
             
-            // Group items by classification
             const groupedItems = {};
             if (data.result && data.result.lineItems) {
                 data.result.lineItems.forEach(item => {
@@ -238,16 +293,13 @@ function loadFoodItems() {
                 });
             }
 
-            // Split classifications between compartments
             const classifications = Object.keys(groupedItems);
             const midPoint = Math.ceil(classifications.length / 2);
             
-            // Left compartment
             classifications.slice(0, midPoint).forEach(classification => {
                 createShelf(leftCompartment, classification, groupedItems[classification]);
             });
             
-            // Right compartment
             classifications.slice(midPoint).forEach(classification => {
                 createShelf(rightCompartment, classification, groupedItems[classification]);
             });
