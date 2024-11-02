@@ -1,0 +1,555 @@
+{
+    "message": "SUCCESS: Result available",
+    "status": "done",
+    "status_code": 3,
+    "result": {
+        "establishment": "Wegmans",
+        "validatedEstablishment": false,
+        "date": "2000-02-07 00:00:00",
+        "total": 4.28,
+        "url": "",
+        "phoneNumber": "",
+        "paymentMethod": "",
+        "address": "",
+        "cash": 0,
+        "change": 0,
+        "validatedTotal": false,
+        "subTotal": 0,
+        "validatedSubTotal": false,
+        "tax": 0,
+        "tip": 0,
+        "taxes": [],
+        "serviceCharges": [],
+        "discount": 0,
+        "rounding": 0,
+        "discounts": [],
+        "lineItems": [
+            {
+                "qty": 0,
+                "desc": "WG WG BLUEBERRY BA",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "WG WG BLUEBERRY BA",
+                "lineTotal": 2.99,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "WG WHITE GRN BRD",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "WG WHITE GRN BRD",
+                "lineTotal": 1.99,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 2,
+                "desc": "SC WEG MILK - 1% L / F",
+                "unit": "",
+                "price": 2.89,
+                "symbols": [
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "SC WEG MILK - 1% L / F",
+                "lineTotal": 5.78,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 2,
+                "desc": "SC 25817 WEG MILK - 1% L / F",
+                "unit": "",
+                "price": 0.64,
+                "symbols": [
+                    "-",
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "SC 25817 WEG MILK - 1% L / F",
+                "lineTotal": 1.28,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 2,
+                "desc": "SIMPLY ORANGE ORIG",
+                "unit": "",
+                "price": 3.79,
+                "symbols": [
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "SIMPLY ORANGE ORIG",
+                "lineTotal": 7.58,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "STNFLD YOKID ST / BA",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "STNFLD YOKID ST / BA",
+                "lineTotal": 3.99,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "WEG LG AA EGGS 18P",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "WEG LG AA EGGS 18P",
+                "lineTotal": 3.43,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "WEG PEPPER JACK",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "WEG PEPPER JACK",
+                "lineTotal": 2.69,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "WG SMALL PEAS",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "WG SMALL PEAS",
+                "lineTotal": 1.99,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "WEG BROCC FLORETS",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "WEG BROCC FLORETS",
+                "lineTotal": 1.99,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "SC GORTON FISH STICK",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "SC GORTON FISH STICK",
+                "lineTotal": 4.49,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "SC 24517 GORTON CRNCHY BD F",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "-",
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "SC 24517 GORTON CRNCHY BD F",
+                "lineTotal": 1.5,
+                "productCode": "",
+                "customFields": {},
+                "supplementaryLineItems": {
+                    "above": [],
+                    "below": [
+                        {
+                            "qty": 2,
+                            "desc": "2 @ 2 / 7.00",
+                            "unit": "",
+                            "price": 7,
+                            "symbols": [],
+                            "discount": 0,
+                            "lineType": "",
+                            "descClean": "2 /",
+                            "lineTotal": 0,
+                            "confidence": 0.5,
+                            "productCode": "",
+                            "customFields": {}
+                        },
+                        {
+                            "qty": 0,
+                            "desc": "DR PEPPER 8PK 7.5Z",
+                            "unit": "",
+                            "price": 0,
+                            "symbols": [],
+                            "discount": 0,
+                            "lineType": "",
+                            "descClean": "DR PEPPER 8PK 7.5Z",
+                            "lineTotal": 0,
+                            "confidence": 0.5,
+                            "productCode": "",
+                            "customFields": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "qty": 2,
+                "desc": "DP De POP DEPOSIT",
+                "unit": "",
+                "price": 0.4,
+                "symbols": [
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "DP De POP DEPOSIT",
+                "lineTotal": 0.8,
+                "productCode": "",
+                "customFields": {},
+                "supplementaryLineItems": {
+                    "above": [
+                        {
+                            "qty": 2,
+                            "desc": "2 @ 2 / 7.00",
+                            "unit": "",
+                            "price": 7,
+                            "symbols": [],
+                            "discount": 0,
+                            "lineType": "",
+                            "descClean": "2 /",
+                            "lineTotal": 0,
+                            "confidence": 0.5,
+                            "productCode": "",
+                            "customFields": {}
+                        },
+                        {
+                            "qty": 0,
+                            "desc": "DR PEPPER 8PK 7.5Z 7.00 B",
+                            "unit": "",
+                            "price": 0,
+                            "symbols": [],
+                            "discount": 0,
+                            "lineType": "",
+                            "descClean": "DR PEPPER 8PK 7.5Z 7.00 B",
+                            "lineTotal": 0,
+                            "confidence": 0.5,
+                            "productCode": "",
+                            "customFields": {}
+                        }
+                    ],
+                    "below": []
+                }
+            },
+            {
+                "qty": 0,
+                "desc": "ITHACA ROOTBEER 4P",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "B"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "ITHACA ROOTBEER 4P",
+                "lineTotal": 4.59,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "DP De POP DEPOSIT",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "DP De POP DEPOSIT",
+                "lineTotal": 0.2,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "72FO SHINEBOCK 6PK",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "T"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "72FO SHINEBOCK 6PK",
+                "lineTotal": 8.99,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "DP CONTAINER DEPOSIT",
+                "unit": "",
+                "price": 0,
+                "symbols": [],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "DP CONTAINER DEPOSIT",
+                "lineTotal": 0.3,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "OEP LOW SALT TACO",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "OEP LOW SALT TACO",
+                "lineTotal": 0.89,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "FYFGA WALNUTS CHOP",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "FYFGA WALNUTS CHOP",
+                "lineTotal": 4.99,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "NEST SEMI - SWT MORS",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "NEST SEMI - SWT MORS",
+                "lineTotal": 6.99,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "GOYA JASMINE RICE",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "GOYA JASMINE RICE",
+                "lineTotal": 2.99,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "ANNIE SHELLS CHDDR",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "ANNIE SHELLS CHDDR",
+                "lineTotal": 1.79,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "ANNIE MAC / CH BUNNY",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "ANNIE MAC / CH BUNNY",
+                "lineTotal": 1.79,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "ANNIE LESS SODIUM",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "ANNIE LESS SODIUM",
+                "lineTotal": 1.79,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "PEET'S FRENCH RST",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "PEET'S FRENCH RST",
+                "lineTotal": 8.99,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "ORTEGA WHL GRN TAC",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "ORTEGA WHL GRN TAC",
+                "lineTotal": 1.99,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "FYFGA CKN TENDERLO",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "FYFGA CKN TENDERLO",
+                "lineTotal": 4.23,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "WEG ORG DRUMSTICKS",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F"
+                ],
+                "discount": 0,
+                "lineType": "Total",
+                "descClean": "WEG ORG DRUMSTICKS",
+                "lineTotal": 4.28,
+                "productCode": "",
+                "customFields": {}
+            }
+        ],
+        "summaryItems": [],
+        "subTotalConfidence": 0,
+        "taxesConfidence": [],
+        "serviceChargeConfidences": [],
+        "discountConfidences": [],
+        "totalConfidence": 0.5,
+        "dateConfidence": 0.99,
+        "establishmentConfidence": 0.99,
+        "tipConfidence": 0,
+        "cashConfidence": 0,
+        "changeConfidence": 0,
+        "roundingConfidence": 0,
+        "customFields": {
+            "URL": "",
+            "Country": "",
+            "StoreID": "",
+            "Currency": "",
+            "VATNumber": "",
+            "ExpenseType": "",
+            "PaymentMethod": "",
+            "CardLast4Digits": ""
+        },
+        "documentType": "receipt",
+        "currency": "",
+        "barcodes": [],
+        "dateISO": "2000-02-07T00:00:00",
+        "addressNorm": {
+            "city": "",
+            "state": "",
+            "number": "",
+            "street": "",
+            "suburb": "",
+            "country": "",
+            "building": "",
+            "postcode": ""
+        },
+        "expenseType": "None",
+        "otherData": []
+    },
+    "success": true,
+    "code": 202
+}
