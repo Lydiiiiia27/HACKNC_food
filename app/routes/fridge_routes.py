@@ -11,9 +11,10 @@ def index():
 @fridge_bp.route('/get_food_items')
 def get_food_items():
     try:
-        json_path = os.path.join('static', 'revise', '1.json')
+        json_path = os.path.join('static', 'revise', 'processed_receipt_results_1730570107.json')
         with open(json_path, 'r', encoding='utf-8') as file:
             data = json.load(file)
+        print(data)  # Debug print
         return jsonify(data)
     except Exception as e:
         return jsonify({'error': str(e)}), 500
