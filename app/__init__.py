@@ -9,9 +9,11 @@ def create_app(config_class=Config):
     app.config.from_object(config_class)
 
     # Register blueprints
+    from app.routes.main_routes import main_bp
     from app.routes.fridge_routes import fridge_bp
     from app.routes.ocr_routes import ocr_bp
     
+    app.register_blueprint(main_bp)
     app.register_blueprint(fridge_bp)
     app.register_blueprint(ocr_bp)
 
