@@ -45,7 +45,7 @@ async function getItemImage(itemName) {
 
 function loadShoppingList() {
     console.log('Loading shopping list...');
-    fetch('/fridge/get_food_items')
+    fetch('/fridge/get_shopping_items')
         .then(response => response.json())
         .then(async data => {
             const shoppingList = document.getElementById('shopping-list');

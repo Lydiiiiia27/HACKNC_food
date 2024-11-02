@@ -138,63 +138,7 @@ def upload_file():
                          message='Invalid file type. Please upload a PNG or JPG file.',
                          error=True)
 
-@app.route('/test-json/')
-@app.route('/test-json')
-def test_json():
-    json_path = os.path.join(BASE_DIR, 'static', 'revise', 'shoppingList.json')
-    print(f"Looking for file at: {json_path}")  # Debug print
-    
-    if not os.path.exists(json_path):
-        return jsonify({
-            'error': 'File not found',
-            'path_checked': json_path,
-            'current_directory': os.getcwd(),
-            'base_dir': BASE_DIR
-        })
-    
-    try:
-        with open(json_path, 'r') as file:
-            items = json.load(file)
-        return jsonify({'count': len(items), 'items': items})
-    except Exception as e:
-        return jsonify({'error': str(e)})
 
-@app.route('/check-path')
-def check_path():
-    base_path = os.path.join(BASE_DIR, 'static', 'revise')
-    try:
-        if os.path.exists(base_path):
-            files = os.listdir(base_path)
-            return jsonify({
-                'exists': True,
-                'files': files,
-                'current_directory': os.getcwd(),
-                'base_dir': BASE_DIR,
-                'full_path': os.path.abspath(base_path)
-            })
-        else:
-            return jsonify({
-                'exists': False,
-                'current_directory': os.getcwd(),
-                'base_dir': BASE_DIR,
-                'path_checked': os.path.abspath(base_path)
-            })
-    except Exception as e:
-        return jsonify({
-            'error': str(e),
-            'current_directory': os.getcwd(),
-            'base_dir': BASE_DIR
-        })
-
-@app.route('/debug')
-def debug():
-    return {
-        'BASE_DIR': BASE_DIR,
-        'static_folder': app.static_folder,
-        'exists': os.path.exists(os.path.join(BASE_DIR, 'static', 'revise', 'shoppingList.json')),
-        'current_dir': os.getcwd(),
-        'static_revise_contents': os.listdir(os.path.join(BASE_DIR, 'static', 'revise')) if os.path.exists(os.path.join(BASE_DIR, 'static', 'revise')) else []
-    }
 
 if __name__ == '__main__':
     app.run(debug=True) 

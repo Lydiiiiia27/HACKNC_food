@@ -1,0 +1,154 @@
+[
+    {
+        "name": "White Whole Wheat Bread",
+        "category": "grain",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 7,
+        "compartment": "left-compartment"
+    },
+    {
+        "name": "Mixed Salad Greens",
+        "category": "vegetables",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 5,
+        "compartment": "left-compartment"
+    },
+    {
+        "name": "Sour Cream and Onion Chips",
+        "category": "condiments",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 90,
+        "compartment": "left-compartment"
+    },
+    {
+        "name": "1% Low Fat Milk",
+        "category": "dairy",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 7,
+        "compartment": "left-compartment"
+    },
+    {
+        "name": "Mini Bagels",
+        "category": "grain",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 7,
+        "compartment": "left-compartment"
+    },
+    {
+        "name": "Flour Tortillas",
+        "category": "grain",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 10,
+        "compartment": "left-compartment"
+    },
+    {
+        "name": "Twix Caramel Bar",
+        "category": "condiments",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 180,
+        "compartment": "right-compartment"
+    },
+    {
+        "name": "Toblerone Milk Chocolate",
+        "category": "condiments",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 180,
+        "compartment": "right-compartment"
+    },
+    {
+        "name": "Assorted Candy",
+        "category": "condiments",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 365,
+        "compartment": "right-compartment"
+    },
+    {
+        "name": "Snickers Peanut Butter Square",
+        "category": "condiments",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 180,
+        "compartment": "right-compartment"
+    },
+    {
+        "name": "Avocado",
+        "category": "fruit",
+        "quantity_or_weight": 2,
+        "unit": "pcs",
+        "best_before_in_fridge": 5,
+        "compartment": "right-compartment"
+    },
+    {
+        "name": "Red Delicious Apples",
+        "category": "fruit",
+        "quantity_or_weight": 2.33,
+        "unit": "lb",
+        "best_before_in_fridge": 30,
+        "compartment": "left-compartment"
+    },
+    {
+        "name": "Bananas",
+        "category": "fruit",
+        "quantity_or_weight": 2.38,
+        "unit": "lb",
+        "best_before_in_fridge": 7,
+        "compartment": "left-compartment"
+    },
+    {
+        "name": "Petite Carrots",
+        "category": "vegetables",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 14,
+        "compartment": "left-compartment"
+    },
+    {
+        "name": "Tai Pei Orange Chicken",
+        "category": "protein",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 2,
+        "compartment": "right-compartment"
+    },
+    {
+        "name": "Cream Cheese",
+        "category": "dairy",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 14,
+        "compartment": "right-compartment"
+    },
+    {
+        "name": "Stone Hearth Bread",
+        "category": "grain",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 7,
+        "compartment": "left-compartment"
+    },
+    {
+        "name": "Aluminum Foil",
+        "category": "condiments",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 0,
+        "compartment": "left-compartment"
+    },
+    {
+        "name": "Mrs. Cubbison's Croutons",
+        "category": "condiments",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 180,
+        "compartment": "left-compartment"
+    }
+]

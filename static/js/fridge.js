@@ -1,118 +1,102 @@
 let doorsOpen = { left: false, right: false };
 
 function toggleDoor(door, side) {
+    console.log('Toggling door:', side, 'Current state:', doorsOpen);
     doorsOpen[side] = !doorsOpen[side];
     door.classList.toggle(`open-${side}`);
     
     const leftCompartment = document.getElementById('left-compartment');
     const rightCompartment = document.getElementById('right-compartment');
     
+    console.log('Door states after toggle:', doorsOpen);
+    
     if (doorsOpen.left && doorsOpen.right) {
+        console.log('Both doors open, loading items...');
         setTimeout(() => {
             leftCompartment.classList.add('visible');
             rightCompartment.classList.add('visible');
             loadFoodItems();
         }, 300);
     } else {
+        console.log('Closing compartments');
         leftCompartment.classList.remove('visible');
         rightCompartment.classList.remove('visible');
     }
 }
 
-function loadFoodItems() {
+async function loadFoodItems() {
+    console.log('Loading food items...');
     fetch('/fridge/get_fridge_items')
         .then(response => response.json())
-        .then(data => {
+        .then(async data => {
+            console.log('Received fridge items:', data);
+            if (!data || !Array.isArray(data)) {
+                console.error('No fridge items found or invalid data format');
+                data = [];
+            }
+            
             const leftCompartment = document.getElementById('left-compartment');
             const rightCompartment = document.getElementById('right-compartment');
+            
+            console.log('Left compartment:', leftCompartment);
+            console.log('Right compartment:', rightCompartment);
             
             leftCompartment.innerHTML = '';
             rightCompartment.innerHTML = '';
             
-            const compartmentItems = {
-                'left-compartment': {},
-                'right-compartment': {}
-            };
-
-            data.forEach(item => {
-                const compartment = item.compartment;
-                const category = item.category || 'Other';
+            // Create fixed category shelves for each compartment
+            for (const category of Object.keys(CATEGORIES)) {
+                console.log(`Creating shelves for category: ${category}`);
+                const leftItems = data.filter(item => 
+                    item.compartment === 'left-compartment' && 
+                    determineCategory(item.category) === category
+                );
+                const rightItems = data.filter(item => 
+                    item.compartment === 'right-compartment' && 
+                    determineCategory(item.category) === category
+                );
                 
-                if (!compartmentItems[compartment][category]) {
-                    compartmentItems[compartment][category] = [];
-                }
-                compartmentItems[compartment][category].push(item);
-            });
-
-            Object.entries(compartmentItems).forEach(([compartmentId, categories]) => {
-                const compartment = document.getElementById(compartmentId);
-                Object.entries(categories).forEach(([category, items]) => {
-                    createShelf(compartment, category, items);
-                });
-            });
+                console.log(`Left items for ${category}:`, leftItems);
+                console.log(`Right items for ${category}:`, rightItems);
+                
+                await createShelf(leftCompartment, category, leftItems);
+                await createShelf(rightCompartment, category, rightItems);
+            }
         })
-        .catch(error => console.error('Error loading fridge items:', error));
+        .catch(error => {
+            console.error('Error loading fridge items:', error);
+        });
 }
 
 async function createShelf(compartment, classification, items) {
+    console.log(`Creating shelf for ${classification} with items:`, items);
+    
     const shelf = document.createElement('div');
     shelf.className = 'shelf';
+    shelf.dataset.category = classification;
     
     const title = document.createElement('div');
     title.className = 'shelf-title';
     title.textContent = classification;
     shelf.appendChild(title);
     
-    for (const item of items) {  // Changed to for...of to use await
-        const foodItem = document.createElement('div');
-        foodItem.className = 'food-item';
-        foodItem.draggable = true;
-        
-        // Add image
-        const img = document.createElement('img');
-        img.className = 'item-image';
-        const imageUrl = await getItemImage(item.name);
-        if (imageUrl) {
-            img.src = imageUrl;
-        }
-        
-        const itemName = document.createElement('span');
-        itemName.textContent = item.name;
-        
-        foodItem.appendChild(img);
-        foodItem.appendChild(itemName);
-        
-        const hoverInfo = document.createElement('div');
-        hoverInfo.className = 'food-item-info';
-        const quantity = item.quantity_or_weight && item.unit ? 
-            `${item.quantity_or_weight}${item.unit} left` : 
-            'Quantity not specified';
-        const bestBefore = `${item.best_before_in_fridge}天变质`;
-        hoverInfo.innerHTML = `
-            <div>${quantity}</div>
-            <div>${bestBefore}</div>
-        `;
-        foodItem.appendChild(hoverInfo);
-
-        foodItem.addEventListener('dragstart', (event) => {
-            event.dataTransfer.setData('application/json', JSON.stringify({
-                ...item,
-                sourceShelf: classification,
-                sourceCompartment: compartment.id
-            }));
-            event.currentTarget.classList.add('dragging');
-        });
-
-        foodItem.addEventListener('dragend', (event) => {
-            event.currentTarget.classList.remove('dragging');
-        });
-        
+    // Add items to shelf - now with await
+    for (const item of items) {
+        console.log(`Adding item to shelf:`, item);
+        const foodItem = await createFoodItem(item, classification);
         shelf.appendChild(foodItem);
     }
     
+    // Add drop zone functionality
     shelf.addEventListener('dragover', (event) => {
         event.preventDefault();
-        event.currentTarget.classList.add('shelf-drag-over');
+        const draggedItem = JSON.parse(event.dataTransfer.getData('application/json') || '{}');
+        const itemCategory = determineCategory(draggedItem.category || '');
+        
+        // Only show drop indicator if category matches
+        if (itemCategory === classification) {
+            event.currentTarget.classList.add('shelf-drag-over');
+        }
     });
 
     shelf.addEventListener('dragleave', (event) => {
@@ -124,16 +108,73 @@ async function createShelf(compartment, classification, items) {
     compartment.appendChild(shelf);
 }
 
+async function createFoodItem(item, shelfCategory) {
+    const foodItem = document.createElement('div');
+    foodItem.className = 'food-item';
+    foodItem.draggable = true;
+    
+    // Add image
+    const img = document.createElement('img');
+    img.className = 'item-image';
+    const imageUrl = await getItemImage(item.name);
+    if (imageUrl) {
+        img.src = imageUrl;
+    }
+    
+    const itemName = document.createElement('span');
+    itemName.textContent = item.name;
+    
+    foodItem.appendChild(img);
+    foodItem.appendChild(itemName);
+    
+    const hoverInfo = document.createElement('div');
+    hoverInfo.className = 'food-item-info';
+    const quantity = item.quantity_or_weight && item.unit ? 
+        `${item.quantity_or_weight}${item.unit} left` : 
+        'Quantity not specified';
+    const bestBefore = `${item.best_before_in_fridge}天变质`;
+    hoverInfo.innerHTML = `
+        <div>${quantity}</div>
+        <div>${bestBefore}</div>
+    `;
+    foodItem.appendChild(hoverInfo);
+
+    // Add drag event listeners for both shopping list and fridge items
+    foodItem.addEventListener('dragstart', (event) => {
+        event.dataTransfer.setData('application/json', JSON.stringify({
+            ...item,
+            sourceShelf: shelfCategory,
+            sourceCompartment: compartment.id
+        }));
+        event.currentTarget.classList.add('dragging');
+    });
+
+    foodItem.addEventListener('dragend', (event) => {
+        event.currentTarget.classList.remove('dragging');
+    });
+    
+    return foodItem;
+}
+
+// Modified drop handler to enforce category restrictions
 async function handleFridgeItemDrop(event) {
     event.preventDefault();
     event.currentTarget.classList.remove('shelf-drag-over');
     
     const itemData = JSON.parse(event.dataTransfer.getData('application/json'));
     const targetShelf = event.currentTarget;
+    const targetCategory = targetShelf.dataset.category;
     const targetCompartment = targetShelf.closest('.compartment').id;
     
-    if (itemData.sourceCompartment === targetCompartment && 
-        itemData.sourceShelf === targetShelf.querySelector('.shelf-title').textContent) {
+    // Check if item belongs to this category
+    const itemCategory = determineCategory(itemData.category);
+    if (itemCategory !== targetCategory) {
+        console.log('Item cannot be moved to this category');
+        return;
+    }
+    
+    // If item hasn't moved compartments, do nothing
+    if (itemData.sourceCompartment === targetCompartment) {
         return;
     }
     
@@ -145,7 +186,8 @@ async function handleFridgeItemDrop(event) {
             },
             body: JSON.stringify({
                 item: itemData,
-                targetCompartment: targetCompartment
+                targetCompartment: targetCompartment,
+                targetCategory: targetCategory
             })
         });
 
@@ -215,3 +257,30 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeFridge();
     window.toggleDoor = toggleDoor;
 });
+
+const CATEGORIES = {
+    'Fruits & Vegetables': ['fruits', 'vegetables', 'produce'],
+    'Dairy & Eggs': ['dairy', 'eggs', 'milk', 'cheese'],
+    'Meat & Seafood': ['meat', 'seafood', 'poultry'],
+    'Beverages': ['drinks', 'beverages', 'juice'],
+    'Condiments': ['sauce', 'condiments', 'spices'],
+    'Others': ['other', 'miscellaneous', 'general']
+};
+
+function determineCategory(itemCategory) {
+    itemCategory = itemCategory.toLowerCase();
+    console.log(`Determining category for: ${itemCategory}`);
+    for (const [mainCategory, subCategories] of Object.entries(CATEGORIES)) {
+        if (subCategories.some(sub => itemCategory.includes(sub))) {
+            console.log(`Found category: ${mainCategory}`);
+            return mainCategory;
+        }
+    }
+    console.log(`No category found, using Others`);
+    return 'Others';
+}
+
+async function getItemImage(itemName) {
+    // For now, return null or a default image URL
+    return null;
+}

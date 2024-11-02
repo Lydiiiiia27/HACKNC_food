@@ -151,12 +151,34 @@
 }
 
 .shelf {
-    background-color: rgba(255, 255, 255, 0.9);
-    margin: 15px 0;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.shelf[data-category="Fruits & Vegetables"] {
+    background-color: rgba(144, 238, 144, 0.1);
+}
+
+.shelf[data-category="Dairy & Eggs"] {
+    background-color: rgba(255, 255, 240, 0.1);
+}
+
+.shelf[data-category="Meat & Seafood"] {
+    background-color: rgba(255, 182, 193, 0.1);
+}
+
+.shelf[data-category="Beverages"] {
+    background-color: rgba(173, 216, 230, 0.1);
+}
+
+.shelf[data-category="Condiments"] {
+    background-color: rgba(255, 228, 181, 0.1);
+}
+
+.shelf[data-category="Others"] {
+    background-color: rgba(211, 211, 211, 0.1);
 }
 
 .shelf:hover {
