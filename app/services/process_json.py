@@ -50,7 +50,7 @@ def process_json_file(input_file: str, output_file: str, api_key: str):
 8. Return only the processed JSON array without any explanation.
 9. Only return the field I requested, do not include any additional fields.
 10. Add a new field 'frozen' to indicate whether the item can be frozen or not. 1 represents this item generally stored by freezing, 0 represents this item generally not stored by freezing based on common food storage knowledge.
-11. Add a new field, 'identify_name,' to store the most common or widely recognized name for each item. This name should differ from the 'name' field if necessary and reflect the typical term people use when searching for an icon or representation of this item in the market. Use a single word whenever possible, in singular form, to indicate a broad category that best describes the item (e.g., if the item is a specific chocolate bar, use 'chocolate').
+11. Add a new field, 'identify_name,' to store the most common or widely recognized name for each item, this name should be broad and general, not specific to any brand or region.
 
 Input JSON:"""
         

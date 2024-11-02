@@ -1,36 +1,36 @@
 [
   {
-    "name": "White Whole Wheat Bread",
+    "name": "Whole Wheat Bread",
     "category": "grain",
-    "quantity_or_weight": "",
-    "unit": "",
+    "quantity_or_weight": 100,
+    "unit": "pcs",
     "best_before_in_fridge": 7,
-    "frozen": 1,
+    "frozen": 0,
     "identify_name": "bread"
   },
   {
-    "name": "Mixed Salad Greens",
+    "name": "Fresh Vegetable Mix",
     "category": "vegetables",
-    "quantity_or_weight": "",
-    "unit": "",
+    "quantity_or_weight": 50,
+    "unit": "grams",
     "best_before_in_fridge": 5,
     "frozen": 0,
-    "identify_name": "salad greens"
+    "identify_name": "vegetables"
   },
   {
-    "name": "Sour Cream and Onion Chips",
-    "category": "condiments",
-    "quantity_or_weight": "",
-    "unit": "",
-    "best_before_in_fridge": 90,
+    "name": "Salted Potato Chips",
+    "category": "grain",
+    "quantity_or_weight": 170,
+    "unit": "grams",
+    "best_before_in_fridge": 0,
     "frozen": 0,
     "identify_name": "chips"
   },
   {
     "name": "Mini Bagels",
     "category": "grain",
-    "quantity_or_weight": "",
-    "unit": "",
+    "quantity_or_weight": 0,
+    "unit": "pcs",
     "best_before_in_fridge": 7,
     "frozen": 1,
     "identify_name": "bagels"
@@ -38,17 +38,17 @@
   {
     "name": "Flour Tortillas",
     "category": "grain",
-    "quantity_or_weight": "",
-    "unit": "",
-    "best_before_in_fridge": 10,
+    "quantity_or_weight": 0,
+    "unit": "pcs",
+    "best_before_in_fridge": 7,
     "frozen": 1,
     "identify_name": "tortillas"
   },
   {
-    "name": "1% Low Fat Milk",
+    "name": "1% Milk",
     "category": "dairy",
-    "quantity_or_weight": "",
-    "unit": "",
+    "quantity_or_weight": 0,
+    "unit": "liters",
     "best_before_in_fridge": 7,
     "frozen": 0,
     "identify_name": "milk"
@@ -56,45 +56,45 @@
   {
     "name": "Twix Caramel Bar",
     "category": "condiments",
-    "quantity_or_weight": "",
-    "unit": "",
-    "best_before_in_fridge": 180,
+    "quantity_or_weight": 0,
+    "unit": "pcs",
+    "best_before_in_fridge": 0,
     "frozen": 0,
-    "identify_name": "chocolate bar"
+    "identify_name": "chocolate"
   },
   {
     "name": "Toblerone Milk Chocolate",
     "category": "condiments",
-    "quantity_or_weight": "",
-    "unit": "",
-    "best_before_in_fridge": 180,
+    "quantity_or_weight": 0,
+    "unit": "pcs",
+    "best_before_in_fridge": 0,
     "frozen": 0,
     "identify_name": "chocolate"
   },
   {
     "name": "Assorted Candy",
     "category": "condiments",
-    "quantity_or_weight": "",
-    "unit": "",
-    "best_before_in_fridge": 365,
+    "quantity_or_weight": 0,
+    "unit": "pcs",
+    "best_before_in_fridge": 0,
     "frozen": 0,
     "identify_name": "candy"
   },
   {
-    "name": "Snickers Peanut Butter Square",
+    "name": "Snickers Peanut Butter Squares",
     "category": "condiments",
-    "quantity_or_weight": "",
-    "unit": "",
-    "best_before_in_fridge": 180,
+    "quantity_or_weight": 0,
+    "unit": "pcs",
+    "best_before_in_fridge": 0,
     "frozen": 0,
-    "identify_name": "candy bar"
+    "identify_name": "candy"
   },
   {
     "name": "Assorted Candy",
     "category": "condiments",
-    "quantity_or_weight": "",
-    "unit": "",
-    "best_before_in_fridge": 365,
+    "quantity_or_weight": 0,
+    "unit": "pcs",
+    "best_before_in_fridge": 0,
     "frozen": 0,
     "identify_name": "candy"
   },
@@ -112,7 +112,7 @@
     "category": "fruit",
     "quantity_or_weight": 2.33,
     "unit": "lb",
-    "best_before_in_fridge": 30,
+    "best_before_in_fridge": 21,
     "frozen": 0,
     "identify_name": "apples"
   },
@@ -122,14 +122,14 @@
     "quantity_or_weight": 2.38,
     "unit": "lb",
     "best_before_in_fridge": 7,
-    "frozen": 0,
+    "frozen": 1,
     "identify_name": "bananas"
   },
   {
     "name": "Petite Carrots",
     "category": "vegetables",
-    "quantity_or_weight": "",
-    "unit": "",
+    "quantity_or_weight": 0,
+    "unit": "grams",
     "best_before_in_fridge": 14,
     "frozen": 0,
     "identify_name": "carrots"
@@ -137,55 +137,55 @@
   {
     "name": "Tai Pei Orange Chicken",
     "category": "protein",
-    "quantity_or_weight": "",
-    "unit": "",
-    "best_before_in_fridge": 2,
+    "quantity_or_weight": 0,
+    "unit": "grams",
+    "best_before_in_fridge": 0,
     "frozen": 1,
-    "identify_name": "frozen meal"
+    "identify_name": "chicken"
   },
   {
     "name": "Cream Cheese",
     "category": "dairy",
-    "quantity_or_weight": "",
-    "unit": "",
+    "quantity_or_weight": 0,
+    "unit": "grams",
     "best_before_in_fridge": 14,
     "frozen": 0,
-    "identify_name": "cream cheese"
+    "identify_name": "cheese"
   },
   {
     "name": "Stone Hearth Bread",
     "category": "grain",
-    "quantity_or_weight": "",
-    "unit": "",
+    "quantity_or_weight": 0,
+    "unit": "pcs",
     "best_before_in_fridge": 7,
-    "frozen": 1,
+    "frozen": 0,
     "identify_name": "bread"
   },
   {
     "name": "Aluminum Foil",
     "category": "condiments",
-    "quantity_or_weight": "",
-    "unit": "",
+    "quantity_or_weight": 0,
+    "unit": "pcs",
     "best_before_in_fridge": 0,
     "frozen": 0,
     "identify_name": "foil"
   },
   {
     "name": "Mrs. Cubbison's Croutons",
-    "category": "condiments",
-    "quantity_or_weight": "",
-    "unit": "",
-    "best_before_in_fridge": 180,
+    "category": "grain",
+    "quantity_or_weight": 0,
+    "unit": "grams",
+    "best_before_in_fridge": 0,
     "frozen": 0,
     "identify_name": "croutons"
   },
   {
     "name": "Cheez-It Snack Mix",
-    "category": "condiments",
-    "quantity_or_weight": "",
-    "unit": "",
-    "best_before_in_fridge": 180,
+    "category": "grain",
+    "quantity_or_weight": 0,
+    "unit": "grams",
+    "best_before_in_fridge": 0,
     "frozen": 0,
-    "identify_name": "snack mix"
+    "identify_name": "snacks"
   }
 ]

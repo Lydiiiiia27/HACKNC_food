@@ -6,39 +6,69 @@ document.addEventListener('DOMContentLoaded', function() {
     loadShoppingList();
 });
 
+const UNSPLASH_API_KEY = 'lBsiCLPHlsKNbkcts9DPF3rniPHq-vaIgMEaSZTLXTA';
+const imageCache = new Map();
+
+async function getItemImage(itemName) {
+    // Check cache first
+    if (imageCache.has(itemName)) {
+        return imageCache.get(itemName);
+    }
+
+    const endpoint = 'https://api.unsplash.com/search/photos';
+    const params = new URLSearchParams({
+        query: itemName,
+        per_page: 1
+    });
+
+    try {
+        const response = await fetch(`${endpoint}?${params}`, {
+            headers: {
+                'Authorization': `Client-ID ${UNSPLASH_API_KEY}`
+            }
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            if (data.results && data.results.length > 0) {
+                const imageUrl = data.results[0].urls.small;
+                imageCache.set(itemName, imageUrl);
+                return imageUrl;
+            }
+        }
+        return null;
+    } catch (error) {
+        console.error('Error fetching image:', error);
+        return null;
+    }
+}
+
 function loadShoppingList() {
     console.log('Loading shopping list...');
     fetch('/fridge/get_food_items')
-        .then(response => {
-            console.log('Response status:', response.status);
-            return response.json();
-        })
-        .then(data => {
-            console.log('Data received:', data);
+        .then(response => response.json())
+        .then(async data => {
             const shoppingList = document.getElementById('shopping-list');
-            if (!shoppingList) {
-                console.error('Shopping list container not found!');
-                return;
-            }
-            
             shoppingList.innerHTML = '';
 
-            data.forEach(item => {
+            for (const item of data) {
                 const listItem = document.createElement('div');
                 listItem.className = 'list-item';
                 listItem.draggable = true;
 
-                // Add icon
-                const icon = document.createElement('img');
-                getIconUrl(item.identify_name || item.name, item.category).then(iconUrl => {
-                    icon.src = iconUrl;
-                    icon.className = 'item-icon enlarged-icon';
-                    listItem.appendChild(icon);
-
-                    const text = document.createElement('span');
-                    text.textContent = `${item.name}`;
-                    listItem.appendChild(text);
-                });
+                // Add image
+                const img = document.createElement('img');
+                img.className = 'item-image';
+                const imageUrl = await getItemImage(item.identify_name);
+                if (imageUrl) {
+                    img.src = imageUrl;
+                }
+                
+                const text = document.createElement('span');
+                text.textContent = item.name;
+                
+                listItem.appendChild(img);
+                listItem.appendChild(text);
 
                 // Add drag events
                 listItem.addEventListener('dragstart', (event) => {
@@ -66,8 +96,7 @@ function loadShoppingList() {
                 });
                 
                 shoppingList.appendChild(listItem);
-                console.log('Added item:', item.name);
-            });
+            }
         })
         .catch(error => console.error('Error loading shopping list:', error));
 }
@@ -209,19 +238,21 @@ function saveItemChanges() {
     });
 }
 
-// Add CSS for icons
+
 const style = document.createElement('style');
 style.innerHTML = `
-    .enlarged-icon {
-        width: 24px;
-        height: 24px;
-        margin-right: 8px;
-        vertical-align: middle;
+    .item-image {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-right: 12px;
     }
     
     .list-item {
         display: flex;
         align-items: center;
+        padding: 8px;
     }
 `;
 document.head.appendChild(style);

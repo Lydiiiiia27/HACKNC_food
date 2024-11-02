@@ -54,7 +54,7 @@ function loadFoodItems() {
         .catch(error => console.error('Error loading fridge items:', error));
 }
 
-function createShelf(compartment, classification, items) {
+async function createShelf(compartment, classification, items) {
     const shelf = document.createElement('div');
     shelf.className = 'shelf';
     
@@ -63,13 +63,23 @@ function createShelf(compartment, classification, items) {
     title.textContent = classification;
     shelf.appendChild(title);
     
-    items.forEach(item => {
+    for (const item of items) {  // Changed to for...of to use await
         const foodItem = document.createElement('div');
         foodItem.className = 'food-item';
         foodItem.draggable = true;
         
+        // Add image
+        const img = document.createElement('img');
+        img.className = 'item-image';
+        const imageUrl = await getItemImage(item.name);
+        if (imageUrl) {
+            img.src = imageUrl;
+        }
+        
         const itemName = document.createElement('span');
         itemName.textContent = item.name;
+        
+        foodItem.appendChild(img);
         foodItem.appendChild(itemName);
         
         const hoverInfo = document.createElement('div');
@@ -98,7 +108,7 @@ function createShelf(compartment, classification, items) {
         });
         
         shelf.appendChild(foodItem);
-    });
+    }
     
     shelf.addEventListener('dragover', (event) => {
         event.preventDefault();
