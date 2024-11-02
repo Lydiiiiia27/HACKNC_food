@@ -8,19 +8,19 @@ function toggleDoor(door, side) {
     const leftCompartment = document.getElementById('left-compartment');
     const rightCompartment = document.getElementById('right-compartment');
     
-    console.log('Door states after toggle:', doorsOpen);
-    
     if (doorsOpen.left && doorsOpen.right) {
         console.log('Both doors open, loading items...');
-        setTimeout(() => {
-            leftCompartment.classList.add('visible');
-            rightCompartment.classList.add('visible');
-            loadFoodItems();
-        }, 300);
+        leftCompartment.style.visibility = 'visible';
+        rightCompartment.style.visibility = 'visible';
+        loadFoodItems();
     } else {
         console.log('Closing compartments');
-        leftCompartment.classList.remove('visible');
-        rightCompartment.classList.remove('visible');
+        if (!doorsOpen.left) {
+            leftCompartment.style.visibility = 'hidden';
+        }
+        if (!doorsOpen.right) {
+            rightCompartment.style.visibility = 'hidden';
+        }
     }
 }
 
@@ -37,14 +37,14 @@ async function loadFoodItems() {
             leftCompartment.innerHTML = '';
             rightCompartment.innerHTML = '';
             
-            // Categories for each compartment
-            const leftCategories = ['Fruits & Vegetables', 'Dairy & Eggs', 'Beverages', 'Condiments'];
-            const rightCategories = ['Meat & Seafood', 'Others'];
+            // Simplified categories
+            const leftCategories = ['vegetables', 'fruit', 'grain', 'dairy', 'oils', 'condiments'];
+            const rightCategories = ['protein'];
             
             // Create shelves for left compartment
             for (const category of leftCategories) {
                 const items = data.filter(item => 
-                    determineCategory(item.category) === category && 
+                    item.category.toLowerCase() === category && 
                     item.compartment === 'left-compartment'
                 );
                 if (items.length > 0) {
@@ -55,7 +55,7 @@ async function loadFoodItems() {
             // Create shelves for right compartment
             for (const category of rightCategories) {
                 const items = data.filter(item => 
-                    determineCategory(item.category) === category && 
+                    item.category.toLowerCase() === category && 
                     item.compartment === 'right-compartment'
                 );
                 if (items.length > 0) {
@@ -68,44 +68,41 @@ async function loadFoodItems() {
         });
 }
 
-async function createShelf(compartment, classification, items) {
-    console.log(`Creating shelf for ${classification} with items:`, items);
-    
+async function createShelf(compartment, category, items) {
     const shelf = document.createElement('div');
     shelf.className = 'shelf';
-    shelf.dataset.category = classification;
+    shelf.setAttribute('data-category', category);
     
-    const title = document.createElement('div');
-    title.className = 'shelf-title';
-    title.textContent = classification;
-    shelf.appendChild(title);
+    // Add category label
+    const categoryLabel = document.createElement('div');
+    categoryLabel.className = 'category-label';
+    categoryLabel.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+    shelf.appendChild(categoryLabel);
     
-    // Add items to shelf - now with await
+    // Create items container
+    const itemsContainer = document.createElement('div');
+    itemsContainer.className = 'items-container';
+    
+    // Add items to shelf
     for (const item of items) {
-        console.log(`Adding item to shelf:`, item);
-        const foodItem = await createFoodItem(item, classification);
-        shelf.appendChild(foodItem);
+        const foodItem = await createFoodItem(item, category);
+        itemsContainer.appendChild(foodItem);
     }
     
-    // Add drop zone functionality
+    shelf.appendChild(itemsContainer);
+    compartment.appendChild(shelf);
+    
+    // Add drag and drop event listeners
     shelf.addEventListener('dragover', (event) => {
         event.preventDefault();
-        const draggedItem = JSON.parse(event.dataTransfer.getData('application/json') || '{}');
-        const itemCategory = determineCategory(draggedItem.category || '');
-        
-        // Only show drop indicator if category matches
-        if (itemCategory === classification) {
-            event.currentTarget.classList.add('shelf-drag-over');
-        }
+        shelf.classList.add('shelf-drag-over');
     });
-
-    shelf.addEventListener('dragleave', (event) => {
-        event.currentTarget.classList.remove('shelf-drag-over');
-    });
-
-    shelf.addEventListener('drop', handleFridgeItemDrop);
     
-    compartment.appendChild(shelf);
+    shelf.addEventListener('dragleave', () => {
+        shelf.classList.remove('shelf-drag-over');
+    });
+    
+    shelf.addEventListener('drop', handleItemDrop);
 }
 
 async function createFoodItem(item, shelfCategory) {
@@ -120,7 +117,7 @@ async function createFoodItem(item, shelfCategory) {
     // Add image or fallback icon
     const img = document.createElement('img');
     img.className = 'item-image';
-    const imageUrl = await getItemImage(item.name);
+    const imageUrl = await getItemImage(item.identify_name || item.name);
     if (imageUrl) {
         img.src = imageUrl;
     } else {
@@ -129,7 +126,7 @@ async function createFoodItem(item, shelfCategory) {
     imgContainer.appendChild(img);
     foodItem.appendChild(imgContainer);
     
-    // Add hover info with dynamic positioning
+    // Create hover info box
     const info = document.createElement('div');
     info.className = 'food-item-info';
     info.innerHTML = `
@@ -137,28 +134,28 @@ async function createFoodItem(item, shelfCategory) {
         <div>Category: ${item.category}</div>
         ${item.quantity_or_weight ? `<div>Quantity: ${item.quantity_or_weight} ${item.unit}</div>` : ''}
         <div>Best Before: ${item.best_before_in_fridge} days</div>
+        ${item.frozen ? `<div>Frozen: Yes</div>` : ''}
+        <div>Identify Name: ${item.identify_name}</div>
     `;
-    foodItem.appendChild(info);
+    document.body.appendChild(info);
     
     // Add mousemove event for dynamic positioning of hover info
     foodItem.addEventListener('mousemove', (e) => {
+        info.style.display = 'block';
         const rect = foodItem.getBoundingClientRect();
-        const infoRect = info.getBoundingClientRect();
         
-        // Calculate position
-        let left = e.clientX + 20; // 20px offset from cursor
-        let top = e.clientY - infoRect.height / 2;
+        // Calculate position relative to viewport
+        let left = e.clientX + 20;
+        let top = e.clientY - info.offsetHeight / 2;
         
-        // Check if info would go off screen to the right
-        if (left + infoRect.width > window.innerWidth) {
-            left = e.clientX - infoRect.width - 20;
+        // Adjust if would go off screen
+        if (left + info.offsetWidth > window.innerWidth) {
+            left = e.clientX - info.offsetWidth - 20;
         }
-        
-        // Check if info would go off screen at the top or bottom
         if (top < 0) {
             top = 0;
-        } else if (top + infoRect.height > window.innerHeight) {
-            top = window.innerHeight - infoRect.height;
+        } else if (top + info.offsetHeight > window.innerHeight) {
+            top = window.innerHeight - info.offsetHeight;
         }
         
         info.style.left = `${left}px`;
@@ -173,6 +170,22 @@ async function createFoodItem(item, shelfCategory) {
     
     foodItem.addEventListener('dragend', (event) => {
         event.currentTarget.classList.remove('dragging');
+    });
+    
+    foodItem.addEventListener('mouseleave', () => {
+        info.style.display = 'none';
+        // Remove the info element from the DOM when not hovering
+        if (info.parentNode) {
+            info.parentNode.removeChild(info);
+        }
+    });
+    
+    // Clean up when the item is removed
+    foodItem.addEventListener('dragstart', () => {
+        // Remove the info element if it exists
+        if (info.parentNode) {
+            info.parentNode.removeChild(info);
+        }
     });
     
     return foodItem;
@@ -238,22 +251,47 @@ function initializeFridge() {
     });
 }
 
-// Add this constant to define compartment rules
+// Replace the existing CATEGORIES and COMPARTMENT_RULES constants
+const CATEGORIES = [
+    'protein',
+    'vegetables',
+    'fruit',
+    'grain',
+    'dairy',
+    'oils',
+    'condiments'
+];
+
 const COMPARTMENT_RULES = {
-    'Meat & Seafood': 'right-compartment',
-    'Others': 'right-compartment'
+    'protein': 'right-compartment'
+    // All other categories default to left-compartment
 };
 
-// Modify the handleItemDrop function to enforce compartment rules
+// Simplify the determineCategory function since we already have the category
+function determineCategory(itemCategory) {
+    itemCategory = itemCategory.toLowerCase();
+    console.log(`Determining category for: ${itemCategory}`);
+    
+    // If the category is already one of our valid categories, use it
+    if (CATEGORIES.includes(itemCategory)) {
+        console.log(`Using existing category: ${itemCategory}`);
+        return itemCategory;
+    }
+    
+    console.log(`Invalid category: ${itemCategory}, defaulting to condiments`);
+    return 'condiments'; // Default category if none matches
+}
+
+// Modify handleItemDrop to use the simplified compartment rules
 async function handleItemDrop(event) {
     event.preventDefault();
     event.currentTarget.classList.remove('drag-over');
     
     const itemData = JSON.parse(event.dataTransfer.getData('application/json'));
     const compartmentId = event.currentTarget.id;
-    const category = determineCategory(itemData.category);
+    const category = itemData.category.toLowerCase(); // Use the existing category directly
     
-    // Check if the item is being dropped in the correct compartment
+    // Check if the item should go in the right compartment (protein) or left (everything else)
     const correctCompartment = COMPARTMENT_RULES[category] || 'left-compartment';
     if (compartmentId !== correctCompartment) {
         alert(`${category} items must go in the ${correctCompartment === 'left-compartment' ? 'left' : 'right'} compartment`);
@@ -294,28 +332,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeFridge();
     window.toggleDoor = toggleDoor;
 });
-
-const CATEGORIES = {
-    'Fruits & Vegetables': ['fruits', 'vegetables', 'produce'],
-    'Dairy & Eggs': ['dairy', 'eggs', 'milk', 'cheese'],
-    'Meat & Seafood': ['meat', 'seafood', 'poultry'],
-    'Beverages': ['drinks', 'beverages', 'juice'],
-    'Condiments': ['sauce', 'condiments', 'spices'],
-    'Others': ['other', 'miscellaneous', 'general']
-};
-
-function determineCategory(itemCategory) {
-    itemCategory = itemCategory.toLowerCase();
-    console.log(`Determining category for: ${itemCategory}`);
-    for (const [mainCategory, subCategories] of Object.entries(CATEGORIES)) {
-        if (subCategories.some(sub => itemCategory.includes(sub))) {
-            console.log(`Found category: ${mainCategory}`);
-            return mainCategory;
-        }
-    }
-    console.log(`No category found, using Others`);
-    return 'Others';
-}
 
 async function getItemImage(itemName) {
     // For now, return null or a default image URL

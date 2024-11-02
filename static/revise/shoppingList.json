@@ -1,11 +1,164 @@
 [
     {
-        "name": "Cheez-It Snack Mix",
-        "category": "condiments",
-        "quantity_or_weight": "",
-        "unit": "",
-        "best_before_in_fridge": 180,
+        "name": "Whole Wheat Bread",
+        "category": "grain",
+        "quantity_or_weight": 100,
+        "unit": "pcs",
+        "best_before_in_fridge": 7,
         "frozen": 0,
-        "identify_name": "snack mix"
+        "identify_name": "bread"
+    },
+    {
+        "name": "Fresh Vegetable Mix",
+        "category": "vegetables",
+        "quantity_or_weight": 50,
+        "unit": "grams",
+        "best_before_in_fridge": 5,
+        "frozen": 0,
+        "identify_name": "vegetables"
+    },
+    {
+        "name": "Salted Potato Chips",
+        "category": "grain",
+        "quantity_or_weight": 170,
+        "unit": "grams",
+        "best_before_in_fridge": 0,
+        "frozen": 0,
+        "identify_name": "chips"
+    },
+    {
+        "name": "Mini Bagels",
+        "category": "grain",
+        "quantity_or_weight": 0,
+        "unit": "pcs",
+        "best_before_in_fridge": 7,
+        "frozen": 1,
+        "identify_name": "bagels"
+    },
+    {
+        "name": "Flour Tortillas",
+        "category": "grain",
+        "quantity_or_weight": 0,
+        "unit": "pcs",
+        "best_before_in_fridge": 7,
+        "frozen": 1,
+        "identify_name": "tortillas"
+    },
+    {
+        "name": "Twix Caramel Bar",
+        "category": "condiments",
+        "quantity_or_weight": 0,
+        "unit": "pcs",
+        "best_before_in_fridge": 0,
+        "frozen": 0,
+        "identify_name": "chocolate"
+    },
+    {
+        "name": "Toblerone Milk Chocolate",
+        "category": "condiments",
+        "quantity_or_weight": 0,
+        "unit": "pcs",
+        "best_before_in_fridge": 0,
+        "frozen": 0,
+        "identify_name": "chocolate"
+    },
+    {
+        "name": "Snickers Peanut Butter Squares",
+        "category": "condiments",
+        "quantity_or_weight": 0,
+        "unit": "pcs",
+        "best_before_in_fridge": 0,
+        "frozen": 0,
+        "identify_name": "candy"
+    },
+    {
+        "name": "Avocado",
+        "category": "fruit",
+        "quantity_or_weight": 2,
+        "unit": "pcs",
+        "best_before_in_fridge": 5,
+        "frozen": 0,
+        "identify_name": "avocado"
+    },
+    {
+        "name": "Red Delicious Apples",
+        "category": "fruit",
+        "quantity_or_weight": 2.33,
+        "unit": "lb",
+        "best_before_in_fridge": 21,
+        "frozen": 0,
+        "identify_name": "apples"
+    },
+    {
+        "name": "Bananas",
+        "category": "fruit",
+        "quantity_or_weight": 2.38,
+        "unit": "lb",
+        "best_before_in_fridge": 7,
+        "frozen": 1,
+        "identify_name": "bananas"
+    },
+    {
+        "name": "Petite Carrots",
+        "category": "vegetables",
+        "quantity_or_weight": 0,
+        "unit": "grams",
+        "best_before_in_fridge": 14,
+        "frozen": 0,
+        "identify_name": "carrots"
+    },
+    {
+        "name": "Tai Pei Orange Chicken",
+        "category": "protein",
+        "quantity_or_weight": 0,
+        "unit": "grams",
+        "best_before_in_fridge": 0,
+        "frozen": 1,
+        "identify_name": "chicken"
+    },
+    {
+        "name": "Cream Cheese",
+        "category": "dairy",
+        "quantity_or_weight": 0,
+        "unit": "grams",
+        "best_before_in_fridge": 14,
+        "frozen": 0,
+        "identify_name": "cheese"
+    },
+    {
+        "name": "Stone Hearth Bread",
+        "category": "grain",
+        "quantity_or_weight": 0,
+        "unit": "pcs",
+        "best_before_in_fridge": 7,
+        "frozen": 0,
+        "identify_name": "bread"
+    },
+    {
+        "name": "Aluminum Foil",
+        "category": "condiments",
+        "quantity_or_weight": 0,
+        "unit": "pcs",
+        "best_before_in_fridge": 0,
+        "frozen": 0,
+        "identify_name": "foil"
+    },
+    {
+        "name": "Mrs. Cubbison's Croutons",
+        "category": "grain",
+        "quantity_or_weight": 0,
+        "unit": "grams",
+        "best_before_in_fridge": 0,
+        "frozen": 0,
+        "identify_name": "croutons"
+    },
+    {
+        "name": "Cheez-It Snack Mix",
+        "category": "grain",
+        "quantity_or_weight": 0,
+        "unit": "grams",
+        "best_before_in_fridge": 0,
+        "frozen": 0,
+        "identify_name": "snacks"
     }
 ]

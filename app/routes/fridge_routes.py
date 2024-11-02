@@ -43,41 +43,32 @@ def list_fridge_items():
         return jsonify([])
 
 COMPARTMENT_RULES = {
-    'Meat & Seafood': 'right-compartment',
-    'Others': 'right-compartment'
+    'protein': 'right-compartment'
+    # All other categories default to left-compartment
 }
-
-def determine_category(item_category):
-    # Your existing category determination logic
-    CATEGORIES = {
-        'Fruits & Vegetables': ['fruits', 'vegetables', 'produce'],
-        'Dairy & Eggs': ['dairy', 'eggs', 'milk', 'cheese'],
-        'Meat & Seafood': ['meat', 'seafood', 'poultry'],
-        'Beverages': ['drinks', 'beverages', 'juice'],
-        'Condiments': ['sauce', 'condiments', 'spices'],
-        'Others': ['other', 'miscellaneous', 'general']
-    }
-    
-    item_category = item_category.lower()
-    for category, keywords in CATEGORIES.items():
-        if any(keyword in item_category for keyword in keywords):
-            return category
-    return 'Others'
 
 @fridge_bp.route('/add_to_fridge', methods=['POST'])
 def add_to_fridge():
     try:
         data = request.json
         item_data = data['item']
-        category = determine_category(item_data['category'])
+        category = item_data['category'].lower()  # Use the existing category directly
         
         # Determine correct compartment based on category
         correct_compartment = COMPARTMENT_RULES.get(category, 'left-compartment')
         
-        # Override the requested compartment with the correct one
-        data['compartment'] = correct_compartment
+        # Create new item with all fields
+        new_item = {
+            'name': item_data['name'],
+            'category': category,  # Use the original category
+            'quantity_or_weight': item_data.get('quantity_or_weight', ''),
+            'unit': item_data.get('unit', ''),
+            'best_before_in_fridge': item_data.get('best_before_in_fridge', 7),
+            'compartment': correct_compartment,
+            'identify_name': item_data.get('identify_name', item_data['name'].lower()),
+            'frozen': item_data.get('frozen', 0)
+        }
         
-        # Rest of your existing add_to_fridge code...
         fridge_path = os.path.join('static', 'revise', 'fridge_items.json')
         
         if not os.path.exists(fridge_path) or os.path.getsize(fridge_path) == 0:
@@ -92,15 +83,7 @@ def add_to_fridge():
             
             # Check for duplicates
             if not any(item['name'] == item_data['name'] for item in fridge_items):
-                new_item = {
-                    'name': item_data['name'],
-                    'category': category,
-                    'quantity_or_weight': item_data.get('quantity_or_weight', ''),
-                    'unit': item_data.get('unit', ''),
-                    'best_before_in_fridge': item_data.get('best_before_in_fridge', 7),
-                    'compartment': correct_compartment
-                }
-                fridge_items.append(new_item)
+                fridge_items.append(new_item)  # Use the new_item with all fields
                 
                 file.seek(0)
                 json.dump(fridge_items, file, indent=4, ensure_ascii=False)
@@ -146,14 +129,16 @@ def move_fridge_item():
             # Remove the item from its current position
             items = [item for item in items if item['name'] != data['item']['name']]
             
-            # Add the item in its new position with updated category and compartment
+            # Add the item in its new position with all fields preserved
             new_item = {
                 'name': data['item']['name'],
-                'category': data.get('targetCategory', data['item']['category']),  # Use new category if provided
+                'category': data.get('targetCategory', data['item']['category']),
                 'quantity_or_weight': data['item']['quantity_or_weight'],
                 'unit': data['item']['unit'],
                 'best_before_in_fridge': data['item']['best_before_in_fridge'],
-                'compartment': data['targetCompartment']
+                'compartment': data['targetCompartment'],
+                'identify_name': data['item'].get('identify_name', data['item']['name'].lower()),  # Preserve identify_name
+                'frozen': data['item'].get('frozen', 0)  # Preserve frozen status
             }
             items.append(new_item)
             
