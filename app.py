@@ -141,7 +141,7 @@ def upload_file():
 @app.route('/test-json/')
 @app.route('/test-json')
 def test_json():
-    json_path = os.path.join(BASE_DIR, 'static', 'revise', 'processed_receipt_results_1730570107.json')
+    json_path = os.path.join(BASE_DIR, 'static', 'revise', 'shoppingList.json')
     print(f"Looking for file at: {json_path}")  # Debug print
     
     if not os.path.exists(json_path):
@@ -191,7 +191,7 @@ def debug():
     return {
         'BASE_DIR': BASE_DIR,
         'static_folder': app.static_folder,
-        'exists': os.path.exists(os.path.join(BASE_DIR, 'static', 'revise', 'processed_receipt_results_1730570107.json')),
+        'exists': os.path.exists(os.path.join(BASE_DIR, 'static', 'revise', 'shoppingList.json')),
         'current_dir': os.getcwd(),
         'static_revise_contents': os.listdir(os.path.join(BASE_DIR, 'static', 'revise')) if os.path.exists(os.path.join(BASE_DIR, 'static', 'revise')) else []
     }

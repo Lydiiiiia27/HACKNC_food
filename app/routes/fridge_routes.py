@@ -11,7 +11,7 @@ def index():
 @fridge_bp.route('/get_food_items')
 def get_food_items():
     try:
-        json_path = os.path.join('static', 'revise', 'processed_receipt_results_1730570107.json')
+        json_path = os.path.join('static', 'revise', 'shoppingList.json')
         print(f"Attempting to load JSON from: {os.path.abspath(json_path)}")
         with open(json_path, 'r', encoding='utf-8') as file:
             data = json.load(file)
@@ -25,7 +25,7 @@ def get_food_items():
 def update_item():
     try:
         item_data = request.json
-        json_path = os.path.join('static', 'revise', 'processed_receipt_results_1730570107.json')
+        json_path = os.path.join('static', 'revise', 'shoppingList.json')
         
         with open(json_path, 'r+', encoding='utf-8') as file:
             data = json.load(file)
@@ -71,7 +71,7 @@ def add_to_fridge():
 def remove_from_shopping():
     try:
         item_name = request.json['name']
-        shopping_path = os.path.join('static', 'revise', 'processed_receipt_results_1730570107.json')
+        shopping_path = os.path.join('static', 'revise', 'shoppingList.json')
         
         with open(shopping_path, 'r+', encoding='utf-8') as file:
             items = json.load(file)
