@@ -42,16 +42,65 @@
         </div>
     </form>
 
-    {% if message %}
-    <div class="result {% if error %}error{% else %}success{% endif %}">
-        {{ message }}
+    <h1>Record Voice Input</h1>
+    <div class="upload-form">
+        <button id="recordButton">Start Recording</button>
+        <button id="stopButton" disabled>Stop Recording</button>
     </div>
+
+    {% if message %}
+        <div class="result {{ 'success' if not error else 'error' }}">
+            <p>{{ message }}</p>
+        </div>
     {% endif %}
 
     {% if json_path %}
-    <div class="result success">
-        <h3>Results saved to: {{ json_path }}</h3>
-    </div>
+        <div class="result success">
+            <p>Processed JSON: <a href="{{ url_for('static', filename=json_path) }}">{{ json_path }}</a></p>
+        </div>
     {% endif %}
 </div>
+
+<script>
+    let mediaRecorder;
+    let audioChunks = [];
+
+    document.getElementById('recordButton').addEventListener('click', async () => {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        mediaRecorder = new MediaRecorder(stream);
+        mediaRecorder.start();
+
+        mediaRecorder.addEventListener('dataavailable', event => {
+            audioChunks.push(event.data);
+        });
+
+        mediaRecorder.addEventListener('stop', async () => {
+            const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+            const formData = new FormData();
+            formData.append('audio_data', audioBlob, 'recording.wav');
+
+            const response = await fetch("{{ url_for('ocr.voice_input') }}", {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+            if (result.success) {
+                alert('Voice input processed successfully!');
+                window.location.reload();
+            } else {
+                alert('Error processing voice input: ' + result.message);
+            }
+        });
+
+        document.getElementById('recordButton').disabled = true;
+        document.getElementById('stopButton').disabled = false;
+    });
+
+    document.getElementById('stopButton').addEventListener('click', () => {
+        mediaRecorder.stop();
+        document.getElementById('recordButton').disabled = false;
+        document.getElementById('stopButton').disabled = true;
+    });
+</script>
 {% endblock %}

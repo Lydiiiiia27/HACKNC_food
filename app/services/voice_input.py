@@ -4,21 +4,26 @@ from openai import OpenAI
 from datetime import datetime
 from dotenv import load_dotenv
 load_dotenv()
+
 class VoiceToJsonConverter:
     def __init__(self, api_key: str):
         """初始化转换器"""
         self.client = OpenAI(api_key=api_key)
-        
-    def transcribe_audio(self, audio_file_path: str) -> str:
-        """使用Whisper模型转录音频文件"""
+
+    def transcribe_audio(self, audio_data, filename) -> str:
+        """使用Whisper模型转录音频数据"""
         try:
-            with open(audio_file_path, "rb") as audio_file:
-                transcript = self.client.audio.transcriptions.create(
-                    model="whisper-1",
-                    file=audio_file,
-                    response_format="text",
-                    language="en"
-                )
+            if isinstance(audio_data, bytes):
+                file_data = audio_data
+            else:
+                file_data = audio_data.read()
+                
+            transcript = self.client.audio.transcriptions.create(
+                model="whisper-1",
+                file=(filename, file_data),
+                response_format="text",
+                language="en"
+            )
             return transcript
         except Exception as e:
             print(f"音频转录出错: {e}")
@@ -35,12 +40,10 @@ class VoiceToJsonConverter:
         5. Add typical refrigerator shelf life in days (best_before_in_fridge)
         
         Return only the JSON array without any explanation."""
-
         user_prompt = f"""Convert the following shopping list into a JSON array. 
         Each item should have these fields: name, category, quantity_or_weight, unit, best_before_in_fridge.
         
         Shopping list: {text}"""
-
         try:
             response = self.client.chat.completions.create(
                 model="gpt-4o",
@@ -68,12 +71,12 @@ class VoiceToJsonConverter:
             print(f"JSON生成出错: {e}")
             raise
 
-    def process_voice_input(self, audio_file_path: str, output_file: str = None) -> None:
+    def process_voice_input(self, audio_data, filename, output_file: str = None) -> None:
         """处理语音输入并生成JSON文件"""
         try:
             # 转录音频
             print("正在转录音频...")
-            transcript = self.transcribe_audio(audio_file_path)
+            transcript = self.transcribe_audio(audio_data, filename)
             print(f"转录结果: {transcript}")
 
             # 生成JSON
@@ -83,7 +86,7 @@ class VoiceToJsonConverter:
             # 如果没有指定输出文件，使用时间戳创建文件名
             if output_file is None:
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-                output_file = f"shopping_list_{timestamp}.json"
+                output_file = os.path.join('static', 'voice_receipt', f"shopping_list_{timestamp}.json")
 
             # 保存JSON文件
             with open(output_file, 'w', encoding='utf-8') as f:
@@ -103,11 +106,7 @@ def main():
     # 创建转换器实例
     converter = VoiceToJsonConverter(api_key)
     
-    # 指定音频文件路径
-    audio_file = "Voice.m4a"  # 支持的格式：mp3, mp4, mpeg, mpga, m4a, wav, webm
-    
-    # 处理语音输入
-    converter.process_voice_input(audio_file)
+    # 这里不需要指定音频文件路径，因为我们将从请求中获取音频数据
 
 if __name__ == "__main__":
     main()

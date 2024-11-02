@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Tomatoes",
+    "category": "vegetables",
+    "quantity_or_weight": 3,
+    "unit": "pieces",
+    "best_before_in_fridge": 7
+  },
+  {
+    "name": "Cheese",
+    "category": "dairy",
+    "quantity_or_weight": 2,
+    "unit": "pieces",
+    "best_before_in_fridge": 21
+  },
+  {
+    "name": "Meat",
+    "category": "protein",
+    "quantity_or_weight": 1,
+    "unit": "pound",
+    "best_before_in_fridge": 3
+  },
+  {
+    "name": "Milk",
+    "category": "dairy",
+    "quantity_or_weight": 1,
+    "unit": "bottle",
+    "best_before_in_fridge": 7
+  },
+  {
+    "name": "Chicken",
+    "category": "protein",
+    "quantity_or_weight": 0,
+    "unit": "",
+    "best_before_in_fridge": 2
+  }
+]
