@@ -30,37 +30,37 @@ async function loadFoodItems() {
         .then(response => response.json())
         .then(async data => {
             console.log('Received fridge items:', data);
-            if (!data || !Array.isArray(data)) {
-                console.error('No fridge items found or invalid data format');
-                data = [];
-            }
             
             const leftCompartment = document.getElementById('left-compartment');
             const rightCompartment = document.getElementById('right-compartment');
             
-            console.log('Left compartment:', leftCompartment);
-            console.log('Right compartment:', rightCompartment);
-            
             leftCompartment.innerHTML = '';
             rightCompartment.innerHTML = '';
             
-            // Create fixed category shelves for each compartment
-            for (const category of Object.keys(CATEGORIES)) {
-                console.log(`Creating shelves for category: ${category}`);
-                const leftItems = data.filter(item => 
-                    item.compartment === 'left-compartment' && 
-                    determineCategory(item.category) === category
+            // Categories for each compartment
+            const leftCategories = ['Fruits & Vegetables', 'Dairy & Eggs', 'Beverages', 'Condiments'];
+            const rightCategories = ['Meat & Seafood', 'Others'];
+            
+            // Create shelves for left compartment
+            for (const category of leftCategories) {
+                const items = data.filter(item => 
+                    determineCategory(item.category) === category && 
+                    item.compartment === 'left-compartment'
                 );
-                const rightItems = data.filter(item => 
-                    item.compartment === 'right-compartment' && 
-                    determineCategory(item.category) === category
+                if (items.length > 0) {
+                    await createShelf(leftCompartment, category, items);
+                }
+            }
+            
+            // Create shelves for right compartment
+            for (const category of rightCategories) {
+                const items = data.filter(item => 
+                    determineCategory(item.category) === category && 
+                    item.compartment === 'right-compartment'
                 );
-                
-                console.log(`Left items for ${category}:`, leftItems);
-                console.log(`Right items for ${category}:`, rightItems);
-                
-                await createShelf(leftCompartment, category, leftItems);
-                await createShelf(rightCompartment, category, rightItems);
+                if (items.length > 0) {
+                    await createShelf(rightCompartment, category, items);
+                }
             }
         })
         .catch(error => {
@@ -113,42 +113,64 @@ async function createFoodItem(item, shelfCategory) {
     foodItem.className = 'food-item';
     foodItem.draggable = true;
     
-    // Add image
+    // Add image container
+    const imgContainer = document.createElement('div');
+    imgContainer.className = 'item-image-container';
+    
+    // Add image or fallback icon
     const img = document.createElement('img');
     img.className = 'item-image';
     const imageUrl = await getItemImage(item.name);
     if (imageUrl) {
         img.src = imageUrl;
+    } else {
+        img.src = '/static/images/default-food-icon.png';
     }
+    imgContainer.appendChild(img);
+    foodItem.appendChild(imgContainer);
     
-    const itemName = document.createElement('span');
-    itemName.textContent = item.name;
-    
-    foodItem.appendChild(img);
-    foodItem.appendChild(itemName);
-    
-    const hoverInfo = document.createElement('div');
-    hoverInfo.className = 'food-item-info';
-    const quantity = item.quantity_or_weight && item.unit ? 
-        `${item.quantity_or_weight}${item.unit} left` : 
-        'Quantity not specified';
-    const bestBefore = `${item.best_before_in_fridge}天变质`;
-    hoverInfo.innerHTML = `
-        <div>${quantity}</div>
-        <div>${bestBefore}</div>
+    // Add hover info with dynamic positioning
+    const info = document.createElement('div');
+    info.className = 'food-item-info';
+    info.innerHTML = `
+        <div><strong>${item.name}</strong></div>
+        <div>Category: ${item.category}</div>
+        ${item.quantity_or_weight ? `<div>Quantity: ${item.quantity_or_weight} ${item.unit}</div>` : ''}
+        <div>Best Before: ${item.best_before_in_fridge} days</div>
     `;
-    foodItem.appendChild(hoverInfo);
-
-    // Add drag event listeners for both shopping list and fridge items
-    foodItem.addEventListener('dragstart', (event) => {
-        event.dataTransfer.setData('application/json', JSON.stringify({
-            ...item,
-            sourceShelf: shelfCategory,
-            sourceCompartment: compartment.id
-        }));
-        event.currentTarget.classList.add('dragging');
+    foodItem.appendChild(info);
+    
+    // Add mousemove event for dynamic positioning of hover info
+    foodItem.addEventListener('mousemove', (e) => {
+        const rect = foodItem.getBoundingClientRect();
+        const infoRect = info.getBoundingClientRect();
+        
+        // Calculate position
+        let left = e.clientX + 20; // 20px offset from cursor
+        let top = e.clientY - infoRect.height / 2;
+        
+        // Check if info would go off screen to the right
+        if (left + infoRect.width > window.innerWidth) {
+            left = e.clientX - infoRect.width - 20;
+        }
+        
+        // Check if info would go off screen at the top or bottom
+        if (top < 0) {
+            top = 0;
+        } else if (top + infoRect.height > window.innerHeight) {
+            top = window.innerHeight - infoRect.height;
+        }
+        
+        info.style.left = `${left}px`;
+        info.style.top = `${top}px`;
     });
-
+    
+    // Add drag event listeners
+    foodItem.addEventListener('dragstart', (event) => {
+        event.currentTarget.classList.add('dragging');
+        event.dataTransfer.setData('application/json', JSON.stringify(item));
+    });
+    
     foodItem.addEventListener('dragend', (event) => {
         event.currentTarget.classList.remove('dragging');
     });
@@ -167,7 +189,7 @@ async function handleFridgeItemDrop(event) {
     const targetCompartment = targetShelf.closest('.compartment').id;
     
     // Check if item belongs to this category
-    const itemCategory = determineCategory(itemData.category);
+    const itemCategory = determineCategory(itemData.category || '');
     if (itemCategory !== targetCategory) {
         console.log('Item cannot be moved to this category');
         return;
@@ -216,12 +238,27 @@ function initializeFridge() {
     });
 }
 
+// Add this constant to define compartment rules
+const COMPARTMENT_RULES = {
+    'Meat & Seafood': 'right-compartment',
+    'Others': 'right-compartment'
+};
+
+// Modify the handleItemDrop function to enforce compartment rules
 async function handleItemDrop(event) {
     event.preventDefault();
     event.currentTarget.classList.remove('drag-over');
     
     const itemData = JSON.parse(event.dataTransfer.getData('application/json'));
     const compartmentId = event.currentTarget.id;
+    const category = determineCategory(itemData.category);
+    
+    // Check if the item is being dropped in the correct compartment
+    const correctCompartment = COMPARTMENT_RULES[category] || 'left-compartment';
+    if (compartmentId !== correctCompartment) {
+        alert(`${category} items must go in the ${correctCompartment === 'left-compartment' ? 'left' : 'right'} compartment`);
+        return;
+    }
     
     try {
         const response = await fetch('/fridge/add_to_fridge', {

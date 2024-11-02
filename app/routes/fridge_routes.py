@@ -42,10 +42,42 @@ def list_fridge_items():
             json.dump([], f, indent=4)
         return jsonify([])
 
+COMPARTMENT_RULES = {
+    'Meat & Seafood': 'right-compartment',
+    'Others': 'right-compartment'
+}
+
+def determine_category(item_category):
+    # Your existing category determination logic
+    CATEGORIES = {
+        'Fruits & Vegetables': ['fruits', 'vegetables', 'produce'],
+        'Dairy & Eggs': ['dairy', 'eggs', 'milk', 'cheese'],
+        'Meat & Seafood': ['meat', 'seafood', 'poultry'],
+        'Beverages': ['drinks', 'beverages', 'juice'],
+        'Condiments': ['sauce', 'condiments', 'spices'],
+        'Others': ['other', 'miscellaneous', 'general']
+    }
+    
+    item_category = item_category.lower()
+    for category, keywords in CATEGORIES.items():
+        if any(keyword in item_category for keyword in keywords):
+            return category
+    return 'Others'
+
 @fridge_bp.route('/add_to_fridge', methods=['POST'])
 def add_to_fridge():
     try:
         data = request.json
+        item_data = data['item']
+        category = determine_category(item_data['category'])
+        
+        # Determine correct compartment based on category
+        correct_compartment = COMPARTMENT_RULES.get(category, 'left-compartment')
+        
+        # Override the requested compartment with the correct one
+        data['compartment'] = correct_compartment
+        
+        # Rest of your existing add_to_fridge code...
         fridge_path = os.path.join('static', 'revise', 'fridge_items.json')
         
         if not os.path.exists(fridge_path) or os.path.getsize(fridge_path) == 0:
@@ -58,20 +90,15 @@ def add_to_fridge():
             except json.JSONDecodeError:
                 fridge_items = []
             
-            item_data = data['item']
-            item_name = item_data['name']
-            
             # Check for duplicates
-            if not any(item['name'] == item_name for item in fridge_items):
-                # Determine the proper category
-                category = item_data.get('category', 'Other')
+            if not any(item['name'] == item_data['name'] for item in fridge_items):
                 new_item = {
-                    'name': item_name,
+                    'name': item_data['name'],
                     'category': category,
                     'quantity_or_weight': item_data.get('quantity_or_weight', ''),
                     'unit': item_data.get('unit', ''),
                     'best_before_in_fridge': item_data.get('best_before_in_fridge', 7),
-                    'compartment': data['compartment']
+                    'compartment': correct_compartment
                 }
                 fridge_items.append(new_item)
                 

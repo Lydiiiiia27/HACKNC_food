@@ -150,5 +150,21 @@
         "unit": "",
         "best_before_in_fridge": 180,
         "compartment": "left-compartment"
+    },
+    {
+        "name": "Chicken Breast",
+        "category": "meat",
+        "quantity_or_weight": "1",
+        "unit": "lb",
+        "best_before_in_fridge": 3,
+        "compartment": "right-compartment"
+    },
+    {
+        "name": "Cheez-It Snack Mix",
+        "category": "Condiments",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 180,
+        "compartment": "left-compartment"
     }
 ]
