@@ -2,8 +2,8 @@
     {
         "name": "Whole Wheat Bread",
         "category": "grain",
-        "quantity_or_weight": "1",
-        "unit": "",
+        "quantity_or_weight": "2",
+        "unit": "bags",
         "best_before_in_fridge": 7
     },
     {
@@ -25,7 +25,7 @@
         "category": "grain",
         "quantity_or_weight": "",
         "unit": "",
-        "best_before_in_fridge": 7
+        "best_before_in_fridge": 14
     },
     {
         "name": "Flour Tortillas",
@@ -37,8 +37,8 @@
     {
         "name": "1% Milk",
         "category": "dairy",
-        "quantity_or_weight": "",
-        "unit": "",
+        "quantity_or_weight": "250",
+        "unit": "ML",
         "best_before_in_fridge": 7
     },
     {

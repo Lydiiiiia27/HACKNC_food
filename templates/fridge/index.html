@@ -15,6 +15,31 @@
         <div id="shopping-list">
             <!-- Shopping list items will be inserted here -->
         </div>
+        
+        <!-- Move the popup inside the list container -->
+        <div id="item-popup" class="item-popup">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closePopup()">&times;</span>
+                <h3 id="popup-item-name"></h3>
+                <div>
+                    <label for="popup-category">Category:</label>
+                    <input type="text" id="popup-category">
+                </div>
+                <div>
+                    <label for="popup-quantity">Quantity/Weight:</label>
+                    <input type="text" id="popup-quantity">
+                </div>
+                <div>
+                    <label for="popup-unit">Unit:</label>
+                    <input type="text" id="popup-unit">
+                </div>
+                <div>
+                    <label for="popup-best-before">Best Before:</label>
+                    <input type="number" id="popup-best-before">
+                </div>
+                <button onclick="saveItemChanges()">Save Changes</button>
+            </div>
+        </div>
     </div>
 
     <!-- Fridge Container -->
@@ -37,30 +62,6 @@
                 <div class="handle"></div>
             </div>
         </div>
-    </div>
-</div>
-
-<div id="item-popup" class="item-popup hidden">
-    <div class="popup-content">
-        <span class="close-btn" onclick="closePopup()">&times;</span>
-        <h3 id="popup-item-name"></h3>
-        <div>
-            <label for="popup-category">Category:</label>
-            <input type="text" id="popup-category">
-        </div>
-        <div>
-            <label for="popup-quantity">Quantity/Weight:</label>
-            <input type="text" id="popup-quantity">
-        </div>
-        <div>
-            <label for="popup-unit">Unit:</label>
-            <input type="text" id="popup-unit">
-        </div>
-        <div>
-            <label for="popup-best-before">Best Before (days):</label>
-            <input type="number" id="popup-best-before">
-        </div>
-        <button onclick="saveItemChanges()">Save Changes</button>
     </div>
 </div>
 {% endblock %}
