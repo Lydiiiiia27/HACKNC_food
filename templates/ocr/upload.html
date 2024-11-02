@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Receipt{% endblock %}
+
+{% block extra_css %}
+<style>
+    .upload-container {
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .upload-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .result {
+        margin-top: 1rem;
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+    .success { background-color: #e7f3e7; }
+    .error { background-color: #f3e7e7; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="upload-container">
+    <h1>Upload Receipt</h1>
+    <form class="upload-form" action="{{ url_for('ocr.upload_file') }}" method="post" enctype="multipart/form-data">
+        <div>
+            <input type="file" name="file" accept="image/*" required>
+        </div>
+        <div>
+            <button type="submit">Upload and Process</button>
+        </div>
+    </form>
+
+    {% if message %}
+    <div class="result {% if error %}error{% else %}success{% endif %}">
+        {{ message }}
+    </div>
+    {% endif %}
+
+    {% if json_path %}
+    <div class="result success">
+        <h3>Results saved to: {{ json_path }}</h3>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
