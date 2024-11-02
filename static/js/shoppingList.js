@@ -9,8 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
 function loadShoppingList() {
     console.log('Loading shopping list...');
     fetch('/fridge/get_food_items')
-        .then(response => response.json())
+        .then(response => {
+            console.log('Response status:', response.status);
+            return response.json();
+        })
         .then(data => {
+            console.log('Data received:', data);
             const shoppingList = document.getElementById('shopping-list');
             if (!shoppingList) {
                 console.error('Shopping list container not found!');
@@ -22,7 +26,29 @@ function loadShoppingList() {
             data.forEach(item => {
                 const listItem = document.createElement('div');
                 listItem.className = 'list-item';
-                listItem.textContent = `${item.name}`;
+                listItem.draggable = true;
+
+                // Add icon
+                const icon = document.createElement('img');
+                getIconUrl(item.identify_name || item.name, item.category).then(iconUrl => {
+                    icon.src = iconUrl;
+                    icon.className = 'item-icon enlarged-icon';
+                    listItem.appendChild(icon);
+
+                    const text = document.createElement('span');
+                    text.textContent = `${item.name}`;
+                    listItem.appendChild(text);
+                });
+
+                // Add drag events
+                listItem.addEventListener('dragstart', (event) => {
+                    event.dataTransfer.setData('application/json', JSON.stringify(item));
+                    event.currentTarget.classList.add('dragging');
+                });
+                
+                listItem.addEventListener('dragend', (event) => {
+                    event.currentTarget.classList.remove('dragging');
+                });
                 
                 // Add hover events
                 listItem.addEventListener('mouseenter', (event) => {
@@ -40,9 +66,39 @@ function loadShoppingList() {
                 });
                 
                 shoppingList.appendChild(listItem);
+                console.log('Added item:', item.name);
             });
         })
         .catch(error => console.error('Error loading shopping list:', error));
+}
+
+function getIconUrl(identifyName, category) {
+    const categoryIcons = {
+        condiments: 'game-icons:cool-spices',
+        fruit: 'carbon:fruit-bowl',
+        vegetables: 'icon-park-twotone:vegetables',
+        dairy: 'healthicons:dairy',
+        protein: 'mdi:meat',
+        grain: 'token:grain'
+    };
+
+    const defaultIcon = categoryIcons[category] || categoryIcons.condiments;
+    const searchUrl = `https://api.iconify.design/search?query=${identifyName}`;
+
+    return fetch(searchUrl)
+        .then(response => response.json())
+        .then(data => {
+            if (data.total > 0) {
+                return `https://api.iconify.design/${data.icons[0]}.svg`;
+            } else {
+                console.log(`No icon found for ${identifyName}, using default icon.`);
+                return `https://api.iconify.design/${defaultIcon}.svg`;
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching icon:', error);
+            return `https://api.iconify.design/${defaultIcon}.svg`;
+        });
 }
 
 function showItemPopup(item, event) {
@@ -152,3 +208,20 @@ function saveItemChanges() {
         }, 2000);
     });
 }
+
+// Add CSS for icons
+const style = document.createElement('style');
+style.innerHTML = `
+    .enlarged-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+        vertical-align: middle;
+    }
+    
+    .list-item {
+        display: flex;
+        align-items: center;
+    }
+`;
+document.head.appendChild(style);

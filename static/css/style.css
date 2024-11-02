@@ -182,11 +182,36 @@
     font-size: 0.9rem;
     transition: all 0.2s ease;
     border-left: 3px solid #3498db;
+    position: relative;
+    cursor: move;
 }
 
 .food-item:hover {
     transform: translateX(5px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.food-item.dragging {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+
+.food-item-info {
+    display: none;
+    position: absolute;
+    right: -220px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    width: 200px;
+    z-index: 1000;
+}
+
+.food-item:hover .food-item-info {
+    display: block;
 }
 
 .door::before {
@@ -329,4 +354,19 @@
     100% {
         box-shadow: 0 4px 20px rgba(46, 204, 113, 0);
     }
+}
+
+.list-item.dragging {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+
+.compartment.drag-over {
+    background-color: rgba(52, 152, 219, 0.1);
+    border: 2px dashed #3498db;
+}
+
+.shelf.shelf-drag-over {
+    background-color: rgba(52, 152, 219, 0.1);
+    border: 2px dashed #3498db;
 }

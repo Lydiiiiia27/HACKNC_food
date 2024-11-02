@@ -40,7 +40,7 @@ def process_json_file(input_file: str, output_file: str, api_key: str):
         
         user_prompt = """Process the following JSON data and return ONLY the processed JSON:
 
-1. Replace each 'name' with a more descriptive full name.
+1. Replace each 'name' with a more descriptive full name based on your knowledgee.
 2. Add a 'category' field for each item based on Dietary Guidelines and Nutritional Standards in the United States, including (protein, vegetables, fruit, grain, dairy, oils, and condiments).
 3. Add two fields for each item:
 4. 'quantity_or_weight': a numeric value representing the quantity or weight of the item, if specified, otherwise leave it empty.
@@ -49,6 +49,8 @@ def process_json_file(input_file: str, output_file: str, api_key: str):
 7. Ensure names do not include any weight or quantity numbers.
 8. Return only the processed JSON array without any explanation.
 9. Only return the field I requested, do not include any additional fields.
+10. Add a new field 'frozen' to indicate whether the item can be frozen or not. 1 represents this item generally stored by freezing, 0 represents this item generally not stored by freezing based on common food storage knowledge.
+11. Add a new field, 'identify_name,' to store the most common or widely recognized name for each item. This name should differ from the 'name' field if necessary and reflect the typical term people use when searching for an icon or representation of this item in the market. Use a single word whenever possible, in singular form, to indicate a broad category that best describes the item (e.g., if the item is a specific chocolate bar, use 'chocolate').
 
 Input JSON:"""
         
