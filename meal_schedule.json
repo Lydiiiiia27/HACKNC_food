@@ -1,0 +1,23 @@
+[
+    {
+        "meal": "Breakfast",
+        "time": "07:15",
+        "eatingOut": false,
+        "items": [],
+        "filters": []
+    },
+    {
+        "meal": "Lunch",
+        "time": "11:00",
+        "eatingOut": false,
+        "items": [],
+        "filters": []
+    },
+    {
+        "meal": "Dinner",
+        "time": "18:00",
+        "eatingOut": false,
+        "items": [],
+        "filters": []
+    }
+]
