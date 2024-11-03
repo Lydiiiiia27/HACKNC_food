@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Display</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/recipe.css') }}">
+</head>
+<body>
+    <div class="recipes-container">
+        <!-- Loading State -->
+        <div id="loading-state" class="loading-overlay" style="display: none;">
+            <div class="spinner">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Loading recipes...</p>
+            </div>
+        </div>
+
+        <!-- Recipe Columns -->
+        <div class="meal-column">
+            <h2><i class="fas fa-sun"></i> Breakfast</h2>
+            <div class="recipe-cards" id="breakfast-recipes"></div>
+        </div>
+        
+        <div class="meal-column">
+            <h2><i class="fas fa-cloud-sun"></i> Lunch</h2>
+            <div class="recipe-cards" id="lunch-recipes"></div>
+        </div>
+        
+        <div class="meal-column">
+            <h2><i class="fas fa-moon"></i> Dinner</h2>
+            <div class="recipe-cards" id="dinner-recipes"></div>
+        </div>
+        <button id="done-button">Done</button>
+        <!-- Error Message Template -->
+        <template id="error-template">
+            <div class="error-card">
+                <i class="fas fa-exclamation-circle"></i>
+                <p class="error-message"></p>
+                <p>Please check the JSON file format and try again</p>
+            </div>
+        </template>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/recipe_display.js') }}"></script>
+</body>
+</html>

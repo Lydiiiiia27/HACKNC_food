@@ -318,7 +318,8 @@
         "compartment": "left-compartment",
         "identify_name": "carrots",
         "frozen": 0
-    },{
+    },
+    {
         "name": "Cucumber",
         "category": "vegetables",
         "quantity_or_weight": 1,

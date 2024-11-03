@@ -36,15 +36,6 @@
         "identify_name": "carrots"
     },
     {
-        "name": "Tai Pei Orange Chicken",
-        "category": "protein",
-        "quantity_or_weight": 0,
-        "unit": "grams",
-        "best_before_in_fridge": 0,
-        "frozen": 1,
-        "identify_name": "chicken"
-    },
-    {
         "name": "Aluminum Foil",
         "category": "condiments",
         "quantity_or_weight": 0,

@@ -1,0 +1,460 @@
+{
+    "generated_at": "2024-11-03T01:57:42.592294",
+    "recipes": [
+        {
+            "meal": "Breakfast",
+            "time": "07:15",
+            "recipes": [
+                {
+                    "name": "Cheddar Cheese and Spinach Scramble",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Eggs",
+                            "amount": 4,
+                            "unit": "count"
+                        },
+                        {
+                            "item": "Cheddar Cheese",
+                            "amount": 2,
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Spinach",
+                            "amount": 5,
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Butter",
+                            "amount": 1,
+                            "unit": "tbsp"
+                        },
+                        {
+                            "item": "Blueberries",
+                            "amount": 1,
+                            "unit": "pint"
+                        },
+                        {
+                            "item": "Orange Juice",
+                            "amount": 8,
+                            "unit": "oz"
+                        }
+                    ],
+                    "steps": [
+                        "In a skillet, melt butter over medium heat.",
+                        "Add spinach and cook until wilted.",
+                        "Whisk eggs in a bowl, add cheddar cheese, and pour into the skillet.",
+                        "Cook, stirring gently, until eggs are set.",
+                        "Serve with fresh blueberries and a glass of orange juice."
+                    ],
+                    "time": {
+                        "prep": "5 minutes",
+                        "cook": "10 minutes",
+                        "total": "15 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "350 kcal",
+                        "protein": "22 g",
+                        "carbs": "30 g",
+                        "fat": "18 g"
+                    },
+                    "storage": "Best served fresh. Can store scrambled eggs in an airtight container in the fridge for up to 2 days."
+                },
+                {
+                    "name": "Bacon and Carrot Breakfast Wrap",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Bacon",
+                            "amount": 4,
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Carrots",
+                            "amount": 1,
+                            "unit": "lb"
+                        },
+                        {
+                            "item": "Greek Yogurt",
+                            "amount": 4,
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Lettuce",
+                            "amount": 2,
+                            "unit": "leaves"
+                        },
+                        {
+                            "item": "Apple",
+                            "amount": 1,
+                            "unit": "count"
+                        }
+                    ],
+                    "steps": [
+                        "Cook bacon in a skillet until crispy, then remove and drain on paper towels.",
+                        "Shred the carrots and mix with Greek yogurt for a creamy dressing.",
+                        "On a plate, lay down lettuce leaves, add shredded carrots, and top with bacon.",
+                        "Slice the apple and serve on the side."
+                    ],
+                    "time": {
+                        "prep": "5 minutes",
+                        "cook": "10 minutes",
+                        "total": "15 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "400 kcal",
+                        "protein": "18 g",
+                        "carbs": "35 g",
+                        "fat": "25 g"
+                    },
+                    "storage": "Can store bacon and carrot mixture in the fridge for up to 2 days, but best served fresh."
+                }
+            ]
+        },
+        {
+            "meal": "Lunch",
+            "time": "12:00",
+            "recipes": [
+                {
+                    "name": "Cheddar Cheese and Broccoli Chicken Bake",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Chicken Breasts",
+                            "amount": "2",
+                            "unit": "lb"
+                        },
+                        {
+                            "item": "Cheddar Cheese",
+                            "amount": "8",
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Broccoli",
+                            "amount": "1",
+                            "unit": "head"
+                        },
+                        {
+                            "item": "Butter",
+                            "amount": "2",
+                            "unit": "tbsp"
+                        },
+                        {
+                            "item": "Ground Beef",
+                            "amount": "1",
+                            "unit": "lb"
+                        },
+                        {
+                            "item": "Carrots",
+                            "amount": "1",
+                            "unit": "lb"
+                        },
+                        {
+                            "item": "Eggs",
+                            "amount": "2",
+                            "unit": "count"
+                        },
+                        {
+                            "item": "Pasta Sauce",
+                            "amount": "24",
+                            "unit": "oz"
+                        }
+                    ],
+                    "steps": [
+                        "Preheat the oven to 375°F (190°C).",
+                        "In a skillet, melt 2 tbsp of butter and sauté chopped carrots and broccoli until tender.",
+                        "In a bowl, mix the sautéed veggies with ground beef and beaten eggs.",
+                        "Spread the mixture in a baking dish and pour pasta sauce on top.",
+                        "Sprinkle shredded cheddar cheese over the top.",
+                        "Bake in the preheated oven for 30-35 minutes until the chicken is cooked through and cheese is bubbly."
+                    ],
+                    "time": {
+                        "prep": "15 minutes",
+                        "cook": "35 minutes",
+                        "total": "50 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "550 kcal",
+                        "protein": "45 g",
+                        "carbs": "30 g",
+                        "fat": "30 g"
+                    },
+                    "storage": "Cool completely before storing in an airtight container in the refrigerator for up to 3 days."
+                },
+                {
+                    "name": "Spinach and Cheese Omelette",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Eggs",
+                            "amount": "4",
+                            "unit": "count"
+                        },
+                        {
+                            "item": "Spinach",
+                            "amount": "5",
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Cheddar Cheese",
+                            "amount": "4",
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Butter",
+                            "amount": "1",
+                            "unit": "tbsp"
+                        }
+                    ],
+                    "steps": [
+                        "In a bowl, whisk the eggs until well beaten.",
+                        "In a frying pan, melt 1 tbsp of butter over medium heat.",
+                        "Add spinach and cook until wilted.",
+                        "Pour in the beaten eggs and cook for a few minutes until the edges set.",
+                        "Sprinkle cheddar cheese over one half of the omelette, fold it, and cook for another minute until cheese melts."
+                    ],
+                    "time": {
+                        "prep": "5 minutes",
+                        "cook": "10 minutes",
+                        "total": "15 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "350 kcal",
+                        "protein": "25 g",
+                        "carbs": "5 g",
+                        "fat": "25 g"
+                    },
+                    "storage": "Best served fresh, but can be stored in the refrigerator for 1 day in an airtight container."
+                },
+                {
+                    "name": "Strawberry and Greek Yogurt Parfait",
+                    "type": "dessert",
+                    "ingredients": [
+                        {
+                            "item": "Greek Yogurt",
+                            "amount": "16",
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Strawberries",
+                            "amount": "1",
+                            "unit": "lb"
+                        },
+                        {
+                            "item": "Maple Syrup",
+                            "amount": "2",
+                            "unit": "tbsp"
+                        }
+                    ],
+                    "steps": [
+                        "Slice the strawberries and mix with maple syrup in a bowl.",
+                        "In serving glasses, layer Greek yogurt and the strawberry mixture.",
+                        "Repeat layers until all ingredients are used, finishing with strawberries on top."
+                    ],
+                    "time": {
+                        "prep": "10 minutes",
+                        "cook": "0 minutes",
+                        "total": "10 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "250 kcal",
+                        "protein": "15 g",
+                        "carbs": "35 g",
+                        "fat": "5 g"
+                    },
+                    "storage": "Can be made ahead and stored in the refrigerator for up to 2 days."
+                }
+            ]
+        },
+        {
+            "meal": "Dinner",
+            "time": "18:00",
+            "recipes": [
+                {
+                    "name": "Cheesy Chicken and Broccoli Bake",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Chicken Breasts",
+                            "amount": 1,
+                            "unit": "lb"
+                        },
+                        {
+                            "item": "Broccoli",
+                            "amount": 1,
+                            "unit": "head"
+                        },
+                        {
+                            "item": "Cheddar Cheese",
+                            "amount": 8,
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Butter",
+                            "amount": 2,
+                            "unit": "tbsp"
+                        },
+                        {
+                            "item": "Ground Beef",
+                            "amount": 1,
+                            "unit": "lb"
+                        },
+                        {
+                            "item": "Pasta Sauce",
+                            "amount": 12,
+                            "unit": "oz"
+                        }
+                    ],
+                    "steps": [
+                        "Preheat the oven to 375°F (190°C).",
+                        "In a skillet, melt butter over medium heat and add ground beef, cooking until browned.",
+                        "Cut the chicken breasts into bite-sized pieces and add to the skillet, cooking until no longer pink.",
+                        "Chop the broccoli into florets and steam for about 5 minutes until tender.",
+                        "In a baking dish, combine the cooked chicken and beef mixture with steamed broccoli and pasta sauce.",
+                        "Sprinkle the shredded cheddar cheese on top.",
+                        "Bake in the preheated oven for 20-25 minutes or until the cheese is bubbly and golden."
+                    ],
+                    "time": {
+                        "prep": "15 minutes",
+                        "cook": "25 minutes",
+                        "total": "40 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "550 kcal",
+                        "protein": "45 g",
+                        "carbs": "20 g",
+                        "fat": "30 g"
+                    },
+                    "storage": "Store leftovers in an airtight container in the refrigerator for up to 3 days."
+                },
+                {
+                    "name": "Spinach and Cheddar Omelette",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Eggs",
+                            "amount": 4,
+                            "unit": "count"
+                        },
+                        {
+                            "item": "Spinach",
+                            "amount": 5,
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Cheddar Cheese",
+                            "amount": 2,
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Butter",
+                            "amount": 1,
+                            "unit": "tbsp"
+                        }
+                    ],
+                    "steps": [
+                        "In a skillet, melt butter over medium heat.",
+                        "Add spinach and sauté until wilted.",
+                        "In a bowl, whisk together eggs and season with salt and pepper.",
+                        "Pour the eggs over the spinach and let cook until the edges start to set.",
+                        "Sprinkle grated cheddar cheese over the top and fold the omelette in half.",
+                        "Cook for another 1-2 minutes until the cheese melts and the omelette is cooked through."
+                    ],
+                    "time": {
+                        "prep": "5 minutes",
+                        "cook": "10 minutes",
+                        "total": "15 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "320 kcal",
+                        "protein": "24 g",
+                        "carbs": "2 g",
+                        "fat": "24 g"
+                    },
+                    "storage": "Best served fresh, but can be stored in the refrigerator for up to 2 days."
+                },
+                {
+                    "name": "Apple and Cheddar Salad",
+                    "type": "side",
+                    "ingredients": [
+                        {
+                            "item": "Apples",
+                            "amount": 2,
+                            "unit": "count"
+                        },
+                        {
+                            "item": "Cheddar Cheese",
+                            "amount": 2,
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Lettuce",
+                            "amount": 2,
+                            "unit": "cups"
+                        },
+                        {
+                            "item": "Hummus",
+                            "amount": 4,
+                            "unit": "oz"
+                        }
+                    ],
+                    "steps": [
+                        "Wash and slice the apples into thin wedges.",
+                        "In a large bowl, combine lettuce, apple slices, and shredded cheddar cheese.",
+                        "Drizzle hummus over the salad as a dressing and toss gently to combine."
+                    ],
+                    "time": {
+                        "prep": "10 minutes",
+                        "cook": "0 minutes",
+                        "total": "10 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "200 kcal",
+                        "protein": "5 g",
+                        "carbs": "30 g",
+                        "fat": "8 g"
+                    },
+                    "storage": "Store in the refrigerator in an airtight container for up to 2 days."
+                },
+                {
+                    "name": "Strawberry Greek Yogurt Parfait",
+                    "type": "dessert",
+                    "ingredients": [
+                        {
+                            "item": "Greek Yogurt",
+                            "amount": 8,
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Strawberries",
+                            "amount": 1,
+                            "unit": "lb"
+                        },
+                        {
+                            "item": "Maple Syrup",
+                            "amount": 1,
+                            "unit": "tbsp"
+                        }
+                    ],
+                    "steps": [
+                        "Wash and slice the strawberries.",
+                        "In a glass or bowl, layer Greek yogurt, strawberries, and drizzle with maple syrup.",
+                        "Repeat layers as desired and serve immediately."
+                    ],
+                    "time": {
+                        "prep": "5 minutes",
+                        "cook": "0 minutes",
+                        "total": "5 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "150 kcal",
+                        "protein": "10 g",
+                        "carbs": "25 g",
+                        "fat": "2 g"
+                    },
+                    "storage": "Can be stored in the refrigerator for up to 1 day, but best served fresh."
+                }
+            ]
+        }
+    ]
+}

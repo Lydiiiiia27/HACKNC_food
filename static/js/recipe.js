@@ -265,7 +265,7 @@ function saveMealSchedule() {
         });
     });
 
-    fetch('/save_schedule', {
+    fetch('/recipe/save_schedule', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -274,8 +274,11 @@ function saveMealSchedule() {
     })
     .then(response => response.json())
     .then(data => {
-        console.log('Schedule saved:', data);
-        showToast('Schedule saved successfully');
+        if (data.status === 'success') {
+            showToast('Schedule saved successfully');
+        } else {
+            showToast('Failed to save schedule', 'error');
+        }
     })
     .catch(error => {
         console.error('Error saving schedule:', error);
@@ -329,7 +332,7 @@ document.getElementById('generate-recipe').addEventListener('click', async () =>
     document.querySelector('.loading-overlay').style.display = 'flex';
     
     try {
-        const response = await fetch('/generate_recipe', {
+        const response = await fetch('/recipe/generate_recipe', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -342,6 +345,12 @@ document.getElementById('generate-recipe').addEventListener('click', async () =>
 
         const data = await response.json();
         displayRecipes(data.recipes);
+
+        // Save the first recipe to localStorage for display
+        localStorage.setItem('generatedRecipe', JSON.stringify(data.recipes[0].recipes[0]));
+
+        // Transition to the new recipe display page
+        window.location.href = '/recipe/recipe_display';
     } catch (error) {
         console.error('Error:', error);
         showToast('Failed to generate recipes', 'error');

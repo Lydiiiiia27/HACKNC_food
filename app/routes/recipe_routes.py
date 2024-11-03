@@ -9,13 +9,17 @@ import json
 from app.services.recipe_generator import RecipeGenerator
 
 recipe_bp = Blueprint('recipe', __name__, url_prefix='/recipe')
-
 with open('refrigerator_items.json', 'r') as f:
     refrigerator_items = json.load(f)
 
 @recipe_bp.route('/recipe', methods=['GET'])
 def upload():
     return render_template('recipe/recipe.html', items=refrigerator_items)
+
+@recipe_bp.route('/recipe_display', methods=['GET'])
+def recipe_display():
+    return render_template('recipe/recipe_display.html')
+
 
     
 
@@ -26,6 +30,7 @@ def generate_recipe():
         recipes = generator.generate_recipes()
         return jsonify({"recipes": recipes})
     except Exception as e:
+        print("Error generating recipes:", str(e))
         return jsonify({
             "status": "error",
             "message": str(e)
@@ -43,8 +48,9 @@ def save_schedule():
                 'status': 'error',
                 'message': 'No schedule data provided'
             }), 400
-            
-        with open('meal_schedule.json', 'w') as f:
+        schedule_path = os.path.join('static', 'recipe', 'meal_schedule.json')
+        print("Saving schedule to", schedule_path)
+        with open(schedule_path, 'w') as f:
             json.dump(data['schedule'], f, indent=4)
             # Verify write completed
             print("Schedule saved to meal_schedule.json")
@@ -59,3 +65,12 @@ def save_schedule():
             'status': 'error',
             'message': str(e)
         }), 500
+
+@recipe_bp.route('/save_selected_recipes', methods=['POST'])
+def save_selected_recipes():
+    data = request.get_json()
+    file_path = os.path.join('static', 'recipe', 'selected_meal', 'selected_recipes.json')
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+    with open(file_path, 'w') as f:
+        json.dump(data, f, indent=2)
+    return jsonify({'status': 'success'})

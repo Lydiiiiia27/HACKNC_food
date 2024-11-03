@@ -1,0 +1,136 @@
+[
+  {
+    "meal": "Breakfast",
+    "name": "Cheddar and Spinach Scramble",
+    "type": "main",
+    "time": {
+      "prep": "5 minutes",
+      "cook": "10 minutes"
+    },
+    "ingredients": [
+      {
+        "item": "Whole Milk",
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "item": "Cheddar Cheese",
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "item": "Eggs",
+        "amount": "4",
+        "unit": "count"
+      },
+      {
+        "item": "Spinach",
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "item": "Butter",
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "instructions": "In a bowl, whisk together eggs, whole milk, and a pinch of salt.\nIn a skillet, melt butter over medium heat, then add spinach and cook until wilted.\nPour the egg mixture into the skillet and scramble until just set.\nStir in shredded cheddar cheese until melted.",
+    "nutrition": {
+      "calories": "300 kcal",
+      "protein": "20 g",
+      "carbs": "6 g",
+      "fat": "22 g"
+    }
+  },
+  {
+    "meal": "Lunch",
+    "name": "Cheesy Spinach and Bacon Frittata",
+    "type": "main",
+    "time": {
+      "prep": "10 minutes",
+      "cook": "20 minutes"
+    },
+    "ingredients": [
+      {
+        "item": "Eggs",
+        "amount": "6",
+        "unit": "count"
+      },
+      {
+        "item": "Spinach",
+        "amount": "5",
+        "unit": "oz"
+      },
+      {
+        "item": "Bacon",
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "item": "Cheddar Cheese",
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "item": "Salt and Pepper (from pantry)",
+        "amount": "to taste",
+        "unit": ""
+      }
+    ],
+    "instructions": "Preheat the oven to 350\u00b0F (175\u00b0C).\nIn a skillet, cook the bacon until crispy. Remove and chop into pieces, leaving the fat in the pan.\nAdd spinach to the skillet and cook until wilted. In a bowl, whisk the eggs and season with salt and pepper.\nCombine the spinach and bacon with the egg mixture and pour into the skillet. Sprinkle cheese on top.\nTransfer the skillet to the oven and bake for about 20 minutes or until the frittata is set.",
+    "nutrition": {
+      "calories": "280 kcal",
+      "protein": "23 g",
+      "carbs": "5 g",
+      "fat": "20 g"
+    }
+  },
+  {
+    "meal": "Dinner",
+    "name": "Creamy Spinach and Chicken Pasta",
+    "type": "main",
+    "time": {
+      "prep": "10 minutes",
+      "cook": "20 minutes"
+    },
+    "ingredients": [
+      {
+        "item": "Chicken Breasts",
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "item": "Spinach",
+        "amount": "10",
+        "unit": "oz"
+      },
+      {
+        "item": "Whole Milk",
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "item": "Butter",
+        "amount": "2",
+        "unit": "tbsp"
+      },
+      {
+        "item": "Pasta Sauce",
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "item": "Cheddar Cheese",
+        "amount": "4",
+        "unit": "oz"
+      }
+    ],
+    "instructions": "Cook pasta according to package instructions; drain and set aside.\nIn a skillet, melt the butter and cook sliced chicken breasts until no longer pink.\nAdd the spinach and stir until wilted, then mix in the pasta sauce and milk.\nCombine the pasta with the sauce mixture and top with cheddar cheese.\nCover and let simmer on low heat for 5 minutes until cheese is melted.",
+    "nutrition": {
+      "calories": "550 kcal",
+      "protein": "45 g",
+      "carbs": "40 g",
+      "fat": "25 g"
+    }
+  }
+]

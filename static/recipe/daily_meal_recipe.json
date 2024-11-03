@@ -1,0 +1,734 @@
+{
+    "generated_at": "2024-11-03T05:10:09.096891",
+    "recipes": [
+        {
+            "meal": "Breakfast",
+            "time": "7:00",
+            "recipes": [
+                {
+                    "name": "Cheddar and Spinach Scramble",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Whole Milk",
+                            "amount": "1",
+                            "unit": "cup"
+                        },
+                        {
+                            "item": "Cheddar Cheese",
+                            "amount": "4",
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Eggs",
+                            "amount": "4",
+                            "unit": "count"
+                        },
+                        {
+                            "item": "Spinach",
+                            "amount": "2",
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Butter",
+                            "amount": "1",
+                            "unit": "tbsp"
+                        }
+                    ],
+                    "steps": [
+                        "In a bowl, whisk together eggs, whole milk, and a pinch of salt.",
+                        "In a skillet, melt butter over medium heat, then add spinach and cook until wilted.",
+                        "Pour the egg mixture into the skillet and scramble until just set.",
+                        "Stir in shredded cheddar cheese until melted."
+                    ],
+                    "time": {
+                        "prep": "5 minutes",
+                        "cook": "10 minutes",
+                        "total": "15 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "300 kcal",
+                        "protein": "20 g",
+                        "carbs": "6 g",
+                        "fat": "22 g"
+                    },
+                    "storage": "Serve immediately; can be stored in an airtight container in the fridge for up to 2 days."
+                },
+                {
+                    "name": "Bacon and Broccoli Frittata",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Bacon",
+                            "amount": "6",
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Broccoli",
+                            "amount": "2",
+                            "unit": "cups"
+                        },
+                        {
+                            "item": "Eggs",
+                            "amount": "6",
+                            "unit": "count"
+                        },
+                        {
+                            "item": "Whole Milk",
+                            "amount": "1/2",
+                            "unit": "cup"
+                        },
+                        {
+                            "item": "Cheddar Cheese",
+                            "amount": "4",
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Butter",
+                            "amount": "1",
+                            "unit": "tbsp"
+                        }
+                    ],
+                    "steps": [
+                        "Preheat the oven to 350°F (175°C).",
+                        "In a skillet, cook bacon until crispy; remove and crumble.",
+                        "In the same skillet, add broccoli and cook until tender.",
+                        "In a bowl, whisk eggs, milk, and a pinch of salt and pepper; stir in cheese and bacon.",
+                        "Pour the egg mixture over broccoli in the skillet and cook for 2 minutes, then transfer to the oven.",
+                        "Bake for 15-20 minutes until set and lightly golden."
+                    ],
+                    "time": {
+                        "prep": "10 minutes",
+                        "cook": "25 minutes",
+                        "total": "35 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "420 kcal",
+                        "protein": "30 g",
+                        "carbs": "5 g",
+                        "fat": "30 g"
+                    },
+                    "storage": "Store leftovers in the fridge for up to 3 days; reheat before serving."
+                },
+                {
+                    "name": "Apple and Cheddar Breakfast Sandwich",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Cheddar Cheese",
+                            "amount": "2",
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Eggs",
+                            "amount": "2",
+                            "unit": "count"
+                        },
+                        {
+                            "item": "Apples",
+                            "amount": "1",
+                            "unit": "count"
+                        },
+                        {
+                            "item": "Butter",
+                            "amount": "1",
+                            "unit": "tbsp"
+                        }
+                    ],
+                    "steps": [
+                        "Slice the apple into thin rounds.",
+                        "In a skillet, melt butter over medium heat, then crack the eggs and cook to your liking.",
+                        "Place a slice of cheddar cheese on each egg to melt.",
+                        "On a plate, layer the apple slices and top with the egg and cheese combination."
+                    ],
+                    "time": {
+                        "prep": "5 minutes",
+                        "cook": "8 minutes",
+                        "total": "13 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "330 kcal",
+                        "protein": "16 g",
+                        "carbs": "30 g",
+                        "fat": "20 g"
+                    },
+                    "storage": "Best served fresh; not recommended for storage."
+                },
+                {
+                    "name": "Strawberry Yogurt Parfait",
+                    "type": "dessert",
+                    "ingredients": [
+                        {
+                            "item": "Greek Yogurt",
+                            "amount": "1",
+                            "unit": "cup"
+                        },
+                        {
+                            "item": "Strawberries",
+                            "amount": "1/2",
+                            "unit": "lb"
+                        },
+                        {
+                            "item": "Maple Syrup",
+                            "amount": "1",
+                            "unit": "tbsp"
+                        }
+                    ],
+                    "steps": [
+                        "Slice strawberries and mix with maple syrup.",
+                        "In a glass, layer Greek yogurt and sweetened strawberries.",
+                        "Repeat layers and finish with strawberries on top."
+                    ],
+                    "time": {
+                        "prep": "5 minutes",
+                        "cook": "0 minutes",
+                        "total": "5 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "200 kcal",
+                        "protein": "15 g",
+                        "carbs": "25 g",
+                        "fat": "5 g"
+                    },
+                    "storage": "Can be made ahead and stored in the fridge for up to 1 day."
+                },
+                {
+                    "name": "Avocado Toast with Hummus",
+                    "type": "side",
+                    "ingredients": [
+                        {
+                            "item": "Avocados",
+                            "amount": "1",
+                            "unit": "count"
+                        },
+                        {
+                            "item": "Hummus",
+                            "amount": "1/4",
+                            "unit": "cup"
+                        },
+                        {
+                            "item": "Lettuce",
+                            "amount": "1",
+                            "unit": "leaf"
+                        }
+                    ],
+                    "steps": [
+                        "Toast bread of choice (not included in ingredients).",
+                        "Mash avocado and spread over the toast.",
+                        "Top with hummus and add a leaf of lettuce for crunch."
+                    ],
+                    "time": {
+                        "prep": "5 minutes",
+                        "cook": "0 minutes",
+                        "total": "5 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "250 kcal",
+                        "protein": "6 g",
+                        "carbs": "20 g",
+                        "fat": "18 g"
+                    },
+                    "storage": "Best served fresh; not recommended for storage."
+                }
+            ]
+        },
+        {
+            "meal": "Lunch",
+            "time": "11:30",
+            "recipes": [
+                {
+                    "name": "Lemon Garlic Salmon with Broccoli",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Salmon Fillets",
+                            "amount": "1",
+                            "unit": "lb"
+                        },
+                        {
+                            "item": "Broccoli",
+                            "amount": "1",
+                            "unit": "head"
+                        },
+                        {
+                            "item": "Butter",
+                            "amount": "2",
+                            "unit": "tbsp"
+                        },
+                        {
+                            "item": "Garlic (from pantry)",
+                            "amount": "2",
+                            "unit": "cloves"
+                        },
+                        {
+                            "item": "Salt and Pepper (from pantry)",
+                            "amount": "to taste",
+                            "unit": ""
+                        }
+                    ],
+                    "steps": [
+                        "Preheat the oven to 400°F (200°C).",
+                        "In a baking dish, place the salmon fillet skin-side down. Melt butter and mix it with minced garlic, then brush over the salmon. Season with salt and pepper.",
+                        "Cut the broccoli into florets and arrange around the salmon in the baking dish. Drizzle a little olive oil and season with salt.",
+                        "Bake in the oven for 15-20 minutes or until salmon is cooked through and flakes easily with a fork."
+                    ],
+                    "time": {
+                        "prep": "10 minutes",
+                        "cook": "20 minutes",
+                        "total": "30 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "350 kcal",
+                        "protein": "35 g",
+                        "carbs": "10 g",
+                        "fat": "20 g"
+                    },
+                    "storage": "Store in an airtight container in the fridge for up to 2 days."
+                },
+                {
+                    "name": "Cheesy Spinach and Bacon Frittata",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Eggs",
+                            "amount": "6",
+                            "unit": "count"
+                        },
+                        {
+                            "item": "Spinach",
+                            "amount": "5",
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Bacon",
+                            "amount": "4",
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Cheddar Cheese",
+                            "amount": "4",
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Salt and Pepper (from pantry)",
+                            "amount": "to taste",
+                            "unit": ""
+                        }
+                    ],
+                    "steps": [
+                        "Preheat the oven to 350°F (175°C).",
+                        "In a skillet, cook the bacon until crispy. Remove and chop into pieces, leaving the fat in the pan.",
+                        "Add spinach to the skillet and cook until wilted. In a bowl, whisk the eggs and season with salt and pepper.",
+                        "Combine the spinach and bacon with the egg mixture and pour into the skillet. Sprinkle cheese on top.",
+                        "Transfer the skillet to the oven and bake for about 20 minutes or until the frittata is set."
+                    ],
+                    "time": {
+                        "prep": "10 minutes",
+                        "cook": "20 minutes",
+                        "total": "30 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "280 kcal",
+                        "protein": "23 g",
+                        "carbs": "5 g",
+                        "fat": "20 g"
+                    },
+                    "storage": "Store in an airtight container in the fridge for up to 3 days."
+                },
+                {
+                    "name": "Chicken and Carrot Stir-Fry",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Chicken Breasts",
+                            "amount": "1",
+                            "unit": "lb"
+                        },
+                        {
+                            "item": "Carrots",
+                            "amount": "1",
+                            "unit": "lb"
+                        },
+                        {
+                            "item": "Orange Bell Peppers",
+                            "amount": "1",
+                            "unit": "count"
+                        },
+                        {
+                            "item": "Hummus",
+                            "amount": "4",
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Butter",
+                            "amount": "2",
+                            "unit": "tbsp"
+                        },
+                        {
+                            "item": "Salt and Pepper (from pantry)",
+                            "amount": "to taste",
+                            "unit": ""
+                        }
+                    ],
+                    "steps": [
+                        "Slice the chicken breasts into thin strips. Peel and slice the carrots into matchsticks, and chop the bell pepper.",
+                        "In a large skillet, melt butter over medium heat. Add chicken and cook until browned.",
+                        "Add carrots and bell pepper to the skillet and stir-fry for about 5-7 minutes or until vegetables are tender.",
+                        "Spoon in hummus and stir until well mixed, and season with salt and pepper before serving."
+                    ],
+                    "time": {
+                        "prep": "10 minutes",
+                        "cook": "10 minutes",
+                        "total": "20 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "350 kcal",
+                        "protein": "30 g",
+                        "carbs": "20 g",
+                        "fat": "15 g"
+                    },
+                    "storage": "Store in an airtight container in the fridge for up to 2 days."
+                },
+                {
+                    "name": "Apple and Strawberry Salad",
+                    "type": "side",
+                    "ingredients": [
+                        {
+                            "item": "Apples",
+                            "amount": "2",
+                            "unit": "count"
+                        },
+                        {
+                            "item": "Strawberries",
+                            "amount": "8",
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Lettuce",
+                            "amount": "1/2",
+                            "unit": "head"
+                        },
+                        {
+                            "item": "Greek Yogurt",
+                            "amount": "1/2",
+                            "unit": "cup"
+                        },
+                        {
+                            "item": "Maple Syrup",
+                            "amount": "1",
+                            "unit": "tbsp"
+                        }
+                    ],
+                    "steps": [
+                        "Chop the apples and slice the strawberries. Tear the lettuce into bite-sized pieces.",
+                        "In a bowl, combine the apples, strawberries, and lettuce.",
+                        "In a small bowl, mix Greek yogurt and maple syrup to create a dressing. Pour over the salad and toss gently."
+                    ],
+                    "time": {
+                        "prep": "10 minutes",
+                        "cook": "0 minutes",
+                        "total": "10 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "150 kcal",
+                        "protein": "3 g",
+                        "carbs": "30 g",
+                        "fat": "1 g"
+                    },
+                    "storage": "Best served fresh, but can be stored in the fridge for up to 1 day."
+                },
+                {
+                    "name": "Orange Juice Smoothie",
+                    "type": "dessert",
+                    "ingredients": [
+                        {
+                            "item": "Orange Juice",
+                            "amount": "1",
+                            "unit": "cup"
+                        },
+                        {
+                            "item": "Greek Yogurt",
+                            "amount": "1/2",
+                            "unit": "cup"
+                        },
+                        {
+                            "item": "Banana (from pantry)",
+                            "amount": "1",
+                            "unit": "count"
+                        },
+                        {
+                            "item": "Blueberries",
+                            "amount": "1/2",
+                            "unit": "pint"
+                        }
+                    ],
+                    "steps": [
+                        "In a blender, combine orange juice, Greek yogurt, banana, and blueberries.",
+                        "Blend until smooth and serve immediately."
+                    ],
+                    "time": {
+                        "prep": "5 minutes",
+                        "cook": "0 minutes",
+                        "total": "5 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "200 kcal",
+                        "protein": "6 g",
+                        "carbs": "45 g",
+                        "fat": "1 g"
+                    },
+                    "storage": "Best served fresh, consume within 2 hours for optimal taste."
+                }
+            ]
+        },
+        {
+            "meal": "Dinner",
+            "time": "18:00",
+            "recipes": [
+                {
+                    "name": "Sliced Turkey and Broccoli Bake",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Sliced Turkey",
+                            "amount": "1",
+                            "unit": "lb"
+                        },
+                        {
+                            "item": "Broccoli",
+                            "amount": "1",
+                            "unit": "head"
+                        },
+                        {
+                            "item": "Cheddar Cheese",
+                            "amount": "8",
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Butter",
+                            "amount": "2",
+                            "unit": "tbsp"
+                        },
+                        {
+                            "item": "Ground Beef",
+                            "amount": "1",
+                            "unit": "lb"
+                        },
+                        {
+                            "item": "Eggs",
+                            "amount": "4",
+                            "unit": "count"
+                        }
+                    ],
+                    "steps": [
+                        "Preheat the oven to 375°F (190°C).",
+                        "In a skillet, melt the butter and brown the ground beef until cooked through.",
+                        "In a large bowl, combine cooked beef, sliced turkey, and chopped broccoli.",
+                        "Add beaten eggs and half of the cheddar cheese, mixing thoroughly.",
+                        "Transfer the mixture to a greased baking dish and top with the remaining cheddar cheese.",
+                        "Bake for 25-30 minutes until set and golden on top."
+                    ],
+                    "time": {
+                        "prep": "15 minutes",
+                        "cook": "30 minutes",
+                        "total": "45 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "450 kcal",
+                        "protein": "40 g",
+                        "carbs": "10 g",
+                        "fat": "25 g"
+                    },
+                    "storage": "Store in an airtight container in the refrigerator for up to 3 days."
+                },
+                {
+                    "name": "Creamy Spinach and Chicken Pasta",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Chicken Breasts",
+                            "amount": "1",
+                            "unit": "lb"
+                        },
+                        {
+                            "item": "Spinach",
+                            "amount": "10",
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Whole Milk",
+                            "amount": "1",
+                            "unit": "cup"
+                        },
+                        {
+                            "item": "Butter",
+                            "amount": "2",
+                            "unit": "tbsp"
+                        },
+                        {
+                            "item": "Pasta Sauce",
+                            "amount": "12",
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Cheddar Cheese",
+                            "amount": "4",
+                            "unit": "oz"
+                        }
+                    ],
+                    "steps": [
+                        "Cook pasta according to package instructions; drain and set aside.",
+                        "In a skillet, melt the butter and cook sliced chicken breasts until no longer pink.",
+                        "Add the spinach and stir until wilted, then mix in the pasta sauce and milk.",
+                        "Combine the pasta with the sauce mixture and top with cheddar cheese.",
+                        "Cover and let simmer on low heat for 5 minutes until cheese is melted."
+                    ],
+                    "time": {
+                        "prep": "10 minutes",
+                        "cook": "20 minutes",
+                        "total": "30 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "550 kcal",
+                        "protein": "45 g",
+                        "carbs": "40 g",
+                        "fat": "25 g"
+                    },
+                    "storage": "Store in an airtight container in the refrigerator for up to 2 days."
+                },
+                {
+                    "name": "Bacon and Apple Salad",
+                    "type": "side",
+                    "ingredients": [
+                        {
+                            "item": "Bacon",
+                            "amount": "4",
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Apples",
+                            "amount": "2",
+                            "unit": "count"
+                        },
+                        {
+                            "item": "Lettuce",
+                            "amount": "1",
+                            "unit": "head"
+                        },
+                        {
+                            "item": "Hummus",
+                            "amount": "4",
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Orange Bell Peppers",
+                            "amount": "1",
+                            "unit": "count"
+                        }
+                    ],
+                    "steps": [
+                        "Cook bacon in a skillet until crispy; let cool, then chop.",
+                        "Chop apples and bell pepper, and toss with lettuce in a large bowl.",
+                        "Add the chopped bacon, and drizzle hummus over the top.",
+                        "Toss everything together and serve immediately."
+                    ],
+                    "time": {
+                        "prep": "10 minutes",
+                        "cook": "10 minutes",
+                        "total": "20 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "300 kcal",
+                        "protein": "10 g",
+                        "carbs": "30 g",
+                        "fat": "18 g"
+                    },
+                    "storage": "Best served fresh, but can be stored in the fridge for 1 day."
+                },
+                {
+                    "name": "Strawberry Greek Yogurt Parfait",
+                    "type": "dessert",
+                    "ingredients": [
+                        {
+                            "item": "Greek Yogurt",
+                            "amount": "8",
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Strawberries",
+                            "amount": "1",
+                            "unit": "lb"
+                        },
+                        {
+                            "item": "Maple Syrup",
+                            "amount": "2",
+                            "unit": "tbsp"
+                        }
+                    ],
+                    "steps": [
+                        "Slice the strawberries and mix with maple syrup in a bowl.",
+                        "In serving glasses, layer the yogurt and strawberries alternately.",
+                        "Drizzle any remaining syrup over the top and serve chilled."
+                    ],
+                    "time": {
+                        "prep": "10 minutes",
+                        "cook": "0 minutes",
+                        "total": "10 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "200 kcal",
+                        "protein": "10 g",
+                        "carbs": "30 g",
+                        "fat": "5 g"
+                    },
+                    "storage": "Can be made ahead and stored in the refrigerator for up to 2 days."
+                },
+                {
+                    "name": "Cheddar and Bacon Stuffed Peppers",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Orange Bell Peppers",
+                            "amount": "2",
+                            "unit": "count"
+                        },
+                        {
+                            "item": "Bacon",
+                            "amount": "8",
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Cheddar Cheese",
+                            "amount": "4",
+                            "unit": "oz"
+                        },
+                        {
+                            "item": "Greek Yogurt",
+                            "amount": "2",
+                            "unit": "oz"
+                        }
+                    ],
+                    "steps": [
+                        "Preheat oven to 375°F (190°C).",
+                        "Cook bacon until crisp; chop finely.",
+                        "Mix bacon, cheddar cheese, and Greek yogurt in a bowl.",
+                        "Halve the bell peppers and remove seeds; stuff with the bacon mixture.",
+                        "Place stuffed peppers on a baking sheet and bake for 20-25 minutes until peppers are tender."
+                    ],
+                    "time": {
+                        "prep": "15 minutes",
+                        "cook": "25 minutes",
+                        "total": "40 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "350 kcal",
+                        "protein": "25 g",
+                        "carbs": "12 g",
+                        "fat": "20 g"
+                    },
+                    "storage": "Store in an airtight container in the refrigerator for up to 3 days."
+                }
+            ]
+        }
+    ]
+}

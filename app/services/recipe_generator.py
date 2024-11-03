@@ -5,6 +5,7 @@ from datetime import datetime
 from typing import List, Dict, Any
 from openai import OpenAI
 import re
+import os
 
 class RecipeGenerator:
     def __init__(self, api_key: str):
@@ -18,7 +19,8 @@ class RecipeGenerator:
             return json.load(f)
             
     def _load_schedule(self) -> List[Dict]:
-        with open('meal_schedule.json', 'r') as f:
+        schedule_path = os.path.join('static', 'recipe', 'meal_schedule.json')
+        with open(schedule_path, 'r') as f:
             return json.load(f)
             
     def _create_recipe_prompt(self, meal: Dict, meal_time: datetime) -> str:
@@ -29,6 +31,7 @@ class RecipeGenerator:
             f"{'frozen' if item['frozen'] else 'fresh'})"
             for item in self.fridge_items
         ])
+        print(available_ingredients)
         
         # Calculate time gaps between meals
         meal_times = [(m['meal'], datetime.strptime(m['time'], '%H:%M')) for m in self.schedule]
@@ -82,6 +85,10 @@ IMPORTANT CONSIDERATIONS:
 5. Balance the overall meal composition
 6. Prioritize using items closer to expiration
 7. Account for preparation time based on meal schedule
+8. Provide at least five recipes for each meal, and three of them must be main type.
+9. Privent repeating the same or similar recipe in the same day.
+10. Ensure a variety of tastes and textures in the meal.
+11. You need to be creative and innovative in your recipe ideas.
 
 OUTPUT FORMAT REQUIREMENTS:
 Return each recipe in the following exact JSON format:
@@ -134,92 +141,12 @@ Do not include any other text or formatting."""
                 formatted.append(f"Prep time preference: {f['value']}")
         
         return "\n".join(formatted)
-
-    def _parse_response(self, response_text):
-        recipes = []
-        raw_recipes = response_text.split("### Recipe")[1:]  # Skip first empty split
-        
-        for raw_recipe in raw_recipes:
-            recipe = {
-                "name": "",
-                "type": "",
-                "ingredients": [],
-                "steps": [],
-                "prep_time": "",
-                "cook_time": "",
-                "total_time": "",
-                "nutrition": {},
-                "storage": ""
-            }
-            
-            # Parse name
-            name_match = re.search(r"\*\*Name\*\*:\s*(.*)", raw_recipe)
-            if name_match:
-                recipe["name"] = name_match.group(1).strip()
-            
-            # Parse type
-            type_match = re.search(r"\*\*Type\*\*:\s*(.*)", raw_recipe)
-            if type_match:
-                recipe["type"] = type_match.group(1).strip()
-            
-            # Parse ingredients
-            ingredients_match = re.search(r"\*\*Ingredients\*\*:(.*?)\*\*Steps\*\*", raw_recipe, re.DOTALL)
-            if ingredients_match:
-                ingredients_section = ingredients_match.group(1).strip()
-                ingredients = [line.strip().replace("-", "").strip() 
-                               for line in ingredients_section.split("\n") 
-                               if line.strip() and "-" in line]
-                recipe["ingredients"] = ingredients
-            
-            # Parse steps
-            steps_match = re.search(r"\*\*Steps\*\*:(.*?)\*\*Prep & Cook Time\*\*", raw_recipe, re.DOTALL)
-            if steps_match:
-                steps_section = steps_match.group(1).strip()
-                steps = [line.strip().replace("   ", "").strip() 
-                         for line in steps_section.split("\n") 
-                         if line.strip() and re.match(r"^\d+\.", line.strip())]
-                recipe["steps"] = steps
-            
-            # Parse times
-            time_match = re.search(r"\*\*Prep & Cook Time\*\*:\s*(.*)", raw_recipe)
-            if time_match:
-                time_section = time_match.group(1).strip()
-                prep_time_match = re.search(r"(\d+ minutes prep)", time_section)
-                cook_time_match = re.search(r"(\d+ minutes cooking)", time_section)
-                total_time_match = re.search(r"\(Total (\d+ minutes)\)", time_section)
-                if prep_time_match:
-                    recipe["prep_time"] = prep_time_match.group(1).strip()
-                if cook_time_match:
-                    recipe["cook_time"] = cook_time_match.group(1).strip()
-                if total_time_match:
-                    recipe["total_time"] = total_time_match.group(1).strip()
-            
-            # Parse nutrition
-            nutrition_match = re.search(r"\*\*Nutrition Facts\*\*(.*?)\*\*Storage Info\*\*", raw_recipe, re.DOTALL)
-            if nutrition_match:
-                nutrition_section = nutrition_match.group(1).strip()
-                nutrition = {}
-                for line in nutrition_section.split("\n"):
-                    if ":" in line:
-                        key_value = line.split(":")
-                        key = key_value[0].strip()
-                        value = key_value[1].strip()
-                        nutrition[key] = value
-                recipe["nutrition"] = nutrition
-            
-            # Parse storage
-            storage_match = re.search(r"\*\*Storage Info\*\*:\s*(.*)", raw_recipe)
-            if storage_match:
-                recipe["storage"] = storage_match.group(1).strip()
-                
-            recipes.append(recipe)
-        
-        return recipes
-
+    
     def _save_recipes_to_json(self, recipes: List[Dict], filename: str = None) -> None:
         if filename is None:
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            filename = f"daily_meal_recipe.json"
+            #filename = f"daily_meal_recipe.json"
+            filename = f"static/recipe/daily_meal_recipe.json"
         
         with open(filename, 'w', encoding='utf-8') as f:
             json.dump({
@@ -247,7 +174,7 @@ Do not include any other text or formatting."""
                         {"role": "system", "content": "You are a professional chef. Respond only with the exact JSON format requested."},
                         {"role": "user", "content": prompt}
                     ],
-                    temperature=0.7
+                    temperature=0.9
                 )
                 print
                 recipes_text = response.choices[0].message.content
