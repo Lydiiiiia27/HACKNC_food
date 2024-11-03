@@ -2,7 +2,7 @@
     {
         "name": "Mini Bagels",
         "category": "grain",
-        "quantity_or_weight": 0,
+        "quantity_or_weight": 0.0,
         "unit": "pcs",
         "best_before_in_fridge": 7,
         "compartment": "left-compartment",
@@ -62,7 +62,7 @@
     {
         "name": "Cream Cheese",
         "category": "dairy",
-        "quantity_or_weight": 0,
+        "quantity_or_weight": 1.0,
         "unit": "grams",
         "best_before_in_fridge": 14,
         "compartment": "left-compartment",
@@ -72,7 +72,7 @@
     {
         "name": "Stone Hearth Bread",
         "category": "grain",
-        "quantity_or_weight": 0,
+        "quantity_or_weight": 2.0,
         "unit": "pcs",
         "best_before_in_fridge": 7,
         "compartment": "left-compartment",
@@ -158,5 +158,25 @@
         "compartment": "left-compartment",
         "identify_name": "vegetables",
         "frozen": 0
+    },
+    {
+        "name": "Salted Potato Chips",
+        "category": "grain",
+        "quantity_or_weight": 170,
+        "unit": "grams",
+        "best_before_in_fridge": 0,
+        "compartment": "left-compartment",
+        "identify_name": "chips",
+        "frozen": 0
+    },
+    {
+        "name": "Flour Tortillas",
+        "category": "grain",
+        "quantity_or_weight": 0,
+        "unit": "pcs",
+        "best_before_in_fridge": 7,
+        "compartment": "left-compartment",
+        "identify_name": "tortillas",
+        "frozen": 1
     }
 ]

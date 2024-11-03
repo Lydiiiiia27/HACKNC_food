@@ -81,7 +81,7 @@
     border-radius: 20px;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
-    z-index: 10;
+    z-index: 8;
 }
 
 .door-left {
@@ -147,7 +147,8 @@
     flex-direction: column;
     gap: 20px;
     overflow-y: auto;
-    z-index: 1;
+    z-index: 5;
+    visibility: hidden;
 }
 
 .compartment.visible {
@@ -201,8 +202,15 @@
 }
 
 .food-item {
-    background: transparent;
-    box-shadow: none;
+    position: relative;
+    padding: 5px;
+    border-radius: 8px;
+    cursor: move;
+    transition: transform 0.2s ease;
+}
+
+.food-item:hover {
+    transform: scale(1.05);
 }
 
 .item-image-container {
@@ -221,7 +229,6 @@
 
 .food-item-info {
     position: fixed;
-    display: none;
     background: white;
     padding: 15px;
     border-radius: 8px;
@@ -229,6 +236,16 @@
     width: 220px;
     z-index: 9999;
     pointer-events: none;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.food-item-info > div {
+    margin-bottom: 5px;
+}
+
+.food-item-info strong {
+    color: #333;
 }
 
 .food-item:hover .food-item-info {

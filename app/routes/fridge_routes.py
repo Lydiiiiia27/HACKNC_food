@@ -159,3 +159,32 @@ def move_fridge_item():
     except Exception as e:
         print(f"Error in move_fridge_item: {str(e)}")
         return jsonify({'success': False, 'error': str(e)}), 500
+
+@fridge_bp.route('/update_item', methods=['POST'])
+def update_item():
+    try:
+        item_data = request.json
+        json_path = os.path.join('static', 'revise', 'shoppingList.json')
+        
+        with open(json_path, 'r+', encoding='utf-8') as file:
+            data = json.load(file)
+            # Update the matching item
+            for item in data:
+                if item['name'] == item_data['name']:
+                    item.update({
+                        'category': item_data['category'],
+                        'quantity_or_weight': item_data['quantity_or_weight'],
+                        'unit': item_data['unit'],
+                        'best_before_in_fridge': item_data['best_before_in_fridge']
+                    })
+                    break
+            
+            # Write back to file
+            file.seek(0)
+            json.dump(data, file, indent=4, ensure_ascii=False)
+            file.truncate()
+        
+        return jsonify({'success': True})
+    except Exception as e:
+        print(f"Error updating item: {str(e)}")
+        return jsonify({'success': False, 'error': str(e)}), 500

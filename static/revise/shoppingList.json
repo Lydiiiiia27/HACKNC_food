@@ -1,32 +1,5 @@
 [
     {
-        "name": "Salted Potato Chips",
-        "category": "grain",
-        "quantity_or_weight": 170,
-        "unit": "grams",
-        "best_before_in_fridge": 0,
-        "frozen": 0,
-        "identify_name": "chips"
-    },
-    {
-        "name": "Mini Bagels",
-        "category": "grain",
-        "quantity_or_weight": 0,
-        "unit": "pcs",
-        "best_before_in_fridge": 7,
-        "frozen": 1,
-        "identify_name": "bagels"
-    },
-    {
-        "name": "Flour Tortillas",
-        "category": "grain",
-        "quantity_or_weight": 0,
-        "unit": "pcs",
-        "best_before_in_fridge": 7,
-        "frozen": 1,
-        "identify_name": "tortillas"
-    },
-    {
         "name": "Toblerone Milk Chocolate",
         "category": "condiments",
         "quantity_or_weight": 0,
@@ -70,24 +43,6 @@
         "best_before_in_fridge": 0,
         "frozen": 1,
         "identify_name": "chicken"
-    },
-    {
-        "name": "Cream Cheese",
-        "category": "dairy",
-        "quantity_or_weight": 0,
-        "unit": "grams",
-        "best_before_in_fridge": 14,
-        "frozen": 0,
-        "identify_name": "cheese"
-    },
-    {
-        "name": "Stone Hearth Bread",
-        "category": "grain",
-        "quantity_or_weight": 0,
-        "unit": "pcs",
-        "best_before_in_fridge": 7,
-        "frozen": 0,
-        "identify_name": "bread"
     },
     {
         "name": "Aluminum Foil",

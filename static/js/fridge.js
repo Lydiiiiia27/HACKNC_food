@@ -8,19 +8,16 @@ function toggleDoor(door, side) {
     const leftCompartment = document.getElementById('left-compartment');
     const rightCompartment = document.getElementById('right-compartment');
     
-    if (doorsOpen.left && doorsOpen.right) {
-        console.log('Both doors open, loading items...');
-        leftCompartment.style.visibility = 'visible';
-        rightCompartment.style.visibility = 'visible';
-        loadFoodItems();
+    // Show items when respective door is opened
+    if (side === 'left') {
+        leftCompartment.style.visibility = doorsOpen.left ? 'visible' : 'hidden';
     } else {
-        console.log('Closing compartments');
-        if (!doorsOpen.left) {
-            leftCompartment.style.visibility = 'hidden';
-        }
-        if (!doorsOpen.right) {
-            rightCompartment.style.visibility = 'hidden';
-        }
+        rightCompartment.style.visibility = doorsOpen.right ? 'visible' : 'hidden';
+    }
+    
+    // Load items whenever any door is opened
+    if (doorsOpen.left || doorsOpen.right) {
+        loadFoodItems();
     }
 }
 
@@ -135,54 +132,32 @@ async function createFoodItem(item, shelfCategory) {
         ${item.quantity_or_weight ? `<div>Quantity: ${item.quantity_or_weight} ${item.unit}</div>` : ''}
         <div>Best Before: ${item.best_before_in_fridge} days</div>
         ${item.frozen ? `<div>Frozen: Yes</div>` : ''}
-        <div>Identify Name: ${item.identify_name}</div>
     `;
-    document.body.appendChild(info);
     
-    // Add mousemove event for dynamic positioning of hover info
-    foodItem.addEventListener('mousemove', (e) => {
-        info.style.display = 'block';
+    // Add hover events
+    foodItem.addEventListener('mouseenter', (e) => {
         const rect = foodItem.getBoundingClientRect();
+        info.style.display = 'block';
+        document.body.appendChild(info);
         
-        // Calculate position relative to viewport
-        let left = e.clientX + 20;
-        let top = e.clientY - info.offsetHeight / 2;
+        // Position the info box
+        const infoRect = info.getBoundingClientRect();
+        let left = rect.right + 10;
+        let top = rect.top;
         
-        // Adjust if would go off screen
-        if (left + info.offsetWidth > window.innerWidth) {
-            left = e.clientX - info.offsetWidth - 20;
+        // Check if info box would go off screen
+        if (left + infoRect.width > window.innerWidth) {
+            left = rect.left - infoRect.width - 10;
         }
-        if (top < 0) {
-            top = 0;
-        } else if (top + info.offsetHeight > window.innerHeight) {
-            top = window.innerHeight - info.offsetHeight;
+        if (top + infoRect.height > window.innerHeight) {
+            top = window.innerHeight - infoRect.height - 10;
         }
         
         info.style.left = `${left}px`;
         info.style.top = `${top}px`;
     });
     
-    // Add drag event listeners
-    foodItem.addEventListener('dragstart', (event) => {
-        event.currentTarget.classList.add('dragging');
-        event.dataTransfer.setData('application/json', JSON.stringify(item));
-    });
-    
-    foodItem.addEventListener('dragend', (event) => {
-        event.currentTarget.classList.remove('dragging');
-    });
-    
     foodItem.addEventListener('mouseleave', () => {
-        info.style.display = 'none';
-        // Remove the info element from the DOM when not hovering
-        if (info.parentNode) {
-            info.parentNode.removeChild(info);
-        }
-    });
-    
-    // Clean up when the item is removed
-    foodItem.addEventListener('dragstart', () => {
-        // Remove the info element if it exists
         if (info.parentNode) {
             info.parentNode.removeChild(info);
         }
@@ -289,12 +264,12 @@ async function handleItemDrop(event) {
     
     const itemData = JSON.parse(event.dataTransfer.getData('application/json'));
     const compartmentId = event.currentTarget.id;
-    const category = itemData.category.toLowerCase(); // Use the existing category directly
+    const category = itemData.category.toLowerCase();
     
     // Check if the item should go in the right compartment (protein) or left (everything else)
     const correctCompartment = COMPARTMENT_RULES[category] || 'left-compartment';
     if (compartmentId !== correctCompartment) {
-        alert(`${category} items must go in the ${correctCompartment === 'left-compartment' ? 'left' : 'right'} compartment`);
+        // Silently return without showing alert
         return;
     }
     
