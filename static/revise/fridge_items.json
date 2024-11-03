@@ -166,7 +166,7 @@
         "unit": "g",
         "best_before_in_fridge": 4,
         "compartment": "right-compartment",
-        "identify_name": "chicken",
+        "identify_name": "chicken Breast",
         "frozen": 0
     },
     {
@@ -216,7 +216,7 @@
         "unit": "pcs",
         "best_before_in_fridge": 5,
         "compartment": "right-compartment",
-        "identify_name": "turkey",
+        "identify_name": "chicken thighs",
         "frozen": 0
     },
     {
@@ -246,7 +246,7 @@
         "unit": "g",
         "best_before_in_fridge": 3,
         "compartment": "left-compartment",
-        "identify_name": "cod",
+        "identify_name": "fillets",
         "frozen": 1
     },
     {
@@ -256,7 +256,7 @@
         "unit": "g",
         "best_before_in_fridge": 1,
         "compartment": "right-compartment",
-        "identify_name": "ribs",
+        "identify_name": "beef",
         "frozen": 0
     },
     {
