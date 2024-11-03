@@ -8,7 +8,7 @@ body {
 
 .container {
     display: flex;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     gap: 20px;
     align-items: flex-start; /* Prevents stretching */
     max-width: 1800px;
@@ -1543,3 +1543,4 @@ html {
     background: #45a049;
     transform: translateY(-2px);
 }
+

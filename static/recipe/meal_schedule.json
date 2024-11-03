@@ -3,27 +3,21 @@
         "meal": "Breakfast",
         "time": "7:00",
         "eatingOut": false,
-        "items": [
-            "Whole Milk"
-        ],
+        "items": [],
         "filters": []
     },
     {
         "meal": "Lunch",
-        "time": "11:30",
+        "time": "12:00",
         "eatingOut": false,
-        "items": [
-            "Salmon Fillets"
-        ],
+        "items": [],
         "filters": []
     },
     {
         "meal": "Dinner",
         "time": "18:00",
         "eatingOut": false,
-        "items": [
-            "Sliced Turkey"
-        ],
+        "items": [],
         "filters": []
     }
 ]

@@ -9,7 +9,7 @@ import json
 from app.services.recipe_generator import RecipeGenerator
 
 recipe_bp = Blueprint('recipe', __name__, url_prefix='/recipe')
-with open('refrigerator_items.json', 'r') as f:
+with open('static/revise/fridge_items.json', 'r') as f:
     refrigerator_items = json.load(f)
 
 @recipe_bp.route('/recipe', methods=['GET'])

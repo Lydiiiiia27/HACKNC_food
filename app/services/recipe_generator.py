@@ -15,7 +15,7 @@ class RecipeGenerator:
         self.schedule = self._load_schedule()
 
     def _load_fridge_items(self) -> List[Dict]:
-        with open('refrigerator_items.json', 'r') as f:
+        with open('static/revise/fridge_items.json', 'r') as f:
             return json.load(f)
             
     def _load_schedule(self) -> List[Dict]:
@@ -209,5 +209,5 @@ Do not include any other text or formatting."""
                         new_quantity = float(fridge_item['quantity_or_weight']) - float(ingredient['quantity'])
                         fridge_item['quantity_or_weight'] = str(max(0, new_quantity))
         
-        with open('refrigerator_items.json', 'w') as f:
+        with open('static/revise/fridge_items.json', 'w') as f:
             json.dump(self.fridge_items, f, indent=4)
