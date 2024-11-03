@@ -8,6 +8,65 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/recipe.css') }}">
+    <style>
+        .done-button-container {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 1000;
+        }
+
+        .fancy-done-button {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .fancy-done-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        .fancy-done-button .button-text {
+            font-weight: 500;
+        }
+
+        .fancy-done-button i {
+            transition: transform 0.3s ease;
+        }
+
+        .fancy-done-button:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Add loading state styles */
+        .fancy-done-button.loading {
+            background: #45a049;
+            pointer-events: none;
+        }
+
+        .fancy-done-button.loading .button-text {
+            opacity: 0.7;
+        }
+
+        .fancy-done-button.loading i {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
     <div class="recipes-container">
@@ -34,7 +93,12 @@
             <h2><i class="fas fa-moon"></i> Dinner</h2>
             <div class="recipe-cards" id="dinner-recipes"></div>
         </div>
-        <button id="done-button">Done</button>
+        <div class="done-button-container">
+            <button id="done-button" class="fancy-done-button">
+                <span class="button-text">View My Daily Meal</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
         <!-- Error Message Template -->
         <template id="error-template">
             <div class="error-card">

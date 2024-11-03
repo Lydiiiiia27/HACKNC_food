@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(data => {
             console.log('Selected recipes saved:', data);
-            window.location.href = '/'; // 重定向到首页
+            window.location.href = '/meal/meal';
         })
         .catch(error => {
             console.error('Error saving selected recipes:', error);
