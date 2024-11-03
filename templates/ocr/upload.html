@@ -269,10 +269,10 @@
     </div>
 </div>
 
-<div class="section-container" style="margin-top: 20px;">
+<!-- <div class="section-container" style="margin-top: 20px;">
     <h2>Test Loading Animation</h2>
     <button onclick="testLoading()">Test Loading Effect</button>
-</div>
+</div> -->
 
 <script>
     document.write('<script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.js"><\/script>');
@@ -352,37 +352,37 @@
     }
 
     // Test function to simulate loading
-    function testLoading() {
-        showLoading();
+    // function testLoading() {
+    //     showLoading();
         
-        setTimeout(() => {
-            hideLoading();
-            showSuccessPopup();
-        }, 3000);
-    }
+    //     setTimeout(() => {
+    //         hideLoading();
+    //         showSuccessPopup();
+    //     }, 3000);
+    // }
 
-    function showSuccessPopup() {
-        const popup = document.getElementById('successPopup');
-        popup.style.display = 'block';
-        setTimeout(() => {
-            popup.classList.add('show');
-        }, 10);
-    }
+    // function showSuccessPopup() {
+    //     const popup = document.getElementById('successPopup');
+    //     popup.style.display = 'block';
+    //     setTimeout(() => {
+    //         popup.classList.add('show');
+    //     }, 10);
+    // }
 
-    function closeSuccessPopup() {
-        const popup = document.getElementById('successPopup');
-        popup.classList.remove('show');
-        setTimeout(() => {
-            popup.style.display = 'none';
-        }, 300);
-    }
+    // function closeSuccessPopup() {
+    //     const popup = document.getElementById('successPopup');
+    //     popup.classList.remove('show');
+    //     setTimeout(() => {
+    //         popup.style.display = 'none';
+    //     }, 300);
+    // }
 
-    // Add form submission handler for testing
-    document.querySelector('.upload-form').addEventListener('submit', function(e) {
-        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-            e.preventDefault(); // Prevent actual form submission in development
-            testLoading();
-        }
-    });
+    // // Add form submission handler for testing
+    // document.querySelector('.upload-form').addEventListener('submit', function(e) {
+    //     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    //         e.preventDefault(); // Prevent actual form submission in development
+    //         testLoading();
+    //     }
+    // });
 </script>
 {% endblock %}
