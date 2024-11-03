@@ -147,6 +147,7 @@
     flex-direction: column;
     gap: 20px;
     overflow-y: auto;
+    z-index: 1;
 }
 
 .compartment.visible {
@@ -154,10 +155,11 @@
 }
 
 .shelf {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     padding: 15px;
-    min-height: 100px;
+    min-height: 120px;
+    flex-grow: 1;
 }
 
 .shelf-title {
@@ -165,28 +167,32 @@
     margin-bottom: 10px;
 }
 
-.shelf[data-category="Fruits & Vegetables"] {
-    background-color: rgba(144, 238, 144, 0.1);
+.shelf[data-category="protein"] {
+    background-color: rgba(255, 182, 193, 0.3);
 }
 
-.shelf[data-category="Dairy & Eggs"] {
-    background-color: rgba(255, 255, 240, 0.1);
+.shelf[data-category="vegetables"] {
+    background-color: rgba(144, 238, 144, 0.3);
 }
 
-.shelf[data-category="Meat & Seafood"] {
-    background-color: rgba(255, 182, 193, 0.1);
+.shelf[data-category="fruit"] {
+    background-color: rgba(255, 165, 0, 0.3);
 }
 
-.shelf[data-category="Beverages"] {
-    background-color: rgba(173, 216, 230, 0.1);
+.shelf[data-category="grain"] {
+    background-color: rgba(210, 180, 140, 0.3);
 }
 
-.shelf[data-category="Condiments"] {
-    background-color: rgba(255, 228, 181, 0.1);
+.shelf[data-category="dairy"] {
+    background-color: rgba(255, 255, 240, 0.3);
 }
 
-.shelf[data-category="Others"] {
-    background-color: rgba(211, 211, 211, 0.1);
+.shelf[data-category="oils"] {
+    background-color: rgba(255, 215, 0, 0.3);
+}
+
+.shelf[data-category="condiments"] {
+    background-color: rgba(255, 228, 181, 0.3);
 }
 
 .shelf:hover {
@@ -195,16 +201,8 @@
 }
 
 .food-item {
-    width: 80px;
-    height: 80px;
-    background: white;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: move;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: relative;
+    background: transparent;
+    box-shadow: none;
 }
 
 .item-image-container {
@@ -404,4 +402,5 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    min-height: 90px;
 }

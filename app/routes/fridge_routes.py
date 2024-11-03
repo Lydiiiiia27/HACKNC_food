@@ -52,22 +52,10 @@ def add_to_fridge():
     try:
         data = request.json
         item_data = data['item']
-        category = item_data['category'].lower()  # Use the existing category directly
+        category = item_data['category'].lower()
         
-        # Determine correct compartment based on category
+        # Determine correct compartment
         correct_compartment = COMPARTMENT_RULES.get(category, 'left-compartment')
-        
-        # Create new item with all fields
-        new_item = {
-            'name': item_data['name'],
-            'category': category,  # Use the original category
-            'quantity_or_weight': item_data.get('quantity_or_weight', ''),
-            'unit': item_data.get('unit', ''),
-            'best_before_in_fridge': item_data.get('best_before_in_fridge', 7),
-            'compartment': correct_compartment,
-            'identify_name': item_data.get('identify_name', item_data['name'].lower()),
-            'frozen': item_data.get('frozen', 0)
-        }
         
         fridge_path = os.path.join('static', 'revise', 'fridge_items.json')
         
@@ -82,15 +70,36 @@ def add_to_fridge():
                 fridge_items = []
             
             # Check for duplicates
-            if not any(item['name'] == item_data['name'] for item in fridge_items):
-                fridge_items.append(new_item)  # Use the new_item with all fields
-                
-                file.seek(0)
-                json.dump(fridge_items, file, indent=4, ensure_ascii=False)
-                file.truncate()
-                return jsonify({'success': True})
+            existing_item = next((item for item in fridge_items if item['name'] == item_data['name']), None)
+            
+            if existing_item:
+                # Add quantities if units match
+                if existing_item['unit'] == item_data['unit']:
+                    try:
+                        existing_qty = float(existing_item['quantity_or_weight'])
+                        new_qty = float(item_data['quantity_or_weight'])
+                        existing_item['quantity_or_weight'] = existing_qty + new_qty
+                    except (ValueError, TypeError):
+                        # If conversion fails, just increment by 1
+                        existing_item['quantity_or_weight'] = existing_item.get('quantity_or_weight', 0) + 1
             else:
-                return jsonify({'success': False, 'error': 'Item already exists in fridge'}), 400
+                # Create new item if no duplicate found
+                new_item = {
+                    'name': item_data['name'],
+                    'category': category,
+                    'quantity_or_weight': item_data.get('quantity_or_weight', ''),
+                    'unit': item_data.get('unit', ''),
+                    'best_before_in_fridge': item_data.get('best_before_in_fridge', 7),
+                    'compartment': correct_compartment,
+                    'identify_name': item_data.get('identify_name', item_data['name'].lower()),
+                    'frozen': item_data.get('frozen', 0)
+                }
+                fridge_items.append(new_item)
+            
+            file.seek(0)
+            json.dump(fridge_items, file, indent=4, ensure_ascii=False)
+            file.truncate()
+            return jsonify({'success': True})
                 
     except Exception as e:
         print(f"Error in add_to_fridge: {str(e)}")

@@ -1,23 +1,5 @@
 [
     {
-        "name": "Whole Wheat Bread",
-        "category": "grain",
-        "quantity_or_weight": 100,
-        "unit": "pcs",
-        "best_before_in_fridge": 7,
-        "frozen": 0,
-        "identify_name": "bread"
-    },
-    {
-        "name": "Fresh Vegetable Mix",
-        "category": "vegetables",
-        "quantity_or_weight": 50,
-        "unit": "grams",
-        "best_before_in_fridge": 5,
-        "frozen": 0,
-        "identify_name": "vegetables"
-    },
-    {
         "name": "Salted Potato Chips",
         "category": "grain",
         "quantity_or_weight": 170,
@@ -45,15 +27,6 @@
         "identify_name": "tortillas"
     },
     {
-        "name": "Twix Caramel Bar",
-        "category": "condiments",
-        "quantity_or_weight": 0,
-        "unit": "pcs",
-        "best_before_in_fridge": 0,
-        "frozen": 0,
-        "identify_name": "chocolate"
-    },
-    {
         "name": "Toblerone Milk Chocolate",
         "category": "condiments",
         "quantity_or_weight": 0,
@@ -79,24 +52,6 @@
         "best_before_in_fridge": 5,
         "frozen": 0,
         "identify_name": "avocado"
-    },
-    {
-        "name": "Red Delicious Apples",
-        "category": "fruit",
-        "quantity_or_weight": 2.33,
-        "unit": "lb",
-        "best_before_in_fridge": 21,
-        "frozen": 0,
-        "identify_name": "apples"
-    },
-    {
-        "name": "Bananas",
-        "category": "fruit",
-        "quantity_or_weight": 2.38,
-        "unit": "lb",
-        "best_before_in_fridge": 7,
-        "frozen": 1,
-        "identify_name": "bananas"
     },
     {
         "name": "Petite Carrots",

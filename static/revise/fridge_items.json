@@ -22,7 +22,7 @@
     {
         "name": "Red Delicious Apples",
         "category": "fruit",
-        "quantity_or_weight": 2.33,
+        "quantity_or_weight": 4.66,
         "unit": "lb",
         "best_before_in_fridge": 21,
         "compartment": "left-compartment",
@@ -32,7 +32,7 @@
     {
         "name": "Bananas",
         "category": "fruit",
-        "quantity_or_weight": 2.38,
+        "quantity_or_weight": 4.76,
         "unit": "lb",
         "best_before_in_fridge": 7,
         "compartment": "left-compartment",
@@ -127,6 +127,36 @@
         "best_before_in_fridge": 0,
         "compartment": "left-compartment",
         "identify_name": "candy",
+        "frozen": 0
+    },
+    {
+        "name": "Whole Wheat Bread",
+        "category": "grain",
+        "quantity_or_weight": 100,
+        "unit": "pcs",
+        "best_before_in_fridge": 7,
+        "compartment": "left-compartment",
+        "identify_name": "bread",
+        "frozen": 0
+    },
+    {
+        "name": "Twix Caramel Bar",
+        "category": "condiments",
+        "quantity_or_weight": 0,
+        "unit": "pcs",
+        "best_before_in_fridge": 0,
+        "compartment": "left-compartment",
+        "identify_name": "chocolate",
+        "frozen": 0
+    },
+    {
+        "name": "Fresh Vegetable Mix",
+        "category": "vegetables",
+        "quantity_or_weight": 50,
+        "unit": "grams",
+        "best_before_in_fridge": 5,
+        "compartment": "left-compartment",
+        "identify_name": "vegetables",
         "frozen": 0
     }
 ]
