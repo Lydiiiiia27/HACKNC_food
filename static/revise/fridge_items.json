@@ -52,8 +52,8 @@
     {
         "name": "Tai Pei Orange Chicken",
         "category": "protein",
-        "quantity_or_weight": 0,
-        "unit": "grams",
+        "quantity_or_weight": 20,
+        "unit": "g",
         "best_before_in_fridge": 0,
         "compartment": "right-compartment",
         "identify_name": "chicken",
@@ -178,5 +178,184 @@
         "compartment": "left-compartment",
         "identify_name": "tortillas",
         "frozen": 1
+    },
+    {
+        "name": "Chicken Breast",
+        "category": "protein",
+        "quantity_or_weight": 500,
+        "unit": "g",
+        "best_before_in_fridge": 4,
+        "compartment": "right-compartment",
+        "identify_name": "chicken",
+        "frozen": 0
+    },
+    {
+        "name": "Ground Beef",
+        "category": "protein",
+        "quantity_or_weight": 300,
+        "unit": "g",
+        "best_before_in_fridge": 3,
+        "compartment": "right-compartment",
+        "identify_name": "beef",
+        "frozen": 0
+    },
+    {
+        "name": "Pork Chops",
+        "category": "protein",
+        "quantity_or_weight": 4,
+        "unit": "pcs",
+        "best_before_in_fridge": 5,
+        "compartment": "right-compartment",
+        "identify_name": "pork",
+        "frozen": 0
+    },
+    {
+        "name": "Salmon Fillets",
+        "category": "protein",
+        "quantity_or_weight": 600,
+        "unit": "g",
+        "best_before_in_fridge": 3,
+        "compartment": "right-compartment",
+        "identify_name": "salmon",
+        "frozen": 1
+    },
+    {
+        "name": "Shrimp",
+        "category": "protein",
+        "quantity_or_weight": 250,
+        "unit": "g",
+        "best_before_in_fridge": 2,
+        "compartment": "right-compartment",
+        "identify_name": "shrimp",
+        "frozen": 1
+    },
+    {
+        "name": "Turkey Thighs",
+        "category": "protein",
+        "quantity_or_weight": 2,
+        "unit": "pcs",
+        "best_before_in_fridge": 5,
+        "compartment": "right-compartment",
+        "identify_name": "turkey",
+        "frozen": 0
+    },
+    {
+        "name": "Lamb Chops",
+        "category": "protein",
+        "quantity_or_weight": 3,
+        "unit": "pcs",
+        "best_before_in_fridge": 4,
+        "compartment": "right-compartment",
+        "identify_name": "lamb",
+        "frozen": 0
+    },
+    {
+        "name": "Duck Breast",
+        "category": "protein",
+        "quantity_or_weight": 400,
+        "unit": "g",
+        "best_before_in_fridge": 6,
+        "compartment": "right-compartment",
+        "identify_name": "duck",
+        "frozen": 1
+    },
+    {
+        "name": "Cod Fillets",
+        "category": "protein",
+        "quantity_or_weight": 350,
+        "unit": "g",
+        "best_before_in_fridge": 3,
+        "compartment": "left-compartment",
+        "identify_name": "cod",
+        "frozen": 1
+    },
+    {
+        "name": "Beef Ribs",
+        "category": "protein",
+        "quantity_or_weight": 700,
+        "unit": "g",
+        "best_before_in_fridge": 5,
+        "compartment": "right-compartment",
+        "identify_name": "ribs",
+        "frozen": 0
+    },
+    {
+        "name": "Broccoli Florets",
+        "category": "vegetables",
+        "quantity_or_weight": 300,
+        "unit": "g",
+        "best_before_in_fridge": 7,
+        "compartment": "left-compartment",
+        "identify_name": "broccoli",
+        "frozen": 0
+    },
+    {
+        "name": "Spinach Leaves",
+        "category": "vegetables",
+        "quantity_or_weight": 200,
+        "unit": "g",
+        "best_before_in_fridge": 5,
+        "compartment": "left-compartment",
+        "identify_name": "spinach",
+        "frozen": 0
+    },
+    {
+        "name": "Cauliflower",
+        "category": "vegetables",
+        "quantity_or_weight": 400,
+        "unit": "g",
+        "best_before_in_fridge": 10,
+        "compartment": "left-compartment",
+        "identify_name": "cauliflower",
+        "frozen": 0
+    },
+    {
+        "name": "Green Bell Peppers",
+        "category": "vegetables",
+        "quantity_or_weight": 3,
+        "unit": "pcs",
+        "best_before_in_fridge": 7,
+        "compartment": "left-compartment",
+        "identify_name": "bell peppers",
+        "frozen": 0
+    },
+    {
+        "name": "Zucchini",
+        "category": "vegetables",
+        "quantity_or_weight": 2,
+        "unit": "pcs",
+        "best_before_in_fridge": 6,
+        "compartment": "left-compartment",
+        "identify_name": "zucchini",
+        "frozen": 0
+    },
+    {
+        "name": "Carrot Sticks",
+        "category": "vegetables",
+        "quantity_or_weight": 250,
+        "unit": "g",
+        "best_before_in_fridge": 14,
+        "compartment": "left-compartment",
+        "identify_name": "carrots",
+        "frozen": 0
+    },{
+        "name": "Cucumber",
+        "category": "vegetables",
+        "quantity_or_weight": 1,
+        "unit": "pcs",
+        "best_before_in_fridge": 5,
+        "compartment": "left-compartment",
+        "identify_name": "cucumber",
+        "frozen": 0
+    },
+    {
+        "name": "Red Onions",
+        "category": "vegetables",
+        "quantity_or_weight": 3,
+        "unit": "pcs",
+        "best_before_in_fridge": 15,
+        "compartment": "left-compartment",
+        "identify_name": "onions",
+        "frozen": 0
     }
 ]
