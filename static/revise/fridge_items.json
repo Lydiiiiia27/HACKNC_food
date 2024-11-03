@@ -338,5 +338,105 @@
         "compartment": "left-compartment",
         "identify_name": "onions",
         "frozen": 0
+    },
+    {
+        "name": "Saint Louis Ribs",
+        "category": "protein",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 3,
+        "compartment": "right-compartment",
+        "identify_name": "Pork Ribs",
+        "frozen": 1
+    },
+    {
+        "name": "Dishwasher Tablets",
+        "category": "condiments",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 0,
+        "compartment": "left-compartment",
+        "identify_name": "Dishwashing Detergent",
+        "frozen": 0
+    },
+    {
+        "name": "Chicken Carbonara",
+        "category": "protein",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 3,
+        "compartment": "right-compartment",
+        "identify_name": "Pasta with Chicken",
+        "frozen": 0
+    },
+    {
+        "name": "Premium Plums",
+        "category": "fruit",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 5,
+        "compartment": "left-compartment",
+        "identify_name": "Plums",
+        "frozen": 0
+    },
+    {
+        "name": "Golden Kiwi",
+        "category": "fruit",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 7,
+        "compartment": "left-compartment",
+        "identify_name": "Kiwi",
+        "frozen": 0
+    },
+    {
+        "name": "Roast Chicken",
+        "category": "protein",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 3,
+        "compartment": "right-compartment",
+        "identify_name": "Roasted Chicken",
+        "frozen": 0
+    },
+    {
+        "name": "Jam Swiss Roll",
+        "category": "grain",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 5,
+        "compartment": "left-compartment",
+        "identify_name": "Swiss Roll",
+        "frozen": 0
+    },
+    {
+        "name": "Beef Rolls",
+        "category": "protein",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 3,
+        "compartment": "right-compartment",
+        "identify_name": "Beef Roll",
+        "frozen": 0
+    },
+    {
+        "name": "Bottled Water Pack",
+        "category": "condiments",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 0,
+        "compartment": "left-compartment",
+        "identify_name": "Water",
+        "frozen": 0
+    },
+    {
+        "name": "Green Grapes",
+        "category": "fruit",
+        "quantity_or_weight": "",
+        "unit": "",
+        "best_before_in_fridge": 7,
+        "compartment": "left-compartment",
+        "identify_name": "Grapes",
+        "frozen": 0
     }
 ]

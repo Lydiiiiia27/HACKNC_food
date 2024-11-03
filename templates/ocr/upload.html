@@ -51,6 +51,149 @@
 
     .success { background-color: #e7f3e7; }
     .error { background-color: #f3e7e7; }
+
+    .transition-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        padding: 0.75rem 1.5rem;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .transition-btn:hover {
+        background-color: #45a049;
+        transform: translateX(5px);
+    }
+
+    .fade-out {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .loading-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .loading-text {
+        margin-top: 20px;
+        font-size: 1.2rem;
+        color: #333;
+    }
+
+    .loading-dots::after {
+        content: '';
+        animation: dots 1.5s steps(5, end) infinite;
+    }
+
+    @keyframes dots {
+        0%, 20% { content: '.'; }
+        40% { content: '..'; }
+        60% { content: '...'; }
+        80%, 100% { content: ''; }
+    }
+
+    .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid #4CAF50;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .success-popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9);
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        z-index: 1001;
+        width: 400px;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .success-popup.show {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    .popup-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .popup-header h3 {
+        margin: 0;
+        color: #2c3e50;
+        font-size: 1.5em;
+    }
+
+    .close-popup {
+        background: none;
+        border: none;
+        font-size: 1.5em;
+        color: #666;
+        cursor: pointer;
+        padding: 0;
+        line-height: 1;
+    }
+
+    .popup-body {
+        text-align: center;
+    }
+
+    .success-icon {
+        width: 60px;
+        height: 60px;
+        background: #4CAF50;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 30px;
+        margin: 0 auto 20px;
+        animation: scaleIn 0.3s ease;
+    }
+
+    .success-message {
+        color: #2c3e50;
+        margin-bottom: 25px;
+        font-size: 1.1em;
+    }
+
+    @keyframes scaleIn {
+        from { transform: scale(0); }
+        to { transform: scale(1); }
+    }
 </style>
 {% endblock %}
 
@@ -81,6 +224,11 @@
     {% if message %}
         <div class="result {{ 'success' if not error else 'error' }}">
             <p>{{ message }}</p>
+            {% if not error %}
+                <button id="addToFridge" class="transition-btn" onclick="transitionToFridge()">
+                    <i class="bi bi-arrow-right-circle"></i> Add to my refrigerator
+                </button>
+            {% endif %}
         </div>
     {% endif %}
 
@@ -91,10 +239,54 @@
     {% endif %}
 </div>
 
+<div class="loading-overlay" id="loadingOverlay">
+    <lottie-player 
+        src="https://lottie.host/4a0cb553-e22e-40db-be4f-d64eea983b87/WwMEBc9Swc.json" 
+        background="transparent" 
+        speed="1" 
+        style="width: 300px; height: 300px" 
+        loop 
+        autoplay>
+    </lottie-player>
+    <div class="loading-text">
+        Processing your receipt<span class="loading-dots"></span>
+    </div>
+</div>
+
+<div class="success-popup" id="successPopup">
+    <div class="popup-content">
+        <div class="popup-header">
+            <h3>Success!</h3>
+            <button class="close-popup" onclick="closeSuccessPopup()">×</button>
+        </div>
+        <div class="popup-body">
+            <div class="success-icon">✓</div>
+            <p class="success-message">Your receipt has been processed successfully!</p>
+            <button class="transition-btn" onclick="transitionToFridge()">
+                <i class="bi bi-arrow-right-circle"></i> Add to my refrigerator
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="section-container" style="margin-top: 20px;">
+    <h2>Test Loading Animation</h2>
+    <button onclick="testLoading()">Test Loading Effect</button>
+</div>
 
 <script>
+    document.write('<script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.js"><\/script>');
+
     let mediaRecorder;
     let audioChunks = [];
+
+    function showLoading() {
+        document.getElementById('loadingOverlay').style.display = 'flex';
+    }
+
+    function hideLoading() {
+        document.getElementById('loadingOverlay').style.display = 'none';
+    }
 
     document.getElementById('recordButton').addEventListener('click', async () => {
         const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -106,21 +298,36 @@
         });
 
         mediaRecorder.addEventListener('stop', async () => {
+            showLoading();
             const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
             const formData = new FormData();
             formData.append('audio_data', audioBlob, 'recording.wav');
 
-            const response = await fetch("{{ url_for('ocr.voice_input') }}", {
-                method: 'POST',
-                body: formData
-            });
+            try {
+                const response = await fetch("{{ url_for('ocr.voice_input') }}", {
+                    method: 'POST',
+                    body: formData
+                });
 
-            const result = await response.json();
-            if (result.success) {
-                alert('Voice input processed successfully!');
-                window.location.reload();
-            } else {
-                alert('Error processing voice input: ' + result.message);
+                const result = await response.json();
+                hideLoading();
+                
+                if (result.success) {
+                    const resultDiv = document.createElement('div');
+                    resultDiv.className = 'result success';
+                    resultDiv.innerHTML = `
+                        <p>Voice input processed successfully!</p>
+                        <button id="addToFridge" class="transition-btn" onclick="transitionToFridge()">
+                            <i class="bi bi-arrow-right-circle"></i> Add to my refrigerator
+                        </button>
+                    `;
+                    document.querySelector('.page-container').appendChild(resultDiv);
+                } else {
+                    alert('Error processing voice input: ' + result.message);
+                }
+            } catch (error) {
+                hideLoading();
+                alert('Error processing voice input: ' + error.message);
             }
         });
 
@@ -132,6 +339,50 @@
         mediaRecorder.stop();
         document.getElementById('recordButton').disabled = false;
         document.getElementById('stopButton').disabled = true;
+    });
+
+    function transitionToFridge() {
+        // Add fade-out effect to the page
+        document.querySelector('.page-container').classList.add('fade-out');
+        
+        // Wait for animation to complete then redirect
+        setTimeout(() => {
+            window.location.href = "{{ url_for('fridge.index') }}";
+        }, 500);
+    }
+
+    // Test function to simulate loading
+    function testLoading() {
+        showLoading();
+        
+        setTimeout(() => {
+            hideLoading();
+            showSuccessPopup();
+        }, 3000);
+    }
+
+    function showSuccessPopup() {
+        const popup = document.getElementById('successPopup');
+        popup.style.display = 'block';
+        setTimeout(() => {
+            popup.classList.add('show');
+        }, 10);
+    }
+
+    function closeSuccessPopup() {
+        const popup = document.getElementById('successPopup');
+        popup.classList.remove('show');
+        setTimeout(() => {
+            popup.style.display = 'none';
+        }, 300);
+    }
+
+    // Add form submission handler for testing
+    document.querySelector('.upload-form').addEventListener('submit', function(e) {
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            e.preventDefault(); // Prevent actual form submission in development
+            testLoading();
+        }
     });
 </script>
 {% endblock %}

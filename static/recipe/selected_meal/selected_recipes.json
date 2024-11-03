@@ -1,7 +1,45 @@
 [
   {
     "meal": "Breakfast",
-    "name": "Cheddar and Spinach Scramble",
+    "name": "Avocado Bagel Toast",
+    "type": "main",
+    "time": {
+      "prep": "5 minutes",
+      "cook": "5 minutes"
+    },
+    "ingredients": [
+      {
+        "item": "Mini Bagels",
+        "amount": 2,
+        "unit": "pcs"
+      },
+      {
+        "item": "Avocado",
+        "amount": 1,
+        "unit": "pcs"
+      },
+      {
+        "item": "Cream Cheese",
+        "amount": 10,
+        "unit": "g"
+      },
+      {
+        "item": "Salted Potato Chips",
+        "amount": 30,
+        "unit": "g"
+      }
+    ],
+    "instructions": "Toast the mini bagels until golden brown.\nMash the avocado and spread it over the toasted bagels.\nSpread cream cheese on the other half of the bagel.\nServe with a side of salted potato chips.",
+    "nutrition": {
+      "calories": "350 kcal",
+      "protein": "8 g",
+      "carbs": "40 g",
+      "fat": "18 g"
+    }
+  },
+  {
+    "meal": "Breakfast",
+    "name": "Spinach and Chicken Breakfast Sandwich",
     "type": "main",
     "time": {
       "prep": "5 minutes",
@@ -9,85 +47,93 @@
     },
     "ingredients": [
       {
-        "item": "Whole Milk",
-        "amount": "1",
-        "unit": "cup"
+        "item": "Stone Hearth Bread",
+        "amount": 2,
+        "unit": "pcs"
       },
       {
-        "item": "Cheddar Cheese",
-        "amount": "4",
-        "unit": "oz"
+        "item": "Chicken Breast",
+        "amount": 100,
+        "unit": "g"
       },
       {
-        "item": "Eggs",
-        "amount": "4",
-        "unit": "count"
+        "item": "Spinach Leaves",
+        "amount": 50,
+        "unit": "g"
       },
       {
-        "item": "Spinach",
-        "amount": "2",
-        "unit": "oz"
-      },
-      {
-        "item": "Butter",
-        "amount": "1",
-        "unit": "tbsp"
+        "item": "Red Onions",
+        "amount": 1,
+        "unit": "pcs"
       }
     ],
-    "instructions": "In a bowl, whisk together eggs, whole milk, and a pinch of salt.\nIn a skillet, melt butter over medium heat, then add spinach and cook until wilted.\nPour the egg mixture into the skillet and scramble until just set.\nStir in shredded cheddar cheese until melted.",
+    "instructions": "Grill or pan-fry the chicken breast until fully cooked.\nSlice the red onion and saut\u00e9 until translucent.\nLayer the chicken, saut\u00e9ed onions, and spinach between the slices of bread.\nToast the sandwich until the bread is golden.",
     "nutrition": {
-      "calories": "300 kcal",
-      "protein": "20 g",
-      "carbs": "6 g",
-      "fat": "22 g"
+      "calories": "400 kcal",
+      "protein": "30 g",
+      "carbs": "30 g",
+      "fat": "15 g"
     }
   },
   {
     "meal": "Lunch",
-    "name": "Cheesy Spinach and Bacon Frittata",
+    "name": "Tai Pei Orange Chicken with Broccoli",
     "type": "main",
     "time": {
-      "prep": "10 minutes",
-      "cook": "20 minutes"
+      "prep": "5 minutes",
+      "cook": "10 minutes"
     },
     "ingredients": [
       {
-        "item": "Eggs",
-        "amount": "6",
-        "unit": "count"
+        "item": "Tai Pei Orange Chicken",
+        "amount": 250,
+        "unit": "g"
       },
       {
-        "item": "Spinach",
-        "amount": "5",
-        "unit": "oz"
-      },
-      {
-        "item": "Bacon",
-        "amount": "4",
-        "unit": "oz"
-      },
-      {
-        "item": "Cheddar Cheese",
-        "amount": "4",
-        "unit": "oz"
-      },
-      {
-        "item": "Salt and Pepper (from pantry)",
-        "amount": "to taste",
-        "unit": ""
+        "item": "Broccoli Florets",
+        "amount": 150,
+        "unit": "g"
       }
     ],
-    "instructions": "Preheat the oven to 350\u00b0F (175\u00b0C).\nIn a skillet, cook the bacon until crispy. Remove and chop into pieces, leaving the fat in the pan.\nAdd spinach to the skillet and cook until wilted. In a bowl, whisk the eggs and season with salt and pepper.\nCombine the spinach and bacon with the egg mixture and pour into the skillet. Sprinkle cheese on top.\nTransfer the skillet to the oven and bake for about 20 minutes or until the frittata is set.",
+    "instructions": "Cook the Tai Pei Orange Chicken according to package instructions.\nIn the last 5 minutes of cooking, add the broccoli florets to steam.",
     "nutrition": {
-      "calories": "280 kcal",
-      "protein": "23 g",
-      "carbs": "5 g",
+      "calories": "550 kcal",
+      "protein": "25 g",
+      "carbs": "65 g",
       "fat": "20 g"
     }
   },
   {
+    "meal": "Lunch",
+    "name": "Baked Salmon with Spinach",
+    "type": "main",
+    "time": {
+      "prep": "10 minutes",
+      "cook": "15 minutes"
+    },
+    "ingredients": [
+      {
+        "item": "Salmon Fillets",
+        "amount": 200,
+        "unit": "g"
+      },
+      {
+        "item": "Spinach Leaves",
+        "amount": 100,
+        "unit": "g"
+      }
+    ],
+    "instructions": "Preheat the oven to 375\u00b0F (190\u00b0C).\nPlace the salmon fillets on a baking tray and season with salt and pepper.\nBake for 15 minutes or until cooked through.\nSaut\u00e9 the spinach in a pan with a little oil until wilted.",
+    "nutrition": {
+      "calories": "400 kcal",
+      "protein": "35 g",
+      "carbs": "5 g",
+      "fat": "25 g"
+    }
+  },
+  {
     "meal": "Dinner",
-    "name": "Creamy Spinach and Chicken Pasta",
+    "name": "Pork Chops with Veggie Mash",
     "type": "main",
     "time": {
       "prep": "10 minutes",
@@ -95,42 +141,32 @@
     },
     "ingredients": [
       {
-        "item": "Chicken Breasts",
-        "amount": "1",
-        "unit": "lb"
-      },
-      {
-        "item": "Spinach",
-        "amount": "10",
-        "unit": "oz"
-      },
-      {
-        "item": "Whole Milk",
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "item": "Butter",
-        "amount": "2",
-        "unit": "tbsp"
-      },
-      {
-        "item": "Pasta Sauce",
-        "amount": "12",
-        "unit": "oz"
-      },
-      {
-        "item": "Cheddar Cheese",
+        "item": "Pork Chops",
         "amount": "4",
-        "unit": "oz"
+        "unit": "pcs"
+      },
+      {
+        "item": "Carrot Sticks",
+        "amount": "250",
+        "unit": "g"
+      },
+      {
+        "item": "Cauliflower",
+        "amount": "400",
+        "unit": "g"
+      },
+      {
+        "item": "Fresh Vegetable Mix",
+        "amount": "50",
+        "unit": "g"
       }
     ],
-    "instructions": "Cook pasta according to package instructions; drain and set aside.\nIn a skillet, melt the butter and cook sliced chicken breasts until no longer pink.\nAdd the spinach and stir until wilted, then mix in the pasta sauce and milk.\nCombine the pasta with the sauce mixture and top with cheddar cheese.\nCover and let simmer on low heat for 5 minutes until cheese is melted.",
+    "instructions": "Cook the pork chops on medium heat until browned and cooked through, about 6-8 minutes on each side.\nBoil the carrot sticks and cauliflower until tender, about 10 minutes.\nDrain and mash the carrots and cauliflower together with a bit of salt.\nSaut\u00e9 the fresh vegetable mix for about 3-4 minutes.\nServe the pork chops alongside the veggie mash and saut\u00e9ed vegetables.",
     "nutrition": {
-      "calories": "550 kcal",
-      "protein": "45 g",
+      "calories": "800 kcal",
+      "protein": "60 g",
       "carbs": "40 g",
-      "fat": "25 g"
+      "fat": "35 g"
     }
   }
 ]

@@ -744,3 +744,55 @@ html, body {
     background: rgba(255,255,255,0.3);
     font-weight: bold;
 }
+
+/* Add these styles */
+.next-step-button {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1000;
+    animation: pulseOnLoad 2s ease-out;
+}
+
+.recipe-link {
+    display: block;
+    text-decoration: none;
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    padding: 15px 30px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    transition: all 0.3s ease;
+}
+
+.recipe-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.button-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.button-content span {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Make the button pulse on page load */
+@keyframes pulseOnLoad {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 15px rgba(76, 175, 80, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    }
+}
