@@ -1,0 +1,105 @@
+/* static/css/calories-chart.css */
+#calories-chart .calories-tooltip {
+    position: absolute;
+    background-color: white;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 1001;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.flashing {
+    animation: flash 1s infinite alternate;
+}
+
+.no-flash {
+    animation: none;
+}
+
+@keyframes flash {
+    from { opacity: 1; }
+    to { opacity: 0.5; }
+}
+
+.day-label, .meal-label {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+}
+
+.title {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0;
+    padding: 0;
+}
+
+#calories-chart {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#calories-chart svg {
+    width: 100%;
+    height: 100%;
+}
+
+.tooltip {
+    display: none !important;
+}
+
+.calories-tooltip,
+.map-tooltip,
+.cooking-tooltip,
+.nutrition-tooltip {
+    pointer-events: none;
+    z-index: 1001;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Bar hover effects */
+#calories-chart rect:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.bar {
+    transition: fill 0.2s ease;
+}
+
+/* Ensure SVG takes full container size */
+#calories-chart svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Style axis lines and text */
+.axis path,
+.axis line {
+    stroke: #ccc;
+}
+
+.axis text {
+    font-size: 12px;
+    fill: #666;
+}
+
+/* Style title */
+.chart-title {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    fill: #333;
+}

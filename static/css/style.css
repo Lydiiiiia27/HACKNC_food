@@ -1,8 +1,17 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .page-container {
+    min-height: 100%;
+    background: #FFF5E1;
     display: flex;
     padding: 20px;
     gap: 30px;
-    min-width: 1400px;
+    min-width: 1600px;
+    justify-content: center;
 }
 
 .list-container {
@@ -12,6 +21,7 @@
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    height: calc(100vh - 80px);
 }
 
 .list-title {
@@ -156,11 +166,14 @@
 }
 
 .shelf {
-    background: rgba(255, 255, 255, 0.3);
+    padding: 12px;
+    margin: 8px 0;
     border-radius: 10px;
-    padding: 15px;
-    min-height: 120px;
-    flex-grow: 1;
+    transition: all 0.2s ease;
+    max-height: 320px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0,0,0,0.2) transparent;
 }
 
 .shelf-title {
@@ -203,10 +216,15 @@
 
 .food-item {
     position: relative;
-    padding: 5px;
+    aspect-ratio: 1;
+    width: 100%;
+    max-width: 70px;
+    height: auto;
+    padding: 3px;
     border-radius: 8px;
     cursor: move;
     transition: transform 0.2s ease;
+    margin: 0 auto;
 }
 
 .food-item:hover {
@@ -214,23 +232,24 @@
 }
 
 .item-image-container {
-    width: 60px;
-    height: 60px;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .item-image {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+    width: 150%;
+    height: 150%;
+    object-fit: cover;
+    border-radius: 6px;
 }
 
 .food-item-info {
     position: fixed;
     background: white;
-    padding: 15px;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     width: 220px;
@@ -411,13 +430,369 @@
 
 .category-label {
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     color: #333;
 }
 
 .items-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    min-height: 70px;
+    padding-right: 2px;
+    width: 100%;
+}
+
+/* Custom scrollbar styling for Webkit browsers (Chrome, Safari, Edge) */
+.shelf::-webkit-scrollbar {
+    width: 4px;
+}
+
+.shelf::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 2px;
+}
+
+.shelf::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 2px;
+}
+
+.shelf::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0,0,0,0.3);
+}
+
+.fridge-list-container {
+    width: 280px;
+    position: relative;
+    z-index: 10;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    overflow: visible !important;
+    height: calc(100vh - 80px);
+}
+
+.list-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.list-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap;
+}
+
+.sort-select {
+    width: 100%;
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+#fridge-list {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 2px;
+}
+
+.fridge-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    margin: 4px 0;
+    background: #f5f5f5;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.fridge-item:hover {
+    background: #e9e9e9;
+    transform: translateX(5px);
+    z-index: 1000;
+}
+
+.item-details {
+    margin-left: 10px;
+    flex-grow: 1;
+    transition: all 0.2s ease;
+}
+
+.item-name {
+    font-weight: bold;
+}
+
+.item-info {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.frozen-badge {
+    background-color: #3498db;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+
+.fridge-item:hover .item-details {
+    position: absolute;
+    right: 100%;
+    top: 0;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 200px;
+    z-index: 101;
+    margin-right: 10px;
+}
+
+.fridge-item:hover .frozen-badge {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.item-image {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+
+.item-details {
+    transition: all 0.2s ease;
+}
+
+.fridge-list-container {
+    width: 280px;
+    position: relative;
+    z-index: 10;
+}
+
+.item-details {
+    background: white;
+    z-index: 1000;
+}
+
+.fridge-item:hover .item-details {
+    box-shadow: -2px 2px 10px rgba(0,0,0,0.15);
+}
+
+.item-hover-box {
+    position: fixed;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    width: 220px;
+    z-index: 9999;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.item-hover-box h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.item-hover-box div {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.item-hover-box strong {
+    color: #333;
+}
+
+.fridge-list-container {
+    position: relative;
+    overflow: visible !important;
+}
+
+#fridge-list {
+    position: relative;
+    overflow-y: auto;
+}
+
+.item-hover-box::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left: 10px solid white;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    filter: drop-shadow(2px 0px 1px rgba(0,0,0,0.1));
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+    margin-top: auto;
     gap: 10px;
-    min-height: 90px;
+}
+
+.page-button {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+    flex: 0 0 auto;
+    min-width: 85px;
+    text-align: center;
+}
+
+.page-button:hover {
+    background: #f5f5f5;
+}
+
+.page-info {
+    font-size: 0.9em;
+    color: #666;
+    white-space: nowrap;
+    flex: 0 0 auto;
+}
+
+/* Add priority warning styles */
+.priority-warning {
+    border-left: 4px solid #e74c3c !important;
+}
+
+/* Priority warning styles with different levels */
+.priority-warning {
+    position: relative;
+}
+
+.priority-warning::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    border-radius: 2px 0 0 2px;
+}
+
+.priority-high::before {
+    background-color: #e74c3c !important; /* Red for high priority */
+}
+
+.priority-medium::before {
+    background-color: #f39c12 !important; /* Orange for medium priority */
+}
+
+.priority-low::before {
+    background-color: #f1c40f !important; /* Yellow for low priority */
+}
+
+/* Add priority indicator in hover box */
+.priority-indicator {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: white;
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+
+.priority-high .priority-indicator {
+    background-color: #e74c3c;
+}
+
+.priority-medium .priority-indicator {
+    background-color: #f39c12;
+}
+
+.priority-low .priority-indicator {
+    background-color: #f1c40f;
+}
+
+/* Override Bootstrap navbar styles */
+.navbar {
+    background: rgb(163,217,165) !important; /* !important to override Bootstrap */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-nav .nav-link {
+    color: rgba(255,255,255,0.9) !important;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link.active {
+    background: rgba(255,255,255,0.3);
+    font-weight: bold;
+}
+
+/* Add these styles */
+.next-step-button {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1000;
+    animation: pulseOnLoad 2s ease-out;
+}
+
+.recipe-link {
+    display: block;
+    text-decoration: none;
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    padding: 15px 30px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    transition: all 0.3s ease;
+}
+
+.recipe-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.button-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.button-content span {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Make the button pulse on page load */
+@keyframes pulseOnLoad {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 15px rgba(76, 175, 80, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    }
 }

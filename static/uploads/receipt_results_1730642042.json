@@ -1,0 +1,262 @@
+{
+    "message": "SUCCESS: Result available",
+    "status": "done",
+    "status_code": 3,
+    "result": {
+        "establishment": "at Durham Delivering to 27516",
+        "validatedEstablishment": false,
+        "date": "",
+        "total": 120.59,
+        "url": "",
+        "phoneNumber": "",
+        "paymentMethod": "",
+        "address": "1510 N POINTE DR DURHAM, NC 27705",
+        "cash": 0,
+        "change": 0,
+        "validatedTotal": true,
+        "subTotal": 116.47,
+        "validatedSubTotal": false,
+        "tax": 4.12,
+        "tip": 0,
+        "taxes": [
+            4.12
+        ],
+        "serviceCharges": [],
+        "discount": 0,
+        "rounding": 0,
+        "discounts": [],
+        "lineItems": [
+            {
+                "qty": 0,
+                "desc": "E 45510 ST.LOUIS",
+                "unit": "",
+                "price": 0,
+                "symbols": [],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "45510 ST.LOUIS ST",
+                "lineTotal": 17.58,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "7816886 FINISHTABS",
+                "unit": "",
+                "price": 0,
+                "symbols": [],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "FINISHTABS",
+                "lineTotal": 19.99,
+                "productCode": "7816886",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "336715 / 7816886",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "-"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "/",
+                "lineTotal": 5,
+                "productCode": "336715",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "E 1746909 CHKN CARB",
+                "unit": "",
+                "price": 0,
+                "symbols": [],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "CHKN CARB",
+                "lineTotal": 11.49,
+                "productCode": "1746909",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "шшш E 6021 PREM.PLUMS",
+                "unit": "",
+                "price": 0,
+                "symbols": [],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "шшш E 6021 PREM.PLUMS",
+                "lineTotal": 4.79,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "E 6995 GOLD KIWI",
+                "unit": "",
+                "price": 0,
+                "symbols": [],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "6995 GOLD KIWI",
+                "lineTotal": 9.79,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "ய E 6984865 ROASTERSVP60",
+                "unit": "",
+                "price": 0,
+                "symbols": [],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "ய E ROASTERSVP60",
+                "lineTotal": 29.99,
+                "productCode": "6984865",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "E 1817699 JAM ROLL",
+                "unit": "",
+                "price": 0,
+                "symbols": [],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "JAM ROLL",
+                "lineTotal": 4.97,
+                "productCode": "1817699",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "E 1863645 BEEF ROLLS",
+                "unit": "",
+                "price": 0,
+                "symbols": [],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "BEEF ROLLS",
+                "lineTotal": 12.99,
+                "productCode": "1863645",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "E 782796 *** KSWTR40PK",
+                "unit": "",
+                "price": 0,
+                "symbols": [],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "*** KSWTR40PK",
+                "lineTotal": 3.99,
+                "productCode": "782796",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "E 47825 GREEN GRAPES",
+                "unit": "",
+                "price": 0,
+                "symbols": [],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "47825 GREEN GRAPES",
+                "lineTotal": 5.89,
+                "productCode": "",
+                "customFields": {}
+            }
+        ],
+        "summaryItems": [
+            {
+                "qty": 0,
+                "desc": "SUBTOTAL",
+                "unit": "",
+                "price": 0,
+                "symbols": [],
+                "discount": 0,
+                "lineType": "SubTotal",
+                "descClean": "SUBTOTAL",
+                "lineTotal": 116.47,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "TAX",
+                "unit": "",
+                "price": 0,
+                "symbols": [],
+                "discount": 0,
+                "lineType": "Tax",
+                "descClean": "TAX",
+                "lineTotal": 4.12,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "TOTAL",
+                "unit": "",
+                "price": 0,
+                "symbols": [],
+                "discount": 0,
+                "lineType": "Total",
+                "descClean": "TOTAL",
+                "lineTotal": 120.59,
+                "productCode": "",
+                "customFields": {}
+            }
+        ],
+        "subTotalConfidence": 0.99,
+        "taxesConfidence": [
+            0.99
+        ],
+        "serviceChargeConfidences": [],
+        "discountConfidences": [],
+        "totalConfidence": 0.99,
+        "dateConfidence": 0,
+        "establishmentConfidence": 0.8,
+        "tipConfidence": 0,
+        "cashConfidence": 0,
+        "changeConfidence": 0,
+        "roundingConfidence": 0,
+        "customFields": {
+            "URL": "",
+            "Country": "USA",
+            "StoreID": "",
+            "Currency": "USD",
+            "VATNumber": "",
+            "ExpenseType": "",
+            "PaymentMethod": "",
+            "CardLast4Digits": "3730"
+        },
+        "documentType": "receipt",
+        "currency": "USD",
+        "barcodes": [
+            [
+                "021024920403222410091956",
+                "I25"
+            ]
+        ],
+        "addressNorm": {
+            "city": "Durham",
+            "state": "NC",
+            "number": "1510",
+            "street": "N Pointe Dr",
+            "suburb": "",
+            "country": "USA",
+            "building": "",
+            "postcode": "27705"
+        },
+        "expenseType": "None",
+        "otherData": []
+    },
+    "success": true,
+    "code": 202
+}

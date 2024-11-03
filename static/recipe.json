@@ -1,0 +1,907 @@
+{
+    "week_meals": [
+      {
+        "day": "Monday",
+        "meals": {
+          "breakfast": [
+            {
+              "cuisine": "American",
+              "dish": "Pancakes with Maple Syrup",
+              "ingredients": [
+                {"name": "pancake mix", "quantity": "200g"},
+                {"name": "milk", "quantity": "250ml"},
+                {"name": "egg", "quantity": "1 pc"},
+                {"name": "maple syrup", "quantity": "50ml"}
+              ],
+              "nutrition": {
+                "carbs": 65,
+                "protein": 12,
+                "fat": 9,
+                "fiber": 2
+              },
+              "method": "Mix pancake batter and cook on a griddle. Serve with maple syrup.",
+              "estimated_time": "20 minutes",
+              "calories": 350,
+              "country": "USA"
+            },
+            {
+              "cuisine": "French",
+              "dish": "Croissant with Butter",
+              "ingredients": [
+                {"name": "croissant", "quantity": "2 pcs"},
+                {"name": "butter", "quantity": "20g"}
+              ],
+              "nutrition": {
+                "carbs": 25,
+                "protein": 4,
+                "fat": 18,
+                "fiber": 1
+              },
+              "method": "Warm croissants and serve with butter.",
+              "estimated_time": "5 minutes",
+              "calories": 250,
+              "country": "France"
+            }
+          ],
+          "lunch": [
+            {
+              "cuisine": "Italian",
+              "dish": "Spaghetti Carbonara",
+              "ingredients": [
+                {"name": "spaghetti", "quantity": "200g"},
+                {"name": "egg yolk", "quantity": "3 pcs"},
+                {"name": "Parmesan cheese", "quantity": "50g"},
+                {"name": "pancetta", "quantity": "100g"},
+                {"name": "black pepper", "quantity": "5g"}
+              ],
+              "nutrition": {
+                "carbs": 75,
+                "protein": 28,
+                "fat": 32,
+                "fiber": 3
+              },
+              "method": "Cook spaghetti and mix with egg yolks, Parmesan, and cooked pancetta.",
+              "estimated_time": "30 minutes",
+              "calories": 600,
+              "country": "Italy"
+            },
+            {
+              "cuisine": "Japanese",
+              "dish": "Miso Soup with Tofu",
+              "ingredients": [
+                {"name": "miso paste", "quantity": "30g"},
+                {"name": "tofu", "quantity": "100g"},
+                {"name": "wakame seaweed", "quantity": "5g"},
+                {"name": "green onions", "quantity": "10g"}
+              ],
+              "nutrition": {
+                "carbs": 10,
+                "protein": 5,
+                "fat": 3,
+                "fiber": 1
+              },
+              "method": "Simmer water with miso paste, add tofu, seaweed, and garnish with green onions.",
+              "estimated_time": "15 minutes",
+              "calories": 100,
+              "country": "Japan"
+            }
+          ],
+          "dinner": [
+            {
+              "cuisine": "Mexican",
+              "dish": "Tacos with Grilled Chicken",
+              "ingredients": [
+                {"name": "tortillas", "quantity": "3 pcs"},
+                {"name": "chicken breast", "quantity": "200g"},
+                {"name": "salsa", "quantity": "50g"},
+                {"name": "lettuce", "quantity": "30g"}
+              ],
+              "nutrition": {
+                "carbs": 10,
+                "protein": 5,
+                "fat": 3,
+                "fiber": 1
+              },
+              "method": "Grill chicken, assemble in tortillas with salsa and lettuce.",
+              "estimated_time": "25 minutes",
+              "calories": 400,
+              "country": "Mexico"
+            },
+            {
+              "cuisine": "Indian",
+              "dish": "Vegetable Curry with Rice",
+              "ingredients": [
+                {"name": "mixed vegetables", "quantity": "200g"},
+                {"name": "basmati rice", "quantity": "150g"},
+                {"name": "curry paste", "quantity": "40g"},
+                {"name": "coconut milk", "quantity": "200ml"}
+              ],
+              "nutrition": {
+                "carbs": 25,
+                "protein": 10,
+                "fat": 15,
+                "fiber": 2
+              },
+              "method": "Cook vegetables in curry paste and coconut milk, serve with rice.",
+              "estimated_time": "35 minutes",
+              "calories": 450,
+              "country": "India"
+            }
+          ]
+        }
+      },
+      {
+        "day": "Tuesday",
+        "meals": {
+          "breakfast": [
+            {
+              "cuisine": "Spanish",
+              "dish": "Tortilla Española (Spanish Omelette)",
+              "ingredients": [
+                {"name": "potatoes", "quantity": "150g"},
+                {"name": "onion", "quantity": "50g"},
+                {"name": "eggs", "quantity": "3 pcs"},
+                {"name": "olive oil", "quantity": "20ml"}
+              ],
+              "nutrition": {
+                "carbs": 30,
+                "protein": 18,
+                "fat": 22,
+                "fiber": 3
+              },
+              "method": "Cook potatoes and onions, then mix with eggs and fry.",
+              "estimated_time": "30 minutes",
+              "calories": 350,
+              "country": "Spain"
+            },
+            {
+              "cuisine": "Middle Eastern",
+              "dish": "Hummus and Pita Bread",
+              "ingredients": [
+                {"name": "pita bread", "quantity": "2 pcs"},
+                {"name": "hummus", "quantity": "100g"}
+              ],
+              "nutrition": {
+                "carbs": 40,
+                "protein": 10,
+                "fat": 14,
+                "fiber": 6
+              },
+              "method": "Serve pita bread with hummus.",
+              "estimated_time": "5 minutes",
+              "calories": 250,
+              "country": "Middle East"
+            }
+          ],
+          "lunch": [
+            {
+              "cuisine": "Chinese",
+              "dish": "Sweet and Sour Chicken",
+              "ingredients": [
+                {"name": "chicken breast", "quantity": "200g"},
+                {"name": "bell peppers", "quantity": "50g"},
+                {"name": "pineapple chunks", "quantity": "50g"},
+                {"name": "sweet and sour sauce", "quantity": "100ml"}
+              ],
+              "nutrition": {
+                "carbs": 45,
+                "protein": 30,
+                "fat": 12,
+                "fiber": 4
+              },
+              "method": "Stir-fry chicken with bell peppers and pineapple, add sauce.",
+              "estimated_time": "30 minutes",
+              "calories": 500,
+              "country": "China"
+            },
+            {
+              "cuisine": "Greek",
+              "dish": "Greek Salad",
+              "ingredients": [
+                {"name": "cucumber", "quantity": "100g"},
+                {"name": "tomatoes", "quantity": "100g"},
+                {"name": "feta cheese", "quantity": "50g"},
+                {"name": "olives", "quantity": "30g"}
+              ],
+              "nutrition": {
+                "carbs": 10,
+                "protein": 8,
+                "fat": 15,
+                "fiber": 4
+              },
+              "method": "Chop vegetables, mix with feta cheese and olives.",
+              "estimated_time": "10 minutes",
+              "calories": 200,
+              "country": "Greece"
+            }
+          ],
+          "dinner": [
+            {
+              "cuisine": "Thai",
+              "dish": "Green Curry with Vegetables",
+              "ingredients": [
+                {"name": "green curry paste", "quantity": "30g"},
+                {"name": "coconut milk", "quantity": "200ml"},
+                {"name": "mixed vegetables", "quantity": "200g"},
+                {"name": "jasmine rice", "quantity": "150g"}
+              ],
+              "nutrition": {
+                "carbs": 60,
+                "protein": 8,
+                "fat": 22,
+                "fiber": 5
+              },
+              "method": "Simmer curry paste and coconut milk, add vegetables, serve with rice.",
+              "estimated_time": "30 minutes",
+              "calories": 400,
+              "country": "Thailand"
+            },
+            {
+              "cuisine": "Moroccan",
+              "dish": "Lamb Tagine",
+              "ingredients": [
+                {"name": "lamb", "quantity": "200g"},
+                {"name": "apricots", "quantity": "30g"},
+                {"name": "almonds", "quantity": "20g"},
+                {"name": "tagine spices", "quantity": "15g"}
+              ],
+              "nutrition": {
+                "carbs": 20,
+                "protein": 35,
+                "fat": 40,
+                "fiber": 3
+              },
+              "method": "Slow-cook lamb with apricots, almonds, and spices.",
+              "estimated_time": "2 hours",
+              "calories": 600,
+              "country": "Morocco"
+            }
+          ]
+        }
+      },
+      {
+        "day": "Wednesday",
+        "meals": {
+          "breakfast": [  
+            {
+                  "cuisine": "French",
+                    "dish": "Croissant and Fruit Salad",
+                    "ingredients": [
+                      {"name": "Croissant", "quantity": "2 pieces"},
+                      {"name": "Mixed fruits (berries, melon, kiwi)", "quantity": "200g"}
+                    ],
+                    "nutrition": {
+                      "carbs": 50,
+                      "protein": 6,
+                      "fat": 22,
+                      "fiber": 6
+                    },
+                    "method": "Pre-made croissants served with freshly chopped fruit salad.",
+                    "estimated_time": "10 minutes",
+                    "calories": 450,
+                    "country": "France"
+                  },
+                  {
+                    "cuisine": "Mexican",
+                    "dish": "Huevos Rancheros",
+                    "ingredients": [
+                      {"name": "Eggs", "quantity": "2"},
+                      {"name": "Tortilla", "quantity": "2"},
+                      {"name": "Tomato", "quantity": "100g"},
+                      {"name": "Onion", "quantity": "50g"},
+                      {"name": "Jalapeno", "quantity": "1"},
+                      {"name": "Black beans", "quantity": "100g"},
+                      {"name": "Cilantro", "quantity": "5g"}
+                    ],
+                    "nutrition": {
+                      "carbs": 40,
+                      "protein": 18,
+                      "fat": 15,
+                      "fiber": 8
+                    },
+                    "method": "Eggs are fried and served over a tortilla topped with a tomato-onion sauce and black beans.",
+                    "estimated_time": "25 minutes",
+                    "calories": 350,
+                    "country": "Mexico"
+                  }
+                ],
+          "lunch": [  
+                {
+                    "cuisine": "Italian",
+                    "dish": "Pasta Primavera",
+                    "ingredients": [
+                      {"name": "Pasta", "quantity": "200g"},
+                      {"name": "Zucchini", "quantity": "100g"},
+                      {"name": "Cherry tomatoes", "quantity": "100g"},
+                      {"name": "Bell peppers", "quantity": "50g"},
+                      {"name": "Parmesan cheese", "quantity": "20g"}
+                    ],
+                    "nutrition": {
+                      "carbs": 70,
+                      "protein": 15,
+                      "fat": 10,
+                      "fiber": 8
+                    },
+                    "method": "Pasta is boiled and mixed with stir-fried vegetables and topped with Parmesan cheese.",
+                    "estimated_time": "30 minutes",
+                    "calories": 550,
+                    "country": "Italy"
+                  },
+                  {
+                    "cuisine": "Japanese",
+                    "dish": "Chicken Teriyaki",
+                    "ingredients": [
+                      {"name": "Chicken breast", "quantity": "200g"},
+                      {"name": "Soy sauce", "quantity": "30ml"},
+                      {"name": "Sugar", "quantity": "10g"},
+                      {"name": "Ginger", "quantity": "5g"},
+                      {"name": "Garlic", "quantity": "5g"}
+                    ],
+                    "nutrition": {
+                      "carbs": 15,
+                      "protein": 38,
+                      "fat": 10,
+                      "fiber": 0
+                    },
+                    "method": "Chicken is pan-fried and glazed with a homemade teriyaki sauce.",
+                    "estimated_time": "25 minutes",
+                    "calories": 400,
+                    "country": "Japan"
+                  }
+                ],
+          "dinner": [
+                {
+                    "cuisine": "Thai",
+                    "dish": "Green Curry with Rice",
+                    "ingredients": [
+                      {"name": "Green curry paste", "quantity": "30g"},
+                      {"name": "Coconut milk", "quantity": "200ml"},
+                      {"name": "Chicken thighs", "quantity": "150g"},
+                      {"name": "Jasmine rice", "quantity": "100g"},
+                      {"name": "Thai basil", "quantity": "5g"}
+                    ],    
+                    "nutrition": {
+                      "carbs": 60,
+                      "protein": 8,
+                      "fat": 22,
+                      "fiber": 5
+                    },
+                    "method": "Chicken is simmered in green curry paste and coconut milk, served over rice.",
+                    "estimated_time": "40 minutes",
+                    "calories": 600,
+                    "country": "Thailand"
+                  },
+                  {
+                    "cuisine": "Moroccan",
+                    "dish": "Lamb Tagine",
+                    "ingredients": [
+                      {"name": "Lamb shank", "quantity": "200g"},
+                      {"name": "Chickpeas", "quantity": "100g"},
+                      {"name": "Cinnamon stick", "quantity": "1"},
+                      {"name": "Apricots", "quantity": "50g"},
+                      {"name": "Onion", "quantity": "50g"}
+                    ],  
+                    "nutrition": {
+                      "carbs": 20,
+                      "protein": 35,
+                      "fat": 40,
+                      "fiber": 3
+                    },
+                    "method": "Lamb is slow-cooked with chickpeas, apricots, and spices.",
+                    "estimated_time": "1.5 hours",
+                    "calories": 700,
+                    "country": "Morocco"
+                  }
+                ]
+              }
+            },
+            {
+              "day": "Thursday",
+              "meals": 
+              {
+                "breakfast": [
+                  {
+                    "cuisine": "American",
+                    "dish": "Pancakes with Maple Syrup",
+                    "ingredients": [
+                      {"name": "Pancake mix", "quantity": "150g"},
+                      {"name": "Maple syrup", "quantity": "30ml"},
+                      {"name": "Butter", "quantity": "10g"}
+                    ],
+                    "nutrition": {
+                      "carbs": 65,
+                      "protein": 8,
+                      "fat": 20,
+                      "fiber": 2
+                    },
+                    "method": "Pancakes are cooked on a griddle and served with melted butter and maple syrup.",
+                    "estimated_time": "20 minutes",
+                    "calories": 500,
+                    "country": "United States"
+                  },
+                  {
+                    "cuisine": "Greek",
+                    "dish": "Greek Yogurt with Honey and Nuts",
+                    "ingredients": [
+                      {"name": "Greek yogurt", "quantity": "200g"},
+                      {"name": "Honey", "quantity": "20ml"},
+                      {"name": "Walnuts", "quantity": "30g"}
+                    ],
+                    "nutrition": {
+                      "carbs": 20,
+                      "protein": 12,
+                      "fat": 15,
+                      "fiber": 2
+                    },
+                    "method": "Greek yogurt is served chilled with honey drizzled on top and sprinkled with walnuts.",
+                    "estimated_time": "5 minutes",
+                    "calories": 350,
+                    "country": "Greece"
+                  }
+                ],
+          "lunch": [
+                  {
+                    "cuisine": "Indian",
+                    "dish": "Chana Masala",
+                    "ingredients": [
+                      {"name": "Chickpeas", "quantity": "200g"},
+                      {"name": "Tomatoes", "quantity": "100g"},
+                      {"name": "Onion", "quantity": "50g"},
+                      {"name": "Garam masala", "quantity": "5g"},
+                      {"name": "Coriander", "quantity": "5g"}
+                    ],
+                    "nutrition": {
+                      "carbs": 60,
+                      "protein": 18,
+                      "fat": 10,
+                      "fiber": 12
+                    },
+                    "method": "Chickpeas are simmered in a tomato-onion sauce with spices.",
+                    "estimated_time": "35 minutes",
+                    "calories": 400,
+                    "country": "India"
+                  },
+                  {
+                    "cuisine": "Vietnamese",
+                    "dish": "Banh Mi Sandwich",
+                    "ingredients": [
+                      {"name": "Baguette", "quantity": "1"},
+                      {"name": "Pork", "quantity": "150g"},
+                      {"name": "Pickled carrots", "quantity": "30g"},
+                      {"name": "Cucumber", "quantity": "30g"},
+                      {"name": "Cilantro", "quantity": "5g"}
+                    ],
+                    "nutrition": {
+                      "carbs": 50,
+                      "protein": 25,
+                      "fat": 14,
+                      "fiber": 4
+                    },
+                    "method": "Pork is grilled and placed in a baguette with pickled vegetables and cilantro.",
+                    "estimated_time": "20 minutes",
+                    "calories": 450,
+                    "country": "Vietnam"
+                  }
+                ],
+          "dinner": [
+                  {
+                    "cuisine": "Spanish",
+                    "dish": "Paella",
+                    "ingredients": [
+                      {"name": "Saffron rice", "quantity": "200g"},
+                      {"name": "Chicken", "quantity": "200g"},
+                      {"name": "Shrimp", "quantity": "200g"},
+                      {"name": "Peas", "quantity": "100g"},
+                      {"name": "Bell peppers", "quantity": "50g"}
+                    ],
+                    "nutrition": {
+                      "carbs": 70,
+                      "protein": 40,
+                      "fat": 20,
+                      "fiber": 6
+                    },
+                    "method": "Saffron rice is cooked and mixed with chicken, shrimp, peas, and bell peppers.",
+                    "estimated_time": "45 minutes",
+                    "calories": 600,
+                    "country": "Spain"
+                  }
+                ]
+              }
+            },
+            {
+              "day": "Friday",
+              "meals": {
+                "breakfast": [  
+                  {
+                    "cuisine": "American",
+                  "dish": "Pancakes with Maple Syrup",
+                  "ingredients": [
+                    {"name": "flour", "quantity": "100g"},
+                    {"name": "milk", "quantity": "200ml"},
+                    {"name": "egg", "quantity": "1"},
+                    {"name": "maple syrup", "quantity": "30ml"},
+                    {"name": "butter", "quantity": "10g"}
+                  ],
+                  "nutrition": {
+                    "carbs": 45,
+                    "protein": 12,
+                    "fat": 14,
+                    "fiber": 2
+                  },
+                  "method": "Mix flour, milk, and egg to make batter. Cook on a skillet and serve with butter and maple syrup.",
+                  "estimated_time": "20 minutes",
+                  "calories": 350,
+                  "country": "USA"
+                },
+                {
+                  "cuisine": "French",
+                  "dish": "Croissant with Jam",
+                  "ingredients": [
+                    {"name": "croissant", "quantity": "1"},
+                    {"name": "fruit jam", "quantity": "20g"}
+                  ],
+                  "nutrition": {
+                    "carbs": 30,
+                    "protein": 4,
+                    "fat": 12,
+                    "fiber": 1
+                  },
+                  "method": "Serve fresh croissant with a side of fruit jam.",
+                  "estimated_time": "5 minutes",
+                  "calories": 230,
+                  "country": "France"
+                }
+              ],
+              "lunch": [
+                {
+                  "cuisine": "Italian",
+                  "dish": "Margherita Pizza",
+                  "ingredients": [
+                    {"name": "pizza dough", "quantity": "200g"},
+                    {"name": "tomato sauce", "quantity": "50g"},
+                    {"name": "mozzarella cheese", "quantity": "100g"},
+                    {"name": "basil leaves", "quantity": "5"}
+                  ],
+                  "nutrition": {
+                    "carbs": 55,
+                    "protein": 20,
+                    "fat": 15,
+                    "fiber": 4
+                  },
+                  "method": "Spread tomato sauce on dough, top with cheese and basil, and bake.",
+                  "estimated_time": "30 minutes",
+                  "calories": 400,
+                  "country": "Italy"
+                },
+                {
+                  "cuisine": "Greek",
+                  "dish": "Greek Salad",
+                  "ingredients": [
+                    {"name": "cucumber", "quantity": "100g"},
+                    {"name": "tomato", "quantity": "100g"},
+                    {"name": "feta cheese", "quantity": "50g"},
+                    {"name": "olives", "quantity": "30g"},
+                    {"name": "olive oil", "quantity": "10ml"}
+                  ],
+                  "nutrition": {
+                    "carbs": 15,
+                    "protein": 7,
+                    "fat": 12,
+                    "fiber": 3
+                  },
+                  "method": "Chop vegetables, mix with feta and olives, and drizzle with olive oil.",
+                  "estimated_time": "15 minutes",
+                  "calories": 200,
+                  "country": "Greece"
+                }
+              ],
+              "dinner": [
+                {
+                  "cuisine": "Japanese",
+                  "dish": "Teriyaki Salmon",
+                  "ingredients": [
+                    {"name": "salmon fillet", "quantity": "150g"},
+                    {"name": "teriyaki sauce", "quantity": "20ml"},
+                    {"name": "sesame seeds", "quantity": "5g"}
+                  ],
+                  "nutrition": {
+                    "carbs": 5,
+                    "protein": 35,
+                    "fat": 15,
+                    "fiber": 0
+                  },
+                  "method": "Marinate salmon with teriyaki sauce and grill. Sprinkle with sesame seeds.",
+                  "estimated_time": "25 minutes",
+                  "calories": 350,
+                  "country": "Japan"
+                },
+                {
+                  "cuisine": "Mexican",
+                  "dish": "Chicken Tacos",
+                  "ingredients": [
+                    {"name": "chicken breast", "quantity": "150g"},
+                    {"name": "taco shells", "quantity": "2"},
+                    {"name": "lettuce", "quantity": "20g"},
+                    {"name": "salsa", "quantity": "30g"},
+                    {"name": "cheese", "quantity": "30g"}
+                  ],
+                  "nutrition": {
+                    "carbs": 40,
+                    "protein": 28,
+                    "fat": 20,
+                    "fiber": 6
+                  },
+                  "method": "Cook chicken and shred it. Fill taco shells with chicken, lettuce, salsa, and cheese.",
+                  "estimated_time": "30 minutes",
+                  "calories": 400,
+                  "country": "Mexico"
+                }
+              ]
+            }
+          },
+          {
+              "day": "Saturday",
+              "meals": {
+                "breakfast": [  
+                  {
+                  "cuisine": "English",
+                  "dish": "Full English Breakfast",
+                  "ingredients": [
+                    {"name": "sausages", "quantity": "2"},
+                    {"name": "bacon", "quantity": "2 slices"},
+                    {"name": "egg", "quantity": "2"},
+                    {"name": "baked beans", "quantity": "100g"},
+                    {"name": "toast", "quantity": "2 slices"}
+                  ],
+                  "nutrition": {
+                    "carbs": 50,
+                    "protein": 30,
+                    "fat": 25,
+                    "fiber": 4
+                  },
+                  "method": "Fry sausages, bacon, and eggs. Serve with baked beans and toast.",
+                  "estimated_time": "25 minutes",
+                  "calories": 600,
+                  "country": "UK"
+                },
+                {
+                  "cuisine": "Turkish",
+                  "dish": "Menemen",
+                  "ingredients": [
+                    {"name": "tomatoes", "quantity": "200g"},
+                    {"name": "green peppers", "quantity": "50g"},
+                    {"name": "eggs", "quantity": "2"},
+                    {"name": "onion", "quantity": "50g"}
+                  ],
+                  "nutrition": {
+                    "carbs": 25,
+                    "protein": 14,
+                    "fat": 12,
+                    "fiber": 5
+                  },
+                  "method": "Sauté onions and peppers, add tomatoes and cook. Stir in beaten eggs until set.",
+                  "estimated_time": "20 minutes",
+                  "calories": 300,
+                  "country": "Turkey"
+                }
+              ],
+              "lunch": [
+                {
+                  "cuisine": "Spanish",
+                  "dish": "Paella",
+                  "ingredients": [
+                    {"name": "rice", "quantity": "100g"},
+                    {"name": "seafood mix", "quantity": "150g"},
+                    {"name": "saffron", "quantity": "1g"},
+                    {"name": "green peas", "quantity": "50g"}
+                  ],
+                  "nutrition": {
+                    "carbs": 45,
+                    "protein": 22,
+                    "fat": 10,
+                    "fiber": 4
+                  },
+                  "method": "Cook rice with saffron and seafood mix. Add peas and simmer until ready.",
+                  "estimated_time": "45 minutes",
+                  "calories": 500,
+                  "country": "Spain"
+                },
+                {
+                  "cuisine": "Indian",
+                  "dish": "Butter Chicken",
+                  "ingredients": [
+                    {"name": "chicken", "quantity": "150g"},
+                    {"name": "butter", "quantity": "20g"},
+                    {"name": "tomato sauce", "quantity": "100g"},
+                    {"name": "spices", "quantity": "15g"}
+                  ],
+                  "nutrition": {
+                    "carbs": 30,
+                    "protein": 25,
+                    "fat": 18,
+                    "fiber": 5
+                  },
+                  "method": "Cook chicken in butter and spices, add tomato sauce and simmer.",
+                  "estimated_time": "40 minutes",
+                  "calories": 550,
+                  "country": "India"
+                }
+              ],
+              "dinner": [
+                {
+                  "cuisine": "Thai",
+                  "dish": "Green Curry",
+                  "ingredients": [
+                    {"name": "chicken", "quantity": "150g"},
+                    {"name": "green curry paste", "quantity": "20g"},
+                    {"name": "coconut milk", "quantity": "200ml"},
+                    {"name": "bamboo shoots", "quantity": "50g"}
+                  ],
+                  "nutrition": {
+                    "carbs": 20,
+                    "protein": 32,
+                    "fat": 30,
+                    "fiber": 2
+                  },
+                  "method": "Simmer chicken in coconut milk with curry paste and bamboo shoots.",
+                  "estimated_time": "30 minutes",
+                  "calories": 450,
+                  "country": "Thailand"
+                },
+                {
+                  "cuisine": "Lebanese",
+                  "dish": "Grilled Lamb Kebabs",
+                  "ingredients": [
+                    {"name": "lamb", "quantity": "150g"},
+                    {"name": "onion", "quantity": "30g"},
+                    {"name": "garlic", "quantity": "5g"},
+                    {"name": "spices", "quantity": "10g"}   
+                  ],
+                  "nutrition": {
+                    "carbs": 5,
+                    "protein": 30,
+                    "fat": 25,
+                    "fiber": 1
+                  },
+                  "method": "Marinate lamb with spices, grill, and serve with onions and garlic.",
+                  "estimated_time": "25 minutes",
+                  "calories": 450,
+                  "country": "Lebanon"
+                }
+              ]
+            }
+          },
+          {
+            "day": "Sunday",
+            "meals": {
+                "breakfast": [   
+                {
+                  "cuisine": "French",
+                  "dish": "Croissant with Jam",
+                  "ingredients": [
+                    {"name": "croissant", "quantity": "2 pieces"},
+                    {"name": "strawberry jam", "quantity": "20g"}
+                  ],
+                  "nutrition": {
+                    "carbs": 50,
+                    "protein": 8,
+                    "fat": 20,
+                    "fiber": 2
+                  },
+                  "method": "Serve freshly baked croissants with strawberry jam on the side.",
+                  "estimated_time": "15 minutes",
+                  "calories": 450,
+                  "country": "France"
+                },
+                {
+                  "cuisine": "American",
+                  "dish": "Scrambled Eggs and Bacon",
+                  "ingredients": [
+                    {"name": "eggs", "quantity": "3 pieces"},
+                    {"name": "bacon", "quantity": "100g"},
+                    {"name": "butter", "quantity": "10g"}
+                  ],
+                  "nutrition": {
+                    "carbs": 5,
+                    "protein": 25,
+                    "fat": 35,
+                    "fiber": 2
+                  },
+                  "method": "Scramble the eggs in butter and serve with crispy bacon.",
+                  "estimated_time": "20 minutes",
+                  "calories": 400,
+                  "country": "USA"
+                }
+              ],
+              "lunch": [
+                {
+                  "cuisine": "Italian",
+                  "dish": "Spaghetti Carbonara",
+                  "ingredients": [
+                    {"name": "spaghetti", "quantity": "150g"},
+                    {"name": "pancetta", "quantity": "50g"},
+                    {"name": "eggs", "quantity": "2 pieces"},
+                    {"name": "Parmesan cheese", "quantity": "30g"},
+                    {"name": "black pepper", "quantity": "5g"}
+                  ],
+                  "nutrition": {
+                    "carbs": 75,
+                    "protein": 25,
+                    "fat": 22,
+                    "fiber": 4
+                  },
+                  "method": "Cook spaghetti, mix with pancetta and a mixture of eggs and Parmesan, and top with black pepper.",
+                  "estimated_time": "30 minutes",
+                  "calories": 600,
+                  "country": "Italy"
+                },
+                {
+                  "cuisine": "Mexican",
+                  "dish": "Chicken Tacos",
+                  "ingredients": [
+                    {"name": "chicken breast", "quantity": "200g"},
+                    {"name": "taco shells", "quantity": "3 pieces"},
+                    {"name": "lettuce", "quantity": "20g"},
+                    {"name": "cheddar cheese", "quantity": "30g"},
+                    {"name": "salsa", "quantity": "30g"}
+                  ],
+                  "nutrition": {
+                    "carbs": 40,
+                    "protein": 35,
+                    "fat": 20,
+                    "fiber": 3
+                  },
+                  "method": "Grill the chicken, slice it, and fill the taco shells with chicken, lettuce, cheese, and salsa.",
+                  "estimated_time": "25 minutes",
+                  "calories": 500,
+                  "country": "Mexico"
+                }
+              ],
+              "dinner": [
+                {
+                  "cuisine": "Japanese",
+                  "dish": "Sushi Rolls",
+                  "ingredients": [
+                    {"name": "sushi rice", "quantity": "200g"},
+                    {"name": "nori sheets", "quantity": "4 pieces"},
+                    {"name": "salmon", "quantity": "100g"},
+                    {"name": "cucumber", "quantity": "30g"},
+                    {"name": "soy sauce", "quantity": "20ml"}
+                  ],
+                  "nutrition": {
+                    "carbs": 70,
+                    "protein": 20,
+                    "fat": 10,
+                    "fiber": 2
+                  },
+                  "method": "Prepare the sushi rice, layer with salmon and cucumber on nori, roll and slice, serve with soy sauce.",
+                  "estimated_time": "40 minutes",
+                  "calories": 350,
+                  "country": "Japan"
+                },
+                {
+                  "cuisine": "Indian",
+                  "dish": "Butter Chicken",
+                  "ingredients": [
+                    {"name": "chicken thighs", "quantity": "250g"},
+                    {"name": "butter", "quantity": "50g"},
+                    {"name": "tomato puree", "quantity": "100g"},
+                    {"name": "cream", "quantity": "30ml"},
+                    {"name": "garam masala", "quantity": "10g"}
+                  ],
+                  "nutrition": {
+                    "carbs": 15,
+                    "protein": 40,
+                    "fat": 45,
+                    "fiber": 23
+                  },
+                  "method": "Cook chicken in butter and tomato puree, add cream and spices, and simmer until thickened.",
+                  "estimated_time": "50 minutes",
+                  "calories": 700,
+                  "country": "India"
+                }
+              ]
+            }
+          }
+        ]
+      }

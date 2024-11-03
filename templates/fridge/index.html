@@ -63,10 +63,47 @@
             </div>
         </div>
     </div>
+
+    <!-- Fridge List Container -->
+    <div class="list-container fridge-list-container">
+        <div class="list-header">
+            <div class="list-title">Refrigerator Items</div>
+            <select id="sort-select" class="sort-select">
+                <option value="best_before">Sort by Best Before</option>
+                <option value="name">Sort by Name</option>
+                <option value="category">Sort by Category</option>
+                <option value="frozen">Sort by Frozen Status</option>
+                <option value="residual">Sort by Residual</option>
+            </select>
+        </div>
+        <div id="fridge-list">
+            <!-- Items will be inserted here -->
+        </div>
+        <!-- Pagination controls will be inserted here -->
+    </div>
+
+    <!-- Add this after the fridge list container -->
+    <div class="next-step-button">
+        <a href="{{ url_for('recipe.upload') }}" class="recipe-link">
+            <div class="button-content">
+                <span>Plan Your Daily Meal</span>
+                <lottie-player 
+                    src="https://lottie.host/e57b22db-6c3c-4cf7-b094-d68a9a88aaab/H8oF712ncx.json"
+                    background="transparent"
+                    speed="1"
+                    style="width: 50px; height: 50px"
+                    loop
+                    autoplay>
+                </lottie-player>
+            </div>
+        </a>
+    </div>
 </div>
 {% endblock %}
 
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/fridge.js') }}"></script>
 <script src="{{ url_for('static', filename='js/shoppingList.js') }}"></script>
+<script src="{{ url_for('static', filename='js/fridgeList.js') }}"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.8/dist/lottie-player.js"></script>
 {% endblock %}

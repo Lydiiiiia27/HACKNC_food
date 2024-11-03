@@ -59,6 +59,8 @@ async function loadFoodItems() {
                     await createShelf(rightCompartment, category, items);
                 }
             }
+
+            document.dispatchEvent(new CustomEvent('fridgeUpdated'));
         })
         .catch(error => {
             console.error('Error loading fridge items:', error);

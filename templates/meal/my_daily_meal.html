@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block title %}My Daily Meal{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<style>
+    .recipe-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .recipe-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .recipe-meta, .recipe-ingredients, .recipe-instructions, .recipe-nutrition {
+        margin-bottom: 15px;
+    }
+    .meal-buttons {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+    }
+    .meal-buttons .btn {
+        margin: 0 10px;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        border-radius: 30px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4 text-center">My Daily Meal</h1>
+    <div class="meal-buttons">
+        <button class="btn btn-primary" id="breakfast-btn">Breakfast</button>
+        <button class="btn btn-primary" id="lunch-btn">Lunch</button>
+        <button class="btn btn-primary" id="dinner-btn">Dinner</button>
+    </div>
+    <div id="mealContent">
+        <!-- Meal content will be dynamically inserted here -->
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    let mealData = [];
+
+    fetch('/static/recipe/selected_meal/selected_recipes.json')
+        .then(response => response.json())
+        .then(data => {
+            mealData = data;
+            displayMeal('Breakfast');
+        })
+        .catch(error => console.error('Error fetching daily meal data:', error));
+
+    document.getElementById('breakfast-btn').addEventListener('click', () => displayMeal('Breakfast'));
+    document.getElementById('lunch-btn').addEventListener('click', () => displayMeal('Lunch'));
+    document.getElementById('dinner-btn').addEventListener('click', () => displayMeal('Dinner'));
+
+    function displayMeal(mealType) {
+        const mealContent = document.getElementById('mealContent');
+        mealContent.innerHTML = '';
+
+        const mealGroup = mealData.filter(meal => meal.meal === mealType);
+        if (mealGroup.length > 0) {
+            mealGroup.forEach(meal => {
+                mealContent.innerHTML += `
+                    <div class="recipe-card">
+                        <h3>${meal.name}</h3>
+                        <p class="recipe-type text-muted">${meal.type}</p>
+                        <div class="recipe-meta">
+                            <span><strong>Prep:</strong> ${meal.time.prep}</span><br>
+                            <span><strong>Cook:</strong> ${meal.time.cook}</span>
+                        </div>
+                        <div class="recipe-ingredients">
+                            <h4>Ingredients:</h4>
+                            <ul>
+                                ${meal.ingredients.map(ingredient => `
+                                    <li>${ingredient.amount} ${ingredient.unit} ${ingredient.item}</li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                        <div class="recipe-instructions">
+                            <h4>Instructions:</h4>
+                            <p>${meal.instructions}</p>
+                        </div>
+                        <div class="recipe-nutrition">
+                            <h4>Nutrition:</h4>
+                            <p><strong>Calories:</strong> ${meal.nutrition.calories}</p>
+                            <p><strong>Protein:</strong> ${meal.nutrition.protein}</p>
+                            <p><strong>Carbs:</strong> ${meal.nutrition.carbs}</p>
+                            <p><strong>Fat:</strong> ${meal.nutrition.fat}</p>
+                        </div>
+                    </div>
+                `;
+            });
+        } else {
+            mealContent.innerHTML = '<p>No meals found for this category.</p>';
+        }
+    }
+});
+</script>
+{% endblock %}

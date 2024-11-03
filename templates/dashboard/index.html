@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="dashboard">
+    <div class="row top-row">
+        <div class="chart-container">
+            <div class="chart" id="calories-container">
+                <div id="calories-chart"></div>
+            </div>
+        </div>
+        <div class="chart-container">
+            <div class="chart" id="map-container">
+                <div id="map-chart">
+                    <svg></svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row bottom-row">
+        <div class="chart-container">
+            <div class="chart" id="nutrition-container">
+                <div id="nutrition-chart"></div>
+            </div>
+        </div>
+        <div class="chart-container">
+            <div class="chart" id="cooking-time-container">
+                <div id="cooking-time-chart"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="{{ url_for('static', filename='js/calories-chart.js') }}"></script>
+<script src="{{ url_for('static', filename='js/map-chart.js') }}"></script>
+<script src="{{ url_for('static', filename='js/nutrition-chart.js') }}"></script>
+<script src="{{ url_for('static', filename='js/cooking-time-chart.js') }}"></script>
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/calories-chart.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/map-chart.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/nutrition-chart.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cooking-time-chart.css') }}">
+{% endblock %}

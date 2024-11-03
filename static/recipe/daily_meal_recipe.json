@@ -1,0 +1,617 @@
+{
+    "generated_at": "2024-11-03T09:19:28.933300",
+    "recipes": [
+        {
+            "meal": "Breakfast",
+            "time": "7:00",
+            "recipes": [
+                {
+                    "name": "Avocado Bagel Toast",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Mini Bagels",
+                            "amount": 2,
+                            "unit": "pcs"
+                        },
+                        {
+                            "item": "Avocado",
+                            "amount": 1,
+                            "unit": "pcs"
+                        },
+                        {
+                            "item": "Cream Cheese",
+                            "amount": 10,
+                            "unit": "g"
+                        },
+                        {
+                            "item": "Salted Potato Chips",
+                            "amount": 30,
+                            "unit": "g"
+                        }
+                    ],
+                    "steps": [
+                        "Toast the mini bagels until golden brown.",
+                        "Mash the avocado and spread it over the toasted bagels.",
+                        "Spread cream cheese on the other half of the bagel.",
+                        "Serve with a side of salted potato chips."
+                    ],
+                    "time": {
+                        "prep": "5 minutes",
+                        "cook": "5 minutes",
+                        "total": "10 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "350 kcal",
+                        "protein": "8 g",
+                        "carbs": "40 g",
+                        "fat": "18 g"
+                    },
+                    "storage": "Best served fresh, consume immediately."
+                },
+                {
+                    "name": "Orange Chicken Breakfast Wrap",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Flour Tortillas",
+                            "amount": 1,
+                            "unit": "pcs"
+                        },
+                        {
+                            "item": "Tai Pei Orange Chicken",
+                            "amount": 250,
+                            "unit": "g"
+                        },
+                        {
+                            "item": "Fresh Vegetable Mix",
+                            "amount": 50,
+                            "unit": "g"
+                        },
+                        {
+                            "item": "Green Bell Peppers",
+                            "amount": 1,
+                            "unit": "pcs"
+                        }
+                    ],
+                    "steps": [
+                        "Heat the Tai Pei Orange Chicken in a pan until heated through.",
+                        "Chop the green bell pepper and mix with the fresh vegetable mix.",
+                        "Place the cooked orange chicken and vegetable mix onto the tortilla.",
+                        "Roll the tortilla tightly to form a wrap."
+                    ],
+                    "time": {
+                        "prep": "5 minutes",
+                        "cook": "10 minutes",
+                        "total": "15 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "480 kcal",
+                        "protein": "25 g",
+                        "carbs": "50 g",
+                        "fat": "20 g"
+                    },
+                    "storage": "Wrap can be stored in the refrigerator for up to 1 day."
+                },
+                {
+                    "name": "Spinach and Chicken Breakfast Sandwich",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Stone Hearth Bread",
+                            "amount": 2,
+                            "unit": "pcs"
+                        },
+                        {
+                            "item": "Chicken Breast",
+                            "amount": 100,
+                            "unit": "g"
+                        },
+                        {
+                            "item": "Spinach Leaves",
+                            "amount": 50,
+                            "unit": "g"
+                        },
+                        {
+                            "item": "Red Onions",
+                            "amount": 1,
+                            "unit": "pcs"
+                        }
+                    ],
+                    "steps": [
+                        "Grill or pan-fry the chicken breast until fully cooked.",
+                        "Slice the red onion and sauté until translucent.",
+                        "Layer the chicken, sautéed onions, and spinach between the slices of bread.",
+                        "Toast the sandwich until the bread is golden."
+                    ],
+                    "time": {
+                        "prep": "5 minutes",
+                        "cook": "10 minutes",
+                        "total": "15 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "400 kcal",
+                        "protein": "30 g",
+                        "carbs": "30 g",
+                        "fat": "15 g"
+                    },
+                    "storage": "Can be stored in an airtight container for up to 1 day."
+                },
+                {
+                    "name": "Fruit and Yogurt Bowl",
+                    "type": "side",
+                    "ingredients": [
+                        {
+                            "item": "Red Delicious Apples",
+                            "amount": 1,
+                            "unit": "pcs"
+                        },
+                        {
+                            "item": "Bananas",
+                            "amount": 100,
+                            "unit": "g"
+                        },
+                        {
+                            "item": "1% Milk",
+                            "amount": 50,
+                            "unit": "g"
+                        }
+                    ],
+                    "steps": [
+                        "Chop the apple and banana into small pieces.",
+                        "In a bowl, combine the chopped fruits.",
+                        "Drizzle with 1% milk and serve."
+                    ],
+                    "time": {
+                        "prep": "5 minutes",
+                        "cook": "0 minutes",
+                        "total": "5 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "150 kcal",
+                        "protein": "3 g",
+                        "carbs": "36 g",
+                        "fat": "1 g"
+                    },
+                    "storage": "Best served fresh, consume immediately."
+                },
+                {
+                    "name": "Candy and Cheez-It Mix",
+                    "type": "dessert",
+                    "ingredients": [
+                        {
+                            "item": "Cheez-It Snack Mix",
+                            "amount": 30,
+                            "unit": "g"
+                        },
+                        {
+                            "item": "Assorted Candy",
+                            "amount": 5,
+                            "unit": "pcs"
+                        }
+                    ],
+                    "steps": [
+                        "Combine Cheez-It snack mix and assorted candy in a bowl.",
+                        "Toss gently to mix."
+                    ],
+                    "time": {
+                        "prep": "2 minutes",
+                        "cook": "0 minutes",
+                        "total": "2 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "220 kcal",
+                        "protein": "3 g",
+                        "carbs": "32 g",
+                        "fat": "10 g"
+                    },
+                    "storage": "Store in an airtight container for up to 1 week."
+                }
+            ]
+        },
+        {
+            "meal": "Lunch",
+            "time": "12:00",
+            "recipes": [
+                {
+                    "name": "Avocado and Cream Cheese Bagel",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Mini Bagels",
+                            "amount": 2,
+                            "unit": "pcs"
+                        },
+                        {
+                            "item": "Avocado",
+                            "amount": 1,
+                            "unit": "pcs"
+                        },
+                        {
+                            "item": "Cream Cheese",
+                            "amount": 10,
+                            "unit": "g"
+                        },
+                        {
+                            "item": "Red Onions",
+                            "amount": 1,
+                            "unit": "pcs"
+                        }
+                    ],
+                    "steps": [
+                        "Toast the mini bagels until golden brown.",
+                        "Mash the avocado and mix it with cream cheese.",
+                        "Spread the avocado-cream cheese mixture on the bagels.",
+                        "Thinly slice the red onion and place on top."
+                    ],
+                    "time": {
+                        "prep": "5 minutes",
+                        "cook": "5 minutes",
+                        "total": "10 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "300 kcal",
+                        "protein": "8 g",
+                        "carbs": "40 g",
+                        "fat": "15 g"
+                    },
+                    "storage": "Best served fresh, can be stored in the fridge for up to 1 day without toppings."
+                },
+                {
+                    "name": "Tai Pei Orange Chicken with Broccoli",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Tai Pei Orange Chicken",
+                            "amount": 250,
+                            "unit": "g"
+                        },
+                        {
+                            "item": "Broccoli Florets",
+                            "amount": 150,
+                            "unit": "g"
+                        }
+                    ],
+                    "steps": [
+                        "Cook the Tai Pei Orange Chicken according to package instructions.",
+                        "In the last 5 minutes of cooking, add the broccoli florets to steam."
+                    ],
+                    "time": {
+                        "prep": "5 minutes",
+                        "cook": "10 minutes",
+                        "total": "15 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "550 kcal",
+                        "protein": "25 g",
+                        "carbs": "65 g",
+                        "fat": "20 g"
+                    },
+                    "storage": "Store leftovers in an airtight container in the fridge for up to 3 days."
+                },
+                {
+                    "name": "Ground Beef & Vegetable Tortillas",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Ground Beef",
+                            "amount": 150,
+                            "unit": "g"
+                        },
+                        {
+                            "item": "Flour Tortillas",
+                            "amount": 2,
+                            "unit": "pcs"
+                        },
+                        {
+                            "item": "Fresh Vegetable Mix",
+                            "amount": 50,
+                            "unit": "g"
+                        },
+                        {
+                            "item": "Red Onions",
+                            "amount": 1,
+                            "unit": "pcs"
+                        }
+                    ],
+                    "steps": [
+                        "In a skillet, cook the ground beef until browned.",
+                        "Add the fresh vegetable mix and diced red onions, cooking until softened.",
+                        "Warm the tortillas in a separate pan.",
+                        "Fill the tortillas with the beef and vegetable mixture, then roll up."
+                    ],
+                    "time": {
+                        "prep": "5 minutes",
+                        "cook": "10 minutes",
+                        "total": "15 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "450 kcal",
+                        "protein": "30 g",
+                        "carbs": "40 g",
+                        "fat": "20 g"
+                    },
+                    "storage": "Store in refrigerator for up to 2 days. Reheat before serving."
+                },
+                {
+                    "name": "Baked Salmon with Spinach",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Salmon Fillets",
+                            "amount": 200,
+                            "unit": "g"
+                        },
+                        {
+                            "item": "Spinach Leaves",
+                            "amount": 100,
+                            "unit": "g"
+                        }
+                    ],
+                    "steps": [
+                        "Preheat the oven to 375°F (190°C).",
+                        "Place the salmon fillets on a baking tray and season with salt and pepper.",
+                        "Bake for 15 minutes or until cooked through.",
+                        "Sauté the spinach in a pan with a little oil until wilted."
+                    ],
+                    "time": {
+                        "prep": "10 minutes",
+                        "cook": "15 minutes",
+                        "total": "25 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "400 kcal",
+                        "protein": "35 g",
+                        "carbs": "5 g",
+                        "fat": "25 g"
+                    },
+                    "storage": "Store any leftovers in an airtight container in the fridge for up to 2 days."
+                },
+                {
+                    "name": "Fruit Salad with Bananas and Apples",
+                    "type": "dessert",
+                    "ingredients": [
+                        {
+                            "item": "Red Delicious Apples",
+                            "amount": 2,
+                            "unit": "pcs"
+                        },
+                        {
+                            "item": "Bananas",
+                            "amount": 200,
+                            "unit": "g"
+                        },
+                        {
+                            "item": "Green Grapes",
+                            "amount": 100,
+                            "unit": "g"
+                        }
+                    ],
+                    "steps": [
+                        "Dice the apples and slice the bananas.",
+                        "Combine the diced apples, sliced bananas, and green grapes in a bowl.",
+                        "Toss gently to mix and serve chilled."
+                    ],
+                    "time": {
+                        "prep": "10 minutes",
+                        "cook": "0 minutes",
+                        "total": "10 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "160 kcal",
+                        "protein": "2 g",
+                        "carbs": "40 g",
+                        "fat": "0 g"
+                    },
+                    "storage": "Can be stored in the fridge for up to 1 day."
+                }
+            ]
+        },
+        {
+            "meal": "Dinner",
+            "time": "18:00",
+            "recipes": [
+                {
+                    "name": "Orange Chicken with Steamed Broccoli",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Tai Pei Orange Chicken",
+                            "amount": "500",
+                            "unit": "g"
+                        },
+                        {
+                            "item": "Broccoli Florets",
+                            "amount": "300",
+                            "unit": "g"
+                        }
+                    ],
+                    "steps": [
+                        "Prepare the Tai Pei Orange Chicken according to package instructions.",
+                        "Steam the broccoli florets until tender, about 5-7 minutes.",
+                        "Serve the orange chicken over a bed of steamed broccoli."
+                    ],
+                    "time": {
+                        "prep": "5 minutes",
+                        "cook": "15 minutes",
+                        "total": "20 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "650 kcal",
+                        "protein": "40 g",
+                        "carbs": "70 g",
+                        "fat": "20 g"
+                    },
+                    "storage": "Store leftovers in an airtight container in the refrigerator for up to 3 days."
+                },
+                {
+                    "name": "Chicken and Avocado Bagels",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Mini Bagels",
+                            "amount": "5",
+                            "unit": "pcs"
+                        },
+                        {
+                            "item": "Chicken Breast",
+                            "amount": "500",
+                            "unit": "g"
+                        },
+                        {
+                            "item": "Avocado",
+                            "amount": "2",
+                            "unit": "pcs"
+                        },
+                        {
+                            "item": "Cream Cheese",
+                            "amount": "10",
+                            "unit": "g"
+                        }
+                    ],
+                    "steps": [
+                        "Cook the chicken breast until fully cooked and slice thinly.",
+                        "Toast the mini bagels.",
+                        "Spread cream cheese on the toasted bagels.",
+                        "Slice the avocado and layer it on top of the cream cheese.",
+                        "Top with sliced chicken breast and serve."
+                    ],
+                    "time": {
+                        "prep": "10 minutes",
+                        "cook": "15 minutes",
+                        "total": "25 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "750 kcal",
+                        "protein": "50 g",
+                        "carbs": "80 g",
+                        "fat": "30 g"
+                    },
+                    "storage": "Best served fresh, but can be stored in the refrigerator for up to 2 days."
+                },
+                {
+                    "name": "Pork Chops with Veggie Mash",
+                    "type": "main",
+                    "ingredients": [
+                        {
+                            "item": "Pork Chops",
+                            "amount": "4",
+                            "unit": "pcs"
+                        },
+                        {
+                            "item": "Carrot Sticks",
+                            "amount": "250",
+                            "unit": "g"
+                        },
+                        {
+                            "item": "Cauliflower",
+                            "amount": "400",
+                            "unit": "g"
+                        },
+                        {
+                            "item": "Fresh Vegetable Mix",
+                            "amount": "50",
+                            "unit": "g"
+                        }
+                    ],
+                    "steps": [
+                        "Cook the pork chops on medium heat until browned and cooked through, about 6-8 minutes on each side.",
+                        "Boil the carrot sticks and cauliflower until tender, about 10 minutes.",
+                        "Drain and mash the carrots and cauliflower together with a bit of salt.",
+                        "Sauté the fresh vegetable mix for about 3-4 minutes.",
+                        "Serve the pork chops alongside the veggie mash and sautéed vegetables."
+                    ],
+                    "time": {
+                        "prep": "10 minutes",
+                        "cook": "20 minutes",
+                        "total": "30 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "800 kcal",
+                        "protein": "60 g",
+                        "carbs": "40 g",
+                        "fat": "35 g"
+                    },
+                    "storage": "Store leftovers in an airtight container in the refrigerator for up to 3 days."
+                },
+                {
+                    "name": "Cheesy Spinach and Apple Snack Platter",
+                    "type": "appetizer",
+                    "ingredients": [
+                        {
+                            "item": "Red Delicious Apples",
+                            "amount": "2",
+                            "unit": "pcs"
+                        },
+                        {
+                            "item": "Spinach Leaves",
+                            "amount": "100",
+                            "unit": "g"
+                        },
+                        {
+                            "item": "Cheez-It Snack Mix",
+                            "amount": "50",
+                            "unit": "g"
+                        }
+                    ],
+                    "steps": [
+                        "Slice the red delicious apples into wedges.",
+                        "Wash and dry the spinach leaves.",
+                        "Arrange the apple wedges and spinach on a platter.",
+                        "Sprinkle the Cheez-It Snack Mix over the platter and serve."
+                    ],
+                    "time": {
+                        "prep": "5 minutes",
+                        "cook": "0 minutes",
+                        "total": "5 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "250 kcal",
+                        "protein": "5 g",
+                        "carbs": "30 g",
+                        "fat": "10 g"
+                    },
+                    "storage": "Serve immediately; not recommended for storage."
+                },
+                {
+                    "name": "Fruit and Nut Dessert",
+                    "type": "dessert",
+                    "ingredients": [
+                        {
+                            "item": "Green Grapes",
+                            "amount": "200",
+                            "unit": "g"
+                        },
+                        {
+                            "item": "Bananas",
+                            "amount": "250",
+                            "unit": "g"
+                        },
+                        {
+                            "item": "Assorted Candy",
+                            "amount": "10",
+                            "unit": "pcs"
+                        }
+                    ],
+                    "steps": [
+                        "Slice the bananas and mix them with the green grapes.",
+                        "Chop the assorted candy into small pieces.",
+                        "Toss the chopped candy with the fruit mix and serve in small bowls."
+                    ],
+                    "time": {
+                        "prep": "10 minutes",
+                        "cook": "0 minutes",
+                        "total": "10 minutes"
+                    },
+                    "nutrition": {
+                        "calories": "300 kcal",
+                        "protein": "2 g",
+                        "carbs": "75 g",
+                        "fat": "0 g"
+                    },
+                    "storage": "Serve immediately; can be stored in the refrigerator for up to 1 day."
+                }
+            ]
+        }
+    ]
+}

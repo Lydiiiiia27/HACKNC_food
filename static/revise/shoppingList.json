@@ -1,74 +1,191 @@
 [
-    {
-        "name": "Toblerone Milk Chocolate",
-        "category": "condiments",
-        "quantity_or_weight": 0,
-        "unit": "pcs",
-        "best_before_in_fridge": 0,
-        "frozen": 0,
-        "identify_name": "chocolate"
-    },
-    {
-        "name": "Snickers Peanut Butter Squares",
-        "category": "condiments",
-        "quantity_or_weight": 0,
-        "unit": "pcs",
-        "best_before_in_fridge": 0,
-        "frozen": 0,
-        "identify_name": "candy"
-    },
-    {
-        "name": "Avocado",
-        "category": "fruit",
-        "quantity_or_weight": 2,
-        "unit": "pcs",
-        "best_before_in_fridge": 5,
-        "frozen": 0,
-        "identify_name": "avocado"
-    },
-    {
-        "name": "Petite Carrots",
-        "category": "vegetables",
-        "quantity_or_weight": 0,
-        "unit": "grams",
-        "best_before_in_fridge": 14,
-        "frozen": 0,
-        "identify_name": "carrots"
-    },
-    {
-        "name": "Tai Pei Orange Chicken",
-        "category": "protein",
-        "quantity_or_weight": 0,
-        "unit": "grams",
-        "best_before_in_fridge": 0,
-        "frozen": 1,
-        "identify_name": "chicken"
-    },
-    {
-        "name": "Aluminum Foil",
-        "category": "condiments",
-        "quantity_or_weight": 0,
-        "unit": "pcs",
-        "best_before_in_fridge": 0,
-        "frozen": 0,
-        "identify_name": "foil"
-    },
-    {
-        "name": "Mrs. Cubbison's Croutons",
-        "category": "grain",
-        "quantity_or_weight": 0,
-        "unit": "grams",
-        "best_before_in_fridge": 0,
-        "frozen": 0,
-        "identify_name": "croutons"
-    },
-    {
-        "name": "Cheez-It Snack Mix",
-        "category": "grain",
-        "quantity_or_weight": 0,
-        "unit": "grams",
-        "best_before_in_fridge": 0,
-        "frozen": 0,
-        "identify_name": "snacks"
-    }
+  {
+    "name": "Whole Wheat Bread",
+    "category": "grain",
+    "quantity_or_weight": 100,
+    "unit": "pcs",
+    "best_before_in_fridge": 7,
+    "frozen": 0,
+    "identify_name": "Bread"
+  },
+  {
+    "name": "Mixed Fruit and Vegetable Juice",
+    "category": "fruit",
+    "quantity_or_weight": 50,
+    "unit": "pcs",
+    "best_before_in_fridge": 5,
+    "frozen": 0,
+    "identify_name": "Juice"
+  },
+  {
+    "name": "Salted Potato Chips",
+    "category": "grain",
+    "quantity_or_weight": 1,
+    "unit": "pcs",
+    "best_before_in_fridge": 0,
+    "frozen": 0,
+    "identify_name": "Chips"
+  },
+  {
+    "name": "Mini Bagels",
+    "category": "grain",
+    "quantity_or_weight": 1,
+    "unit": "pcs",
+    "best_before_in_fridge": 7,
+    "frozen": 1,
+    "identify_name": "Bagels"
+  },
+  {
+    "name": "Flour Tortillas",
+    "category": "grain",
+    "quantity_or_weight": 1,
+    "unit": "pcs",
+    "best_before_in_fridge": 10,
+    "frozen": 1,
+    "identify_name": "Tortillas"
+  },
+  {
+    "name": "1% Milk",
+    "category": "dairy",
+    "quantity_or_weight": 1,
+    "unit": "pcs",
+    "best_before_in_fridge": 7,
+    "frozen": 0,
+    "identify_name": "Milk"
+  },
+  {
+    "name": "Twix Caramel Chocolate Bar",
+    "category": "condiments",
+    "quantity_or_weight": 1,
+    "unit": "pcs",
+    "best_before_in_fridge": 0,
+    "frozen": 0,
+    "identify_name": "Chocolate Bar"
+  },
+  {
+    "name": "Toblerone Milk Chocolate",
+    "category": "condiments",
+    "quantity_or_weight": 1,
+    "unit": "pcs",
+    "best_before_in_fridge": 0,
+    "frozen": 0,
+    "identify_name": "Chocolate"
+  },
+  {
+    "name": "Assorted Candy",
+    "category": "condiments",
+    "quantity_or_weight": 1,
+    "unit": "pcs",
+    "best_before_in_fridge": 0,
+    "frozen": 0,
+    "identify_name": "Candy"
+  },
+  {
+    "name": "Snickers Peanut Butter Square",
+    "category": "condiments",
+    "quantity_or_weight": 1,
+    "unit": "pcs",
+    "best_before_in_fridge": 0,
+    "frozen": 0,
+    "identify_name": "Candy Bar"
+  },
+  {
+    "name": "Assorted Candy",
+    "category": "condiments",
+    "quantity_or_weight": 1,
+    "unit": "pcs",
+    "best_before_in_fridge": 0,
+    "frozen": 0,
+    "identify_name": "Candy"
+  },
+  {
+    "name": "Avocado",
+    "category": "vegetables",
+    "quantity_or_weight": 2,
+    "unit": "pcs",
+    "best_before_in_fridge": 5,
+    "frozen": 0,
+    "identify_name": "Avocado"
+  },
+  {
+    "name": "Red Delicious Apples",
+    "category": "fruit",
+    "quantity_or_weight": 2.33,
+    "unit": "lb",
+    "best_before_in_fridge": 21,
+    "frozen": 0,
+    "identify_name": "Apple"
+  },
+  {
+    "name": "Bananas",
+    "category": "fruit",
+    "quantity_or_weight": 2.38,
+    "unit": "lb",
+    "best_before_in_fridge": 7,
+    "frozen": 0,
+    "identify_name": "Banana"
+  },
+  {
+    "name": "Petite Carrots",
+    "category": "vegetables",
+    "quantity_or_weight": 1,
+    "unit": "pcs",
+    "best_before_in_fridge": 14,
+    "frozen": 0,
+    "identify_name": "Carrot"
+  },
+  {
+    "name": "Tai Pei Orange Chicken",
+    "category": "protein",
+    "quantity_or_weight": 1,
+    "unit": "pcs",
+    "best_before_in_fridge": 2,
+    "frozen": 1,
+    "identify_name": "Chicken"
+  },
+  {
+    "name": "Cream Cheese",
+    "category": "dairy",
+    "quantity_or_weight": 1,
+    "unit": "pcs",
+    "best_before_in_fridge": 14,
+    "frozen": 0,
+    "identify_name": "Cheese"
+  },
+  {
+    "name": "Stone Hearth Bread",
+    "category": "grain",
+    "quantity_or_weight": 1,
+    "unit": "pcs",
+    "best_before_in_fridge": 7,
+    "frozen": 0,
+    "identify_name": "Bread"
+  },
+  {
+    "name": "Aluminum Foil",
+    "category": "condiments",
+    "quantity_or_weight": 1,
+    "unit": "pcs",
+    "best_before_in_fridge": 0,
+    "frozen": 0,
+    "identify_name": "Foil"
+  },
+  {
+    "name": "Mrs. Cubbison's Croutons",
+    "category": "grain",
+    "quantity_or_weight": 1,
+    "unit": "pcs",
+    "best_before_in_fridge": 90,
+    "frozen": 0,
+    "identify_name": "Croutons"
+  },
+  {
+    "name": "Cheez-It Snack Mix",
+    "category": "grain",
+    "quantity_or_weight": 1,
+    "unit": "pcs",
+    "best_before_in_fridge": 0,
+    "frozen": 0,
+    "identify_name": "Snack Mix"
+  }
 ]

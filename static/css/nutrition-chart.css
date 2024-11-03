@@ -1,0 +1,358 @@
+/* Styles for nutrition chart */
+.tooltip {
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.title, .chart-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px !important;
+    font-weight: bold;
+    color: #333;
+    margin: 5px 0;
+    padding: 0;
+}
+
+/* Word cloud styles */
+.word-cloud text {
+    font-family: Arial, sans-serif;
+}
+
+.word-cloud text:hover {
+    opacity: 0.7;
+}
+
+.nutrition-tooltip {
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    pointer-events: none;
+    font-size: 12px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#nutrition-chart {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#circular-chart, #word-cloud {
+    height: 100%;
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+#nutrition-chart .title {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#nutrition-chart path {
+    transition: opacity 0.2s;
+}
+
+#nutrition-chart path:hover {
+    opacity: 1;
+}
+
+/* Add to existing CSS */
+.word-cloud-tooltip {
+    position: absolute;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    pointer-events: none;
+    font-size: 12px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.word {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#nutrition-chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.tooltip-content {
+    background-color: rgba(255, 255, 255, 0.98);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.tooltip-content h3 {
+    margin: 0 0 10px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.tooltip-content table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tooltip-content th,
+.tooltip-content td {
+    padding: 5px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.tooltip-content th {
+    background-color: #f8f8f8;
+}
+
+.chart-title {
+    font-family: 'Arial Black', sans-serif;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.chart-subtitle {
+    font-family: Arial, sans-serif;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Word cloud animations */
+#word-cloud text {
+    transition: all 0.3s ease;
+}
+
+#word-cloud text:hover {
+    cursor: pointer;
+}
+
+/* Enhanced tooltip */
+.tooltip {
+    position: absolute;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    z-index: 1000;
+}
+
+/* Circular chart enhancements */
+#circular-chart path {
+    transition: all 0.3s ease;
+}
+
+#circular-chart path:hover {
+    cursor: pointer;
+}
+
+#nutrition-chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+#circular-chart,
+#word-cloud,
+#third-chart {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.nutrition-tooltip-content {
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+    min-width: 300px;
+}
+
+.nutrition-tooltip-content h3 {
+    margin: 0 0 10px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+}
+
+.nutrition-tooltip-content table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.nutrition-tooltip-content th,
+.nutrition-tooltip-content td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.nutrition-tooltip-content th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+
+#nutrition-chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    height: 700px;
+}
+
+#circular-chart,
+#word-cloud,
+#third-chart {
+    height: 100%;
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.chart-title {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Word cloud specific styles */
+#word-cloud text {
+    transition: all 0.3s ease;
+}
+
+#word-cloud text:hover {
+    cursor: pointer;
+}
+
+.word-cloud-tooltip {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+    z-index: 1000;
+}
+
+#word-cloud {
+    position: relative;
+    background: white;
+}
+
+#word-cloud text {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+#word-cloud svg {
+    overflow: visible;
+}
+
+.chart {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.chart-title {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0.8;
+    margin: 0;
+    padding: 5px 0;
+}
+
+#word-cloud text {
+    transition: all 0.3s ease;
+}
+
+#word-cloud text:hover {
+    cursor: pointer;
+    filter: brightness(0.8);
+}
+
+/* Make charts more striking */
+#circular-chart path,
+#word-cloud text,
+#third-chart {
+    filter: saturate(1.2);
+}
+
+/* Ensure tooltips are above other elements */
+.tooltip,
+.word-cloud-tooltip,
+.nutrition-tooltip {
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    border: none;
+    border-radius: 4px;
+}
+
+/* Ensure all charts have consistent padding */
+#circular-chart,
+#word-cloud,
+#third-chart,
+#calories-chart,
+#map-chart {
+    padding: 8px;
+}
+
+/* Adjust map title position */
+#map-chart .title {
+    transform: translateY(10px);
+}
+
+#word-cloud {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+#word-cloud text {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    transition: all 0.3s ease;
+}
+
+#word-cloud text:hover {
+    cursor: pointer;
+    filter: brightness(0.8);
+    transform-origin: center;
+}
+
+.word-cloud-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

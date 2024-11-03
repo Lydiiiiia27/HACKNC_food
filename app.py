@@ -1,10 +1,13 @@
 import os
-from flask import Flask, render_template, request, flash, jsonify
+from flask import Flask, render_template, request, flash, jsonify, redirect, url_for
 from werkzeug.utils import secure_filename
 import requests
 import json
 import time
 from dotenv import load_dotenv
+from app.routes.dashboard_routes import dashboard_bp
+from app.routes.ocr import ocr_bp
+from app.routes.fridge import fridge_bp
 
 # Load environment variables
 load_dotenv()
@@ -26,6 +29,11 @@ API_KEY = os.getenv("TABSCANNER_API_KEY")
 
 # Ensure upload folder exists
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+# Register blueprints
+app.register_blueprint(ocr_bp, url_prefix='/ocr')
+app.register_blueprint(fridge_bp, url_prefix='/fridge')
+app.register_blueprint(dashboard_bp)
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -93,7 +101,7 @@ class TabScannerOCR:
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return redirect(url_for('ocr.upload'))
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -137,7 +145,6 @@ def upload_file():
     return render_template('index.html', 
                          message='Invalid file type. Please upload a PNG or JPG file.',
                          error=True)
-
 
 
 if __name__ == '__main__':

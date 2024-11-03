@@ -1,0 +1,59 @@
+/* static/css/dashboard.css */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    height: 100vh;
+    background-color: white;
+}
+
+.row {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.top-row {
+    height: 45%;
+}
+
+.bottom-row {
+    height: 45%;
+}
+
+.chart-container {
+    flex: 1;
+    height: 100%;
+}
+
+.chart {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+/* Individual chart containers */
+#calories-container,
+#map-container,
+#nutrition-container,
+#cooking-time-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Individual charts */
+#calories-chart,
+#map-chart,
+#nutrition-chart,
+#cooking-time-chart {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}

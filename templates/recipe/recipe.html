@@ -1,0 +1,238 @@
+{% extends "base.html" %}
+
+{% block title %}Recipe Generator{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/recipe.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Refrigerator Items</h2>
+            <div class="refrigerator-list">
+                {% set categories = ['dairy', 'protein', 'vegetables', 'fruit', 'condiments', 'beverages'] %}
+                
+                {% for category in categories %}
+                <div class="category-group" data-category="{{ category }}">
+                    <div class="category-title">{{ category|title }}</div>
+                    {% for item in items if item.category == category %}
+                    <div class="fridge-item" data-item-id="{{ items.index(item) }}" data-category="{{ item.category }}" draggable="true">
+                        <span class="item-name">{{ item.name }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+                
+                <!-- Others group -->
+                <div class="category-group" data-category="others">
+                    <div class="category-title">Others</div>
+                    {% for item in items if item.category not in categories %}
+                    <div class="fridge-item" data-item-id="{{ loop.index }}" data-category="{{ item.category }}" draggable="true">
+                        <span class="item-name">{{ item.name }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="recipes-container" style="display: none;">
+            <div class="meal-column">
+                <h2>Breakfast</h2>
+                <div class="recipe-cards" id="breakfast-recipes"></div>
+            </div>
+            <div class="meal-column">
+                <h2>Lunch</h2>
+                <div class="recipe-cards" id="lunch-recipes"></div>
+            </div>
+            <div class="meal-column">
+                <h2>Dinner</h2>
+                <div class="recipe-cards" id="dinner-recipes"></div>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>Generated Recipe</h2>
+            <div class="recipe-generate-wrapper">
+                <button id="generate-recipe">Generate Recipe</button>
+                <div class="loading-overlay" style="display: none;">
+                    <div class="spinner">
+                        <i class="fas fa-utensils fa-spin"></i>
+                        <p>Generating your recipes...</p>
+                    </div>
+                </div>
+            </div>
+            <div id="recipe"></div>
+            <div class="filter-section">
+                <div class="filter-category">
+                    <h3>Cooking Method</h3>
+                    <div class="filter-buttons" data-type="method">
+                        <button class="filter-btn" draggable="true" data-filter="stove">Stove Top</button>
+                        <button class="filter-btn" draggable="true" data-filter="oven">Oven</button>
+                        <button class="filter-btn" draggable="true" data-filter="microwave">Microwave</button>
+                        <button class="filter-btn" draggable="true" data-filter="no-cook">No Cook</button>
+                    </div>
+                </div>
+                
+                <div class="filter-category">
+                    <h3>Temperature</h3>
+                    <div class="filter-buttons" data-type="temp">
+                        <button class="filter-btn" draggable="true" data-filter="hot">Hot</button>
+                        <button class="filter-btn" draggable="true" data-filter="cold">Cold</button>
+                        <button class="filter-btn" draggable="true" data-filter="room-temp">Room Temp</button>
+                    </div>
+                </div>
+                
+                <div class="filter-category">
+                    <h3>Preparation Time</h3>
+                    <div class="filter-buttons" data-type="prep">
+                        <button class="filter-btn" draggable="true" data-filter="quick">Quick (15m)</button>
+                        <button class="filter-btn" draggable="true" data-filter="medium">Medium (30m)</button>
+                        <button class="filter-btn" draggable="true" data-filter="long">Long (60m+)</button>
+                    </div>
+                </div>
+                
+                <div class="filter-category">
+                    <h3>Complexity</h3>
+                    <div class="filter-buttons" data-type="complexity">
+                        <button class="filter-btn" draggable="true" data-filter="easy">Easy</button>
+                        <button class="filter-btn" draggable="true" data-filter="moderate">Moderate</button>
+                        <button class="filter-btn" draggable="true" data-filter="complex">Complex</button>
+                    </div>
+                </div>
+                
+                <div class="filter-category">
+                    <h3>Cuisine Type</h3>
+                    <div class="filter-buttons" data-type="cuisine">
+                        <button class="filter-btn" draggable="true" data-filter="chinese">Chinese</button>
+                        <button class="filter-btn" draggable="true" data-filter="italian">Italian</button>
+                        <button class="filter-btn" draggable="true" data-filter="mexican">Mexican</button>
+                        <button class="filter-btn" draggable="true" data-filter="american">American</button>
+                    </div>
+                </div>
+
+                <div class="filter-category">
+                    <h3>Meal Occasion</h3>
+                    <div class="filter-buttons" data-type="occasion">
+                        <button class="filter-btn" draggable="true" data-filter="daily">Daily Home Cooking</button>
+                        <button class="filter-btn" draggable="true" data-filter="holiday">Holiday Feast</button>
+                        <button class="filter-btn" draggable="true" data-filter="picnic">Picnic</button>
+                        <button class="filter-btn" draggable="true" data-filter="lunch-box">Office Lunch Box</button>
+                    </div>
+                </div>
+
+                <div class="filter-category">
+                    <h3>Nutritional Goals</h3>
+                    <div class="filter-buttons" data-type="nutrition">
+                        <button class="filter-btn" draggable="true" data-filter="high-protein">High Protein Low Fat</button>
+                        <button class="filter-btn" draggable="true" data-filter="keto">Keto Diet</button>
+                        <button class="filter-btn" draggable="true" data-filter="weight-loss">Weight Loss</button>
+                        <button class="filter-btn" draggable="true" data-filter="muscle-gain">Muscle Gain</button>
+                        <button class="filter-btn" draggable="true" data-filter="pregnancy">Pregnancy Nutrition</button>
+                    </div>
+                </div>
+
+                <div class="filter-category">
+                    <h3>Ingredient Status</h3>
+                    <div class="filter-buttons" data-type="ingredients">
+                        <button class="filter-btn" draggable="true" data-filter="expiring">Use Expiring Items</button>
+                        <button class="filter-btn" draggable="true" data-filter="no-thaw">No Thawing Required</button>
+                        <button class="filter-btn" draggable="true" data-filter="seasonal">Seasonal Ingredients</button>
+                    </div>
+                </div>
+
+                <div class="filter-category">
+                    <h3>Taste Preference</h3>
+                    <div class="filter-buttons" data-type="taste">
+                        <button class="filter-btn" draggable="true" data-filter="savory">Savory</button>
+                        <button class="filter-btn" draggable="true" data-filter="spicy">Spicy</button>
+                        <button class="filter-btn" draggable="true" data-filter="sweet-sour">Sweet & Sour</button>
+                        <button class="filter-btn" draggable="true" data-filter="mild">Mild</button>
+                        <button class="filter-btn" draggable="true" data-filter="strong">Strong Flavored</button>
+                    </div>
+                </div>
+
+                <div class="filter-category">
+                    <h3>Dietary Restrictions</h3>
+                    <div class="filter-buttons" data-type="dietary">
+                        <button class="filter-btn" draggable="true" data-filter="gluten-free">Gluten Free</button>
+                        <button class="filter-btn" draggable="true" data-filter="low-carb">Low Carb</button>
+                        <button class="filter-btn" draggable="true" data-filter="low-sodium">Low Sodium</button>
+                        <button class="filter-btn" draggable="true" data-filter="sugar-free">Sugar Free</button>
+                        <button class="filter-btn" draggable="true" data-filter="allergy-safe">Allergy Safe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Replace the schedule div content in index.html -->
+        <div class="schedule">
+            <h2>Meal Schedule</h2>
+            <div class="timeline">
+                <div class="time-markers">
+                    <div>6 AM</div>
+                    <div>9 AM</div>
+                    <div>12 PM</div>
+                    <div>3 PM</div>
+                    <div>6 PM</div>
+                    <div>9 PM</div>
+                </div>
+                <div class="meal-slots">
+                    <div class="meal-slot" id="breakfast">
+                        <div class="meal-header">
+                            <span class="meal-name">Breakfast</span>
+                            <div class="location-toggle">
+                                <label class="switch">
+                                    <input type="checkbox" class="location-checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                                <span class="location-label">Eat Out</span>
+                            </div>
+                        </div>
+                        <span class="meal-time" id="breakfast-time">7:00</span>
+                    </div>
+                    <div class="meal-slot" id="lunch">
+                        <div class="meal-header">
+                            <span class="meal-name">Lunch</span>
+                            <div class="location-toggle">
+                                <label class="switch">
+                                    <input type="checkbox" class="location-checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                                <span class="location-label">Eat Out</span>
+                            </div>
+                        </div>
+                        <span class="meal-time" id="lunch-time">12:00</span>
+                    </div>
+                    <div class="meal-slot" id="dinner">
+                        <div class="meal-header">
+                            <span class="meal-name">Dinner</span>
+                            <div class="location-toggle">
+                                <label class="switch">
+                                    <input type="checkbox" class="location-checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                                <span class="location-label">Eat Out</span>
+                            </div>
+                        </div>
+                        <span class="meal-time" id="dinner-time">18:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/recipe.js') }}"></script>
+</body>
+</html>
+{% endblock %}

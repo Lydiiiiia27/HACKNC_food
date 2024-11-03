@@ -1,0 +1,272 @@
+[
+    {
+        "name": "Whole Milk",
+        "category": "dairy",
+        "quantity_or_weight": "1",
+        "unit": "gallon",
+        "best_before_in_fridge": 7,
+        "frozen": 0,
+        "identify_name": "milk"
+    },
+    {
+        "name": "Cheddar Cheese",
+        "category": "dairy",
+        "quantity_or_weight": "8",
+        "unit": "oz",
+        "best_before_in_fridge": 14,
+        "frozen": 0,
+        "identify_name": "cheese"
+    },
+    {
+        "name": "Eggs",
+        "category": "protein",
+        "quantity_or_weight": "12",
+        "unit": "count",
+        "best_before_in_fridge": 21,
+        "frozen": 0,
+        "identify_name": "eggs"
+    },
+    {
+        "name": "Carrots",
+        "category": "vegetables",
+        "quantity_or_weight": "1",
+        "unit": "lb",
+        "best_before_in_fridge": 14,
+        "frozen": 0,
+        "identify_name": "carrots"
+    },
+    {
+        "name": "Apples",
+        "category": "fruit",
+        "quantity_or_weight": "6",
+        "unit": "count",
+        "best_before_in_fridge": 21,
+        "frozen": 0,
+        "identify_name": "apples"
+    },
+    {
+        "name": "Chicken Breasts",
+        "category": "protein",
+        "quantity_or_weight": "2",
+        "unit": "lb",
+        "best_before_in_fridge": 3,
+        "frozen": 1,
+        "identify_name": "chicken"
+    },
+    {
+        "name": "Greek Yogurt",
+        "category": "dairy",
+        "quantity_or_weight": "32",
+        "unit": "oz",
+        "best_before_in_fridge": 10,
+        "frozen": 0,
+        "identify_name": "yogurt"
+    },
+    {
+        "name": "Broccoli",
+        "category": "vegetables",
+        "quantity_or_weight": "1",
+        "unit": "head",
+        "best_before_in_fridge": 7,
+        "frozen": 0,
+        "identify_name": "broccoli"
+    },
+    {
+        "name": "Orange Juice",
+        "category": "beverages",
+        "quantity_or_weight": "64",
+        "unit": "oz",
+        "best_before_in_fridge": 10,
+        "frozen": 0,
+        "identify_name": "juice"
+    },
+    {
+        "name": "Ground Beef",
+        "category": "protein",
+        "quantity_or_weight": "1",
+        "unit": "lb",
+        "best_before_in_fridge": 3,
+        "frozen": 1,
+        "identify_name": "beef"
+    },
+    {
+        "name": "Spinach",
+        "category": "vegetables",
+        "quantity_or_weight": "10",
+        "unit": "oz",
+        "best_before_in_fridge": 5,
+        "frozen": 0,
+        "identify_name": "spinach"
+    },
+    {
+        "name": "Hummus",
+        "category": "condiments",
+        "quantity_or_weight": "16",
+        "unit": "oz",
+        "best_before_in_fridge": 7,
+        "frozen": 0,
+        "identify_name": "hummus"
+    },
+    {
+        "name": "Strawberries",
+        "category": "fruit",
+        "quantity_or_weight": "1",
+        "unit": "lb",
+        "best_before_in_fridge": 5,
+        "frozen": 0,
+        "identify_name": "strawberries"
+    },
+    {
+        "name": "Butter",
+        "category": "dairy",
+        "quantity_or_weight": "1",
+        "unit": "lb",
+        "best_before_in_fridge": 30,
+        "frozen": 0,
+        "identify_name": "butter"
+    },
+    {
+        "name": "Bacon",
+        "category": "protein",
+        "quantity_or_weight": "12",
+        "unit": "oz",
+        "best_before_in_fridge": 7,
+        "frozen": 0,
+        "identify_name": "bacon"
+    },
+    {
+        "name": "Frozen Peas",
+        "category": "vegetables",
+        "quantity_or_weight": "16",
+        "unit": "oz",
+        "best_before_in_fridge": 365,
+        "frozen": 1,
+        "identify_name": "peas"
+    },
+    {
+        "name": "Pasta Sauce",
+        "category": "condiments",
+        "quantity_or_weight": "24",
+        "unit": "oz",
+        "best_before_in_fridge": 14,
+        "frozen": 0,
+        "identify_name": "sauce"
+    },
+    {
+        "name": "Avocados",
+        "category": "fruit",
+        "quantity_or_weight": "3",
+        "unit": "count",
+        "best_before_in_fridge": 5,
+        "frozen": 0,
+        "identify_name": "avocados"
+    },
+    {
+        "name": "Orange Bell Peppers",
+        "category": "vegetables",
+        "quantity_or_weight": "2",
+        "unit": "count",
+        "best_before_in_fridge": 7,
+        "frozen": 0,
+        "identify_name": "bell peppers"
+    },
+    {
+        "name": "Ice Cream",
+        "category": "dessert",
+        "quantity_or_weight": "1",
+        "unit": "quart",
+        "best_before_in_fridge": 90,
+        "frozen": 1,
+        "identify_name": "ice cream"
+    },
+    {
+        "name": "Sliced Turkey",
+        "category": "protein",
+        "quantity_or_weight": "1",
+        "unit": "lb",
+        "best_before_in_fridge": 5,
+        "frozen": 0,
+        "identify_name": "turkey slices"
+    },
+    {
+        "name": "Almond Milk",
+        "category": "dairy alternatives",
+        "quantity_or_weight": "64",
+        "unit": "oz",
+        "best_before_in_fridge": 10,
+        "frozen": 0,
+        "identify_name": "almond milk"
+    },
+    {
+        "name": "Ketchup",
+        "category": "condiments",
+        "quantity_or_weight": "20",
+        "unit": "oz",
+        "best_before_in_fridge": 60,
+        "frozen": 0,
+        "identify_name": "ketchup"
+    },
+    {
+        "name": "Blueberries",
+        "category": "fruit",
+        "quantity_or_weight": "1",
+        "unit": "pint",
+        "best_before_in_fridge": 7,
+        "frozen": 0,
+        "identify_name": "blueberries"
+    },
+    {
+        "name": "Lettuce",
+        "category": "vegetables",
+        "quantity_or_weight": "1",
+        "unit": "head",
+        "best_before_in_fridge": 5,
+        "frozen": 0,
+        "identify_name": "lettuce"
+    },
+    {
+        "name": "Maple Syrup",
+        "category": "condiments",
+        "quantity_or_weight": "12",
+        "unit": "oz",
+        "best_before_in_fridge": 180,
+        "frozen": 0,
+        "identify_name": "syrup"
+    },
+    {
+        "name": "Frozen Pizza",
+        "category": "prepared foods",
+        "quantity_or_weight": "1",
+        "unit": "count",
+        "best_before_in_fridge": 365,
+        "frozen": 1,
+        "identify_name": "pizza"
+    },
+    {
+        "name": "Pickles",
+        "category": "condiments",
+        "quantity_or_weight": "16",
+        "unit": "oz",
+        "best_before_in_fridge": 180,
+        "frozen": 0,
+        "identify_name": "pickles"
+    },
+    {
+        "name": "Apple Juice",
+        "category": "beverages",
+        "quantity_or_weight": "64",
+        "unit": "oz",
+        "best_before_in_fridge": 14,
+        "frozen": 0,
+        "identify_name": "apple juice"
+    },
+    {
+        "name": "Salmon Fillets",
+        "category": "protein",
+        "quantity_or_weight": "2",
+        "unit": "lb",
+        "best_before_in_fridge": 3,
+        "frozen": 1,
+        "identify_name": "salmon"
+    }
+]
