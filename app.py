@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request, flash, jsonify
 from werkzeug.utils import secure_filename
 import requests
 import json
@@ -8,6 +8,13 @@ from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
+
+# Get the absolute path to the project directory
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Create necessary directories if they don't exist
+os.makedirs(os.path.join(BASE_DIR, 'static', 'revise'), exist_ok=True)
+os.makedirs(os.path.join(BASE_DIR, 'static', 'uploads'), exist_ok=True)
 
 app = Flask(__name__)
 app.secret_key = os.getenv("FLASK_SECRET_KEY", "hacknc2024")
@@ -130,6 +137,8 @@ def upload_file():
     return render_template('index.html', 
                          message='Invalid file type. Please upload a PNG or JPG file.',
                          error=True)
+
+
 
 if __name__ == '__main__':
     app.run(debug=True) 

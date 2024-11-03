@@ -1,0 +1,538 @@
+{
+    "message": "SUCCESS: Result available",
+    "status": "done",
+    "status_code": 3,
+    "result": {
+        "establishment": "WinCo FOODS",
+        "validatedEstablishment": false,
+        "date": "2012-01-26 19:38:23",
+        "total": 44.51,
+        "url": "www.wincofoods.com",
+        "phoneNumber": " 4500011176",
+        "paymentMethod": "Debit",
+        "address": "",
+        "cash": 0,
+        "change": 0,
+        "validatedTotal": false,
+        "subTotal": 44.07,
+        "validatedSubTotal": true,
+        "tax": 0,
+        "tip": 0,
+        "taxes": [],
+        "serviceCharges": [],
+        "discount": 0,
+        "rounding": 0,
+        "discounts": [],
+        "lineItems": [
+            {
+                "qty": 0,
+                "desc": "N / P 100 WH WHT 4500011176",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F",
+                    "S"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "N / P 100 WH WHT",
+                "lineTotal": 2.48,
+                "productCode": "4500011176",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "F / E 50/50 MIX 7127927103",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F",
+                    "S"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "F / E 50/50 MIX",
+                "lineTotal": 1.78,
+                "productCode": "7127927103",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "C / P S C ON CHP 1707200702",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F",
+                    "S"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "C / P S C ON CHP",
+                "lineTotal": 1.88,
+                "productCode": "1707200702",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "THOMAS MINI BAG 4812121679",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F",
+                    "S"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "THOMAS MINI BAG",
+                "lineTotal": 4.1,
+                "productCode": "4812121679",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "RESER FLOUR TO 7111700109",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F",
+                    "S"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "RESER FLOUR TO",
+                "lineTotal": 1.68,
+                "productCode": "7111700109",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "HY TOP 1% MILK 5070055324",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F",
+                    "S"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "HY TOP 1% MILK",
+                "lineTotal": 1.88,
+                "productCode": "5070055324",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "TWIX CARAMEL SN 4000000435",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F",
+                    "S"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "TWIX CARAMEL SN",
+                "lineTotal": 0.68,
+                "productCode": "4000000435",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "TOBLERONE MILK 7022101111",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F",
+                    "S"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "TOBLERONE MILK",
+                "lineTotal": 2.07,
+                "productCode": "7022101111",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "CANDY 3400000159",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F",
+                    "S"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "CANDY",
+                "lineTotal": 0.68,
+                "productCode": "3400000159",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "SNICKERS PB SQR 4000039412",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F",
+                    "S"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "SNICKERS PB SQR",
+                "lineTotal": 0.68,
+                "productCode": "4000039412",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "CANDY 3400000155",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F",
+                    "S"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "CANDY",
+                "lineTotal": 0.68,
+                "productCode": "3400000155",
+                "customFields": {}
+            },
+            {
+                "qty": 2,
+                "desc": "AVOCADO 4046",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F",
+                    "S"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "AVOCADO",
+                "lineTotal": 1.56,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "APPLES,RED DEL LG 4016",
+                "unit": "lb",
+                "price": 0,
+                "symbols": [
+                    "F",
+                    "S"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "2.33 lb @ .78 / lb APPLES,RED DEL LG",
+                "lineTotal": 1.82,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 1,
+                "desc": "BANANAS 4011",
+                "unit": "lb",
+                "price": 0,
+                "symbols": [
+                    "F",
+                    "S"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "2.38 lb @ lb / BANANAS",
+                "lineTotal": 1.38,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "CARROTS,PETITE 7146418095",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F",
+                    "S"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "CARROTS,PETITE",
+                "lineTotal": 1.48,
+                "productCode": "7146418095",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "TAI - PEI OR / CHIX 7007700423",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F",
+                    "S"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "TAI - PEI OR / CHIX",
+                "lineTotal": 3.98,
+                "productCode": "7007700423",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "HY - TOP CRM CHS 5070047907",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F",
+                    "S"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "HY - TOP CRM CHS",
+                "lineTotal": 1.61,
+                "productCode": "5070047907",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "R / B STNE HEARTH 7218063018",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F",
+                    "S"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "R / B STNE HEARTH",
+                "lineTotal": 3.38,
+                "productCode": "7218063018",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "H / T ALUM FOIL 5070005055",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "T",
+                    "X"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "H / T ALUM FOIL",
+                "lineTotal": 6.1,
+                "productCode": "5070005055",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "MRS CUBB CROUTN 7471408554",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F",
+                    "S"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "MRS CUBB CROUTN",
+                "lineTotal": 1.69,
+                "productCode": "7471408554",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "CHEEZ - IT SNK MX 2410051445",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "F",
+                    "S"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "CHEEZ - IT SNK MX",
+                "lineTotal": 2.48,
+                "productCode": "2410051445",
+                "customFields": {}
+            }
+        ],
+        "summaryItems": [
+            {
+                "qty": 0,
+                "desc": "SUBTOTAL",
+                "unit": "",
+                "price": 0,
+                "symbols": [],
+                "discount": 0,
+                "lineType": "SubTotal",
+                "descClean": "SUBTOTAL",
+                "lineTotal": 44.07,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "TOTAL TAX",
+                "unit": "",
+                "price": 0,
+                "symbols": [],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "TOTAL TAX",
+                "lineTotal": 0.44,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "TOTAL",
+                "unit": "",
+                "price": 0,
+                "symbols": [],
+                "discount": 0,
+                "lineType": "Total",
+                "descClean": "TOTAL",
+                "lineTotal": 44.51,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "DEBIT CARD TENDER",
+                "unit": "",
+                "price": 0,
+                "symbols": [],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "DEBIT CARD TENDER",
+                "lineTotal": 44.51,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "CASH CHANGE",
+                "unit": "",
+                "price": 0,
+                "symbols": [],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "CASH CHANGE",
+                "lineTotal": 0,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "01/26/12 Oper # 126634 Trx #",
+                "unit": "",
+                "price": 0,
+                "symbols": [],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "01/26/12 Oper # Trx #",
+                "lineTotal": 0.242,
+                "productCode": "126634",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "DEBIT CARD",
+                "unit": "",
+                "price": 0,
+                "symbols": [],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "DEBIT CARD",
+                "lineTotal": 44.51,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "Cash back",
+                "unit": "",
+                "price": 0,
+                "symbols": [],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "Cash back",
+                "lineTotal": 0,
+                "productCode": "",
+                "customFields": {}
+            },
+            {
+                "qty": 0,
+                "desc": "01/26/12 Oper # 126634 Trx #",
+                "unit": "",
+                "price": 0,
+                "symbols": [],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "01/26/12 Oper # Trx #",
+                "lineTotal": 0.242,
+                "productCode": "126634",
+                "customFields": {}
+            },
+            {
+                "qty": 7,
+                "desc": "19:39:43 Term # 7 Store",
+                "unit": "",
+                "price": 0,
+                "symbols": [
+                    "#"
+                ],
+                "discount": 0,
+                "lineType": "",
+                "descClean": "19:39:43 Term # Store",
+                "lineTotal": 25,
+                "productCode": "",
+                "customFields": {}
+            }
+        ],
+        "subTotalConfidence": 0.99,
+        "taxesConfidence": [],
+        "serviceChargeConfidences": [],
+        "discountConfidences": [],
+        "totalConfidence": 0.7,
+        "dateConfidence": 0.7,
+        "establishmentConfidence": 0.99,
+        "tipConfidence": 0,
+        "cashConfidence": 0,
+        "changeConfidence": 0,
+        "roundingConfidence": 0,
+        "customFields": {
+            "URL": "www.wincofoods.com",
+            "Country": "",
+            "StoreID": "0025",
+            "Currency": "",
+            "VATNumber": "",
+            "ExpenseType": "",
+            "PaymentMethod": "Debit",
+            "CardLast4Digits": ""
+        },
+        "documentType": "receipt",
+        "currency": "",
+        "barcodes": [],
+        "dateISO": "2012-01-26T19:38:23",
+        "addressNorm": {
+            "city": "",
+            "state": "",
+            "number": "",
+            "street": "",
+            "suburb": "",
+            "country": "",
+            "building": "",
+            "postcode": ""
+        },
+        "expenseType": "None",
+        "otherData": []
+    },
+    "success": true,
+    "code": 202
+}

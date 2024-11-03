@@ -35,7 +35,7 @@ def upload_file():
         ocr.save_to_json(results, json_path)
         
         # Process the JSON file
-        processed_json_path = os.path.join('static', 'revise', f"processed_{json_filename}")
+        processed_json_path = os.path.join('static', 'revise', f"shoppingList.json")
         api_key = os.getenv("OPENAI_API_KEY")
         process_json_file(json_path, processed_json_path, api_key)
         
