@@ -63,10 +63,29 @@
             </div>
         </div>
     </div>
+
+    <!-- Fridge List Container -->
+    <div class="list-container fridge-list-container">
+        <div class="list-header">
+            <div class="list-title">Refrigerator Items</div>
+            <select id="sort-select" class="sort-select">
+                <option value="best_before">Sort by Best Before</option>
+                <option value="name">Sort by Name</option>
+                <option value="category">Sort by Category</option>
+                <option value="frozen">Sort by Frozen Status</option>
+                <option value="residual">Sort by Residual</option>
+            </select>
+        </div>
+        <div id="fridge-list">
+            <!-- Items will be inserted here -->
+        </div>
+        <!-- Pagination controls will be inserted here -->
+    </div>
 </div>
 {% endblock %}
 
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/fridge.js') }}"></script>
 <script src="{{ url_for('static', filename='js/shoppingList.js') }}"></script>
+<script src="{{ url_for('static', filename='js/fridgeList.js') }}"></script>
 {% endblock %}
