@@ -5,6 +5,7 @@ import requests
 import json
 import time
 from dotenv import load_dotenv
+from app.routes.dashboard_routes import dashboard_bp
 
 # Load environment variables
 load_dotenv()
@@ -26,6 +27,9 @@ API_KEY = os.getenv("TABSCANNER_API_KEY")
 
 # Ensure upload folder exists
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+# Register blueprints
+app.register_blueprint(dashboard_bp)
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -137,6 +141,7 @@ def upload_file():
     return render_template('index.html', 
                          message='Invalid file type. Please upload a PNG or JPG file.',
                          error=True)
+
 
 if __name__ == '__main__':
     app.run(debug=True) 
